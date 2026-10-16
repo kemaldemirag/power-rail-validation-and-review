@@ -1,0 +1,35 @@
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Python and generated output
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.py[cod]
+build/
+dist/
+out/
+*.egg-info/
+
+# Unreviewed third-party models or raw evidence
+vendor/
+third_party/
+raw/
+screenshots/
