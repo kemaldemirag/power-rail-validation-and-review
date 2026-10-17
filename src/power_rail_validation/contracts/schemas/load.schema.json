@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.rep02.invalid/v1/load.schema.json",
+  "title": "REP-02 Load",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "entity_type",
+    "load_id",
+    "rail_id",
+    "operating_current",
+    "peak_current",
+    "provenance",
+    "source_refs"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "entity_type": {"const": "load"},
+    "load_id": {"$ref": "#/$defs/id"},
+    "rail_id": {"$ref": "#/$defs/id"},
+    "operating_current": {"$ref": "#/$defs/quantity"},
+    "peak_current": {"$ref": "#/$defs/quantity"},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "source_refs": {"$ref": "#/$defs/sourceRefs"}
+  },
+  "$defs": {
+    "id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"},
+    "provenance": {
+      "enum": ["SOURCE_EXPLICIT", "DERIVED", "ENGINEERING_RULE", "ASSUMPTION", "UNKNOWN", "CONFLICT"]
+    },
+    "sourceRefs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/id"}
+    },
+    "quantity": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "value", "unit"],
+          "properties": {
+            "state": {"const": "KNOWN"},
+            "value": {"type": "number"},
+            "unit": {"const": "A"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "value", "unit"],
+          "properties": {
+            "state": {"const": "UNKNOWN"},
+            "value": {"type": "null"},
+            "unit": {"const": "A"}
+          }
+        }
+      ]
+    }
+  }
+}
+

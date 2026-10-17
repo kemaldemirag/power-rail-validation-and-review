@@ -1,0 +1,8 @@
+contract_id,file,entity_type,schema_version,json_schema_draft,status,owner
+REP02-D1-RAIL,schemas/rail.schema.json,rail,1.0.0,2020-12,ACTIVE,REP-02
+REP02-D1-LOAD,schemas/load.schema.json,load,1.0.0,2020-12,ACTIVE,REP-02
+REP02-D1-REGULATOR,schemas/regulator.schema.json,regulator,1.0.0,2020-12,ACTIVE,REP-02
+REP02-D1-SOURCE,schemas/source.schema.json,source,1.0.0,2020-12,ACTIVE,REP-02
+REP02-D1-EVENT,schemas/event.schema.json,event,1.0.0,2020-12,ACTIVE,REP-02
+REP02-D1-FINDING,schemas/finding.schema.json,finding,1.0.0,2020-12,ACTIVE,REP-02
+

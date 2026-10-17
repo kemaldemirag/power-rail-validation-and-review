@@ -1,0 +1,82 @@
+{
+  "request": {
+    "contract_version": "1.0.0",
+    "handoff_id": "REP01-REP02-CONFLICT",
+    "producer": {
+      "repo": "REP-01",
+      "product_contract_version": "1.0.0",
+      "rule_registry_version": "2026.10"
+    },
+    "configuration_id": "CFG-CONFLICT",
+    "configuration_sha256": "909b23bbc9920a235626f56841d7e194832711c3c5f07f42e5c1ecdf6576237e",
+    "collections": {
+      "sources": [
+        {
+          "schema_version": "1.0.0",
+          "entity_type": "source",
+          "source_id": "SRC-CONFLICT-001",
+          "classification": "CONFLICT",
+          "title": "Conflicting limit evidence",
+          "version": "set-2",
+          "locator": "evidence/conflict-set-2",
+          "access_status": "AVAILABLE",
+          "content_hash": {
+            "state": "KNOWN",
+            "algorithm": "SHA-256",
+            "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+          }
+        }
+      ],
+      "rails": [],
+      "loads": [],
+      "regulators": [],
+      "events": []
+    },
+    "claim_limits": ["POWER_BUDGET"]
+  },
+  "response": {
+    "contract_version": "1.0.0",
+    "assessment_id": "ASSESS-CONFLICT",
+    "input_configuration_sha256": "909b23bbc9920a235626f56841d7e194832711c3c5f07f42e5c1ecdf6576237e",
+    "tool_versions": [
+      {"name": "power-rail-validation", "version": "0.1.0", "package_version": "0.1.0"}
+    ],
+    "model_records": [],
+    "checks": [
+      {
+        "id": "CHECK-CONFLICT",
+        "status": "PASS",
+        "reason_code": "UNSAFE_PASS_FIXTURE",
+        "reason": "Fixture intentionally attempts PASS from conflicting evidence.",
+        "inputs_used": ["SRC-CONFLICT-001"],
+        "metrics": {},
+        "evidence_refs": ["SRC-CONFLICT-001"],
+        "model_refs": [],
+        "limitations": ["NEGATIVE_TEST_FIXTURE"],
+        "next_action": "BLOCK_ON_CONFLICT"
+      }
+    ],
+    "scenario_results": [],
+    "findings": [
+      {
+        "schema_version": "1.0.0",
+        "entity_type": "finding",
+        "finding_id": "FINDING-CONFLICT",
+        "subject_ref": {"entity_type": "source", "entity_id": "SRC-CONFLICT-001"},
+        "rule_id": "SOURCE_CONSISTENCY",
+        "status": "PASS",
+        "reason_code": "UNSAFE_PASS_FIXTURE",
+        "message": "Fixture attempts PASS from conflicting evidence.",
+        "source_refs": [{"source_id": "SRC-CONFLICT-001", "version": "set-2"}],
+        "input_hash": "909b23bbc9920a235626f56841d7e194832711c3c5f07f42e5c1ecdf6576237e",
+        "tool_version": "0.1.0",
+        "package_version": "0.1.0",
+        "limit_context": {"required": false, "state": "NOT_APPLICABLE", "refs": []}
+      }
+    ],
+    "summary_status": "PASS",
+    "claim_limits": ["POWER_BUDGET"],
+    "generated_at": "2026-10-17T12:01:00+03:00"
+  }
+}
+

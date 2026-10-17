@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.rep02.invalid/v1/source.schema.json",
+  "title": "REP-02 Evidence Source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "entity_type",
+    "source_id",
+    "classification",
+    "title",
+    "version",
+    "locator",
+    "access_status",
+    "content_hash"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "entity_type": {"const": "source"},
+    "source_id": {"$ref": "#/$defs/id"},
+    "classification": {"$ref": "#/$defs/provenance"},
+    "title": {"type": "string", "minLength": 1},
+    "version": {"type": "string", "minLength": 1},
+    "locator": {"type": "string", "minLength": 1},
+    "access_status": {"enum": ["AVAILABLE", "MISSING", "BLOCKED", "UNKNOWN"]},
+    "content_hash": {"$ref": "#/$defs/contentHash"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"access_status": {"const": "AVAILABLE"}}, "required": ["access_status"]},
+      "then": {"properties": {"content_hash": {"properties": {"state": {"const": "KNOWN"}}}}}
+    },
+    {
+      "if": {"properties": {"access_status": {"enum": ["MISSING", "UNKNOWN"]}}, "required": ["access_status"]},
+      "then": {"properties": {"content_hash": {"properties": {"state": {"const": "UNKNOWN"}}}}}
+    }
+  ],
+  "$defs": {
+    "id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"},
+    "provenance": {
+      "enum": ["SOURCE_EXPLICIT", "DERIVED", "ENGINEERING_RULE", "ASSUMPTION", "UNKNOWN", "CONFLICT"]
+    },
+    "contentHash": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "algorithm", "value"],
+          "properties": {
+            "state": {"const": "KNOWN"},
+            "algorithm": {"const": "SHA-256"},
+            "value": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "algorithm", "value"],
+          "properties": {
+            "state": {"const": "UNKNOWN"},
+            "algorithm": {"const": "SHA-256"},
+            "value": {"type": "null"}
+          }
+        }
+      ]
+    }
+  }
+}
+

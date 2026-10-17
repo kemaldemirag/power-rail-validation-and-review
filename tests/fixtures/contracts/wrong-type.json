@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "entity_type": "rail",
+  "rail_id": "VDD_3V3",
+  "nominal_voltage": 3.3,
+  "voltage_limits": {
+    "minimum": {"state": "KNOWN", "value": 3.135, "unit": "V"},
+    "maximum": {"state": "KNOWN", "value": 3.465, "unit": "V"}
+  },
+  "provenance": "SOURCE_EXPLICIT",
+  "source_refs": ["SRC-DATASHEET-001"]
+}
+

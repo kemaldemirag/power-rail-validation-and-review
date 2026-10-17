@@ -1,0 +1,67 @@
+entity_type,field_path,required,data_type,allowed_values/unit,unknown_policy,description
+rail,schema_version,true,string,1.0.0,forbidden,Entity schema version
+rail,entity_type,true,string,rail,forbidden,Entity discriminator
+rail,rail_id,true,string,stable identifier,forbidden,Rail identifier
+rail,nominal_voltage,true,quantity,V,UNKNOWN uses null,Nominal rail voltage
+rail,voltage_limits.minimum,true,quantity,V,UNKNOWN uses null,Minimum acceptable voltage
+rail,voltage_limits.maximum,true,quantity,V,UNKNOWN uses null,Maximum acceptable voltage
+rail,provenance,true,enum,SOURCE_EXPLICIT;DERIVED;ENGINEERING_RULE;ASSUMPTION;UNKNOWN;CONFLICT,explicit enum,Origin classification
+rail,source_refs,true,array[string],source_id,empty forbidden,Evidence source identifiers
+load,schema_version,true,string,1.0.0,forbidden,Entity schema version
+load,entity_type,true,string,load,forbidden,Entity discriminator
+load,load_id,true,string,stable identifier,forbidden,Load identifier
+load,rail_id,true,string,rail_id,forbidden,Supplying rail identifier
+load,operating_current,true,quantity,A,UNKNOWN uses null,Operating current
+load,peak_current,true,quantity,A,UNKNOWN uses null,Peak current
+load,provenance,true,enum,SOURCE_EXPLICIT;DERIVED;ENGINEERING_RULE;ASSUMPTION;UNKNOWN;CONFLICT,explicit enum,Origin classification
+load,source_refs,true,array[string],source_id,empty forbidden,Evidence source identifiers
+regulator,schema_version,true,string,1.0.0,forbidden,Entity schema version
+regulator,entity_type,true,string,regulator,forbidden,Entity discriminator
+regulator,regulator_id,true,string,stable identifier,forbidden,Regulator identifier
+regulator,input_ref,true,string,source or rail identifier,forbidden,Input supply reference
+regulator,output_rail_id,true,string,rail_id,forbidden,Regulated rail identifier
+regulator,output_voltage,true,quantity,V,UNKNOWN uses null,Configured output voltage
+regulator,rated_output_current,true,quantity,A,UNKNOWN uses null,Rated output current
+regulator,switching_frequency,true,quantity,Hz,UNKNOWN uses null,Switching frequency in SI base unit
+regulator,provenance,true,enum,SOURCE_EXPLICIT;DERIVED;ENGINEERING_RULE;ASSUMPTION;UNKNOWN;CONFLICT,explicit enum,Origin classification
+regulator,source_refs,true,array[string],source_id,empty forbidden,Evidence source identifiers
+source,schema_version,true,string,1.0.0,forbidden,Entity schema version
+source,entity_type,true,string,source,forbidden,Entity discriminator
+source,source_id,true,string,stable identifier,forbidden,Evidence identifier
+source,classification,true,enum,SOURCE_EXPLICIT;DERIVED;ENGINEERING_RULE;ASSUMPTION;UNKNOWN;CONFLICT,explicit enum,Evidence classification
+source,title,true,string,free text,forbidden,Human-readable title
+source,version,true,string,source-defined version,UNKNOWN literal permitted,Pinned evidence version
+source,locator,true,string,path or URI,forbidden,Expected or actual source locator
+source,access_status,true,enum,AVAILABLE;MISSING;BLOCKED;UNKNOWN,explicit enum,Retrieval state including absent PKG-A or PKG-B
+source,content_hash.state,true,enum,KNOWN;UNKNOWN,explicit enum,Hash knowledge state
+source,content_hash.algorithm,true,string,SHA-256,forbidden,Hash algorithm
+source,content_hash.value,true,string|null,64 lowercase hex,UNKNOWN requires null,Content digest
+event,schema_version,true,string,1.0.0,forbidden,Entity schema version
+event,entity_type,true,string,event,forbidden,Entity discriminator
+event,event_id,true,string,stable identifier,forbidden,Sequence event identifier
+event,event_type,true,enum,MEASUREMENT;SIMULATION;CALCULATION;REVIEW;SIGNAL_TRANSITION;POWER_STATE;FAULT,explicit enum,Event category
+event,event_kind,true,enum,VIN_VALID;EN;PGOOD;RESET;POWER_OFF;BROWNOUT;RAIL_LOSS;RESTART;OTHER,explicit enum,Power sequence semantic
+event,state,true,enum,ASSERTED;DEASSERTED;ENTERED;EXITED;ACTIVE;INACTIVE;UNKNOWN,explicit UNKNOWN,Observed state
+event,occurred_at,true,string,RFC 3339 with timezone,forbidden,Absolute observation time
+event,time_offset,true,quantity,s,UNKNOWN uses null,Offset from scenario epoch
+event,subject_refs,true,array[string],entity references,empty forbidden,Affected entities
+event,measurements[].name,true,string,stable measurement name,forbidden,Measurement identifier
+event,measurements[].quantity,true,quantity,V;A;Hz;s,UNKNOWN uses null,Measured quantity
+event,provenance,true,enum,SOURCE_EXPLICIT;DERIVED;ENGINEERING_RULE;ASSUMPTION;UNKNOWN;CONFLICT,explicit enum,Origin classification
+event,source_refs,true,array[string],source_id,empty forbidden,Evidence source identifiers
+finding,schema_version,true,string,1.0.0,forbidden,Entity schema version
+finding,entity_type,true,string,finding,forbidden,Entity discriminator
+finding,finding_id,true,string,stable identifier,forbidden,Finding identifier
+finding,subject_ref,true,object,entity_type plus entity_id,forbidden,Assessed entity
+finding,rule_id,true,string,rule registry identifier,forbidden,Applied rule
+finding,status,true,enum,PASS;FAIL;UNKNOWN;BLOCKED;NOT_RUN,explicit UNKNOWN or BLOCKED,Assessment status
+finding,reason_code,true,string,stable code,forbidden,Machine-readable reason
+finding,message,true,string,free text,forbidden,Human-readable explanation
+finding,source_refs[].source_id,true,string,source_id,forbidden,Evidence reference
+finding,source_refs[].version,true,string,exact source version,forbidden,Pinned evidence version
+finding,input_hash,true,string,64 lowercase hex,forbidden,Assessed configuration digest
+finding,tool_version,true,string,version,forbidden,Executing tool version
+finding,package_version,true,string,version,forbidden,Installed package version
+finding,limit_context.required,true,boolean,true;false,forbidden,Whether the rule needs a limit
+finding,limit_context.state,true,enum,KNOWN;MISSING;UNKNOWN;CONFLICT;NOT_APPLICABLE,explicit enum,Resolved limit state
+finding,limit_context.refs,true,array[string],rail limit reference,empty only when not required,Evaluated limit references

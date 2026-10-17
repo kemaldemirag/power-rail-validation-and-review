@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "entity_type": "finding",
+  "finding_id": "FINDING-UNKNOWN-LIMIT",
+  "subject_ref": {"entity_type": "rail", "entity_id": "VDD_3V3"},
+  "rule_id": "RAIL_VOLTAGE_LIMIT",
+  "status": "PASS",
+  "reason_code": "UNSAFE_PASS_FIXTURE",
+  "message": "Fixture attempts PASS while a required limit is unknown.",
+  "source_refs": [{"source_id": "SRC-DATASHEET-001", "version": "rev-C"}],
+  "input_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "tool_version": "0.1.0",
+  "package_version": "0.1.0",
+  "limit_context": {
+    "required": true,
+    "state": "UNKNOWN",
+    "refs": ["rail:VDD_3V3.voltage_limits.maximum"]
+  }
+}
+

@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "entity_type": "source",
+  "source_id": "SRC-PKG-A",
+  "classification": "UNKNOWN",
+  "title": "Expected PKG-A evidence package",
+  "version": "UNKNOWN",
+  "locator": "evidence/PKG-A",
+  "access_status": "MISSING",
+  "content_hash": {
+    "state": "UNKNOWN",
+    "algorithm": "SHA-256",
+    "value": null
+  }
+}
+

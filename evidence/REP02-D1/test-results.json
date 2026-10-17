@@ -1,0 +1,78 @@
+{
+  "evidence_id": "REP02-D1-TEST-2026-10-17",
+  "workflow": "WF-02-01",
+  "deliverable_gate": "D1",
+  "executed_on": "2026-10-17",
+  "timezone": "Europe/Istanbul",
+  "environment": {
+    "python": "3.12.14",
+    "dependency_policy": "standard-library-only runtime validation; no package installation performed"
+  },
+  "verification_status": "PASS",
+  "review_gate_status": "PENDING",
+  "checks": [
+    {
+      "name": "unit_tests",
+      "command": "$env:PYTHONPATH='src'; python -m unittest discover -s tests -v",
+      "status": "PASS",
+      "tests_run": 49,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "name": "bytecode_compile",
+      "command": "python -m compileall -q src tests",
+      "status": "PASS"
+    },
+    {
+      "name": "schema_json_parse",
+      "status": "PASS",
+      "files_parsed": 6
+    },
+    {
+      "name": "fixture_json_parse",
+      "status": "PASS",
+      "files_parsed": 5,
+      "note": "malformed.json is intentionally excluded because it is the negative syntax fixture"
+    },
+    {
+      "name": "field_dictionary_csv_parse",
+      "status": "PASS",
+      "data_rows": 66
+    },
+    {
+      "name": "git_diff_check",
+      "command": "git diff --check",
+      "status": "PASS"
+    },
+    {
+      "name": "independent_mutation_sweep",
+      "status": "PASS",
+      "nodes_exercised": 194,
+      "mutations_per_node": 5,
+      "cases_run": 965,
+      "uncaught_exceptions": 0,
+      "note": "Each JSON node was independently replaced with array, object, null, string and zero variants."
+    }
+  ],
+  "claim_boundary": {
+    "validated": [
+      "D1 data-contract structure and safety gates",
+      "deterministic request hashing",
+      "six entity schemas and synthetic fixtures",
+      "unknown, null, zero, conflict, evidence, model, version and claim-scope handling",
+      "strict rejection of NaN and positive/negative Infinity plus fail-closed hash encoding",
+      "duplicate JSON key and unexpected request field rejection",
+      "rail, subject and evaluation-input referential integrity",
+      "ASSUMPTION-only PASS rejection and exact request/response claim_limits parity"
+    ],
+    "not_validated": [
+      "schematic or PCB correctness",
+      "vendor or component models",
+      "physical measurements",
+      "SPICE or KiCad execution",
+      "EMC, ISO, AEC or field compliance"
+    ]
+  },
+  "next_gate": "D1 contract review and approval before WF-02-02 or WF-02-03 implementation"
+}

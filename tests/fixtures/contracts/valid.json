@@ -1,0 +1,160 @@
+{
+  "request": {
+    "contract_version": "1.0.0",
+    "handoff_id": "REP01-REP02-0001",
+    "producer": {
+      "repo": "REP-01",
+      "product_contract_version": "1.0.0",
+      "rule_registry_version": "2026.10"
+    },
+    "configuration_id": "CFG-3V3-BASELINE",
+    "configuration_sha256": "331ebe87ae3ce47e995ddd74ed3c88a7d4bdb2baa9b0fd32771a68bba4cb3d80",
+    "collections": {
+      "sources": [
+        {
+          "schema_version": "1.0.0",
+          "entity_type": "source",
+          "source_id": "SRC-DATASHEET-001",
+          "classification": "SOURCE_EXPLICIT",
+          "title": "Regulator data sheet",
+          "version": "rev-C",
+          "locator": "datasheet.pdf#page=12",
+          "access_status": "AVAILABLE",
+          "content_hash": {
+            "state": "KNOWN",
+            "algorithm": "SHA-256",
+            "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      ],
+      "rails": [
+        {
+          "schema_version": "1.0.0",
+          "entity_type": "rail",
+          "rail_id": "VIN_12V",
+          "nominal_voltage": {"state": "KNOWN", "value": 12.0, "unit": "V"},
+          "voltage_limits": {
+            "minimum": {"state": "KNOWN", "value": 10.8, "unit": "V"},
+            "maximum": {"state": "KNOWN", "value": 13.2, "unit": "V"}
+          },
+          "provenance": "SOURCE_EXPLICIT",
+          "source_refs": ["SRC-DATASHEET-001"]
+        },
+        {
+          "schema_version": "1.0.0",
+          "entity_type": "rail",
+          "rail_id": "VDD_3V3",
+          "nominal_voltage": {"state": "KNOWN", "value": 3.3, "unit": "V"},
+          "voltage_limits": {
+            "minimum": {"state": "KNOWN", "value": 3.135, "unit": "V"},
+            "maximum": {"state": "KNOWN", "value": 3.465, "unit": "V"}
+          },
+          "provenance": "SOURCE_EXPLICIT",
+          "source_refs": ["SRC-DATASHEET-001"]
+        }
+      ],
+      "loads": [
+        {
+          "schema_version": "1.0.0",
+          "entity_type": "load",
+          "load_id": "LOAD-STANDBY",
+          "rail_id": "VDD_3V3",
+          "operating_current": {"state": "KNOWN", "value": 0, "unit": "A"},
+          "peak_current": {"state": "KNOWN", "value": 0.8, "unit": "A"},
+          "provenance": "ENGINEERING_RULE",
+          "source_refs": ["SRC-DATASHEET-001"]
+        }
+      ],
+      "regulators": [
+        {
+          "schema_version": "1.0.0",
+          "entity_type": "regulator",
+          "regulator_id": "REG-3V3",
+          "input_ref": "VIN_12V",
+          "output_rail_id": "VDD_3V3",
+          "output_voltage": {"state": "KNOWN", "value": 3.3, "unit": "V"},
+          "rated_output_current": {"state": "KNOWN", "value": 2.0, "unit": "A"},
+          "switching_frequency": {"state": "KNOWN", "value": 500000, "unit": "Hz"},
+          "provenance": "SOURCE_EXPLICIT",
+          "source_refs": ["SRC-DATASHEET-001"]
+        }
+      ],
+      "events": [
+        {
+          "schema_version": "1.0.0",
+          "entity_type": "event",
+          "event_id": "EVENT-CALC-001",
+          "event_type": "SIGNAL_TRANSITION",
+          "event_kind": "PGOOD",
+          "state": "ASSERTED",
+          "occurred_at": "2026-10-17T12:00:00+03:00",
+          "time_offset": {"state": "KNOWN", "value": 0.012, "unit": "s"},
+          "subject_refs": ["rail:VDD_3V3"],
+          "measurements": [
+            {
+              "name": "calculated_peak_current",
+              "quantity": {"state": "KNOWN", "value": 0.8, "unit": "A"}
+            }
+          ],
+          "provenance": "DERIVED",
+          "source_refs": ["SRC-DATASHEET-001"]
+        }
+      ]
+    },
+    "claim_limits": ["POWER_BUDGET", "RAIL_VOLTAGE_STATIC"]
+  },
+  "response": {
+    "contract_version": "1.0.0",
+    "assessment_id": "ASSESS-0001",
+    "input_configuration_sha256": "331ebe87ae3ce47e995ddd74ed3c88a7d4bdb2baa9b0fd32771a68bba4cb3d80",
+    "tool_versions": [
+      {"name": "power-rail-validation", "version": "0.1.0", "package_version": "0.1.0"}
+    ],
+    "model_records": [],
+    "checks": [
+      {
+        "id": "CHECK-POWER-BUDGET",
+        "status": "PASS",
+        "reason_code": "WITHIN_RATING",
+        "reason": "Peak current remains within the declared regulator rating.",
+        "inputs_used": ["REG-3V3", "LOAD-STANDBY"],
+        "metrics": {
+          "peak_current": {"state": "KNOWN", "value": 0.8, "unit": "A"}
+        },
+        "evidence_refs": ["SRC-DATASHEET-001"],
+        "model_refs": [],
+        "limitations": ["STATIC_POWER_BUDGET_ONLY"],
+        "next_action": "NONE"
+      }
+    ],
+    "scenario_results": [],
+    "findings": [
+      {
+        "schema_version": "1.0.0",
+        "entity_type": "finding",
+        "finding_id": "FINDING-0001",
+        "subject_ref": {"entity_type": "rail", "entity_id": "VDD_3V3"},
+        "rule_id": "RAIL_VOLTAGE_LIMIT",
+        "status": "PASS",
+        "reason_code": "WITHIN_LIMITS",
+        "message": "Nominal voltage lies inside the declared static limits.",
+        "source_refs": [{"source_id": "SRC-DATASHEET-001", "version": "rev-C"}],
+        "input_hash": "331ebe87ae3ce47e995ddd74ed3c88a7d4bdb2baa9b0fd32771a68bba4cb3d80",
+        "tool_version": "0.1.0",
+        "package_version": "0.1.0",
+        "limit_context": {
+          "required": true,
+          "state": "KNOWN",
+          "refs": [
+            "rail:VDD_3V3.voltage_limits.minimum",
+            "rail:VDD_3V3.voltage_limits.maximum"
+          ]
+        }
+      }
+    ],
+    "summary_status": "PASS",
+    "claim_limits": ["POWER_BUDGET", "RAIL_VOLTAGE_STATIC"],
+    "generated_at": "2026-10-17T12:01:00+03:00"
+  }
+}
+

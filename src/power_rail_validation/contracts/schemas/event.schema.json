@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.rep02.invalid/v1/event.schema.json",
+  "title": "REP-02 Evidence Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "entity_type",
+    "event_id",
+    "event_type",
+    "event_kind",
+    "state",
+    "occurred_at",
+    "time_offset",
+    "subject_refs",
+    "measurements",
+    "provenance",
+    "source_refs"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "entity_type": {"const": "event"},
+    "event_id": {"$ref": "#/$defs/id"},
+    "event_type": {
+      "enum": [
+        "MEASUREMENT",
+        "SIMULATION",
+        "CALCULATION",
+        "REVIEW",
+        "SIGNAL_TRANSITION",
+        "POWER_STATE",
+        "FAULT"
+      ]
+    },
+    "event_kind": {
+      "enum": ["VIN_VALID", "EN", "PGOOD", "RESET", "POWER_OFF", "BROWNOUT", "RAIL_LOSS", "RESTART", "OTHER"]
+    },
+    "state": {"enum": ["ASSERTED", "DEASSERTED", "ENTERED", "EXITED", "ACTIVE", "INACTIVE", "UNKNOWN"]},
+    "occurred_at": {"type": "string", "format": "date-time"},
+    "time_offset": {"$ref": "#/$defs/timeQuantity"},
+    "subject_refs": {"$ref": "#/$defs/idRefs"},
+    "measurements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "quantity"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "quantity": {"$ref": "#/$defs/quantity"}
+        }
+      }
+    },
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "source_refs": {"$ref": "#/$defs/idRefs"}
+  },
+  "$defs": {
+    "id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"},
+    "provenance": {
+      "enum": ["SOURCE_EXPLICIT", "DERIVED", "ENGINEERING_RULE", "ASSUMPTION", "UNKNOWN", "CONFLICT"]
+    },
+    "idRefs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/id"}
+    },
+    "quantity": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "value", "unit"],
+          "properties": {
+            "state": {"const": "KNOWN"},
+            "value": {"type": "number"},
+            "unit": {"enum": ["V", "A", "Hz", "s"]}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "value", "unit"],
+          "properties": {
+            "state": {"const": "UNKNOWN"},
+            "value": {"type": "null"},
+            "unit": {"enum": ["V", "A", "Hz", "s"]}
+          }
+        }
+      ]
+    },
+    "timeQuantity": {
+      "allOf": [
+        {"$ref": "#/$defs/quantity"},
+        {"type": "object", "properties": {"unit": {"const": "s"}}}
+      ]
+    }
+  }
+}
+

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.rep02.invalid/v1/regulator.schema.json",
+  "title": "REP-02 Regulator",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "entity_type",
+    "regulator_id",
+    "input_ref",
+    "output_rail_id",
+    "output_voltage",
+    "rated_output_current",
+    "switching_frequency",
+    "provenance",
+    "source_refs"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "entity_type": {"const": "regulator"},
+    "regulator_id": {"$ref": "#/$defs/id"},
+    "input_ref": {"$ref": "#/$defs/id"},
+    "output_rail_id": {"$ref": "#/$defs/id"},
+    "output_voltage": {"$ref": "#/$defs/voltageQuantity"},
+    "rated_output_current": {"$ref": "#/$defs/currentQuantity"},
+    "switching_frequency": {"$ref": "#/$defs/frequencyQuantity"},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "source_refs": {"$ref": "#/$defs/sourceRefs"}
+  },
+  "$defs": {
+    "id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"},
+    "provenance": {
+      "enum": ["SOURCE_EXPLICIT", "DERIVED", "ENGINEERING_RULE", "ASSUMPTION", "UNKNOWN", "CONFLICT"]
+    },
+    "sourceRefs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/id"}
+    },
+    "quantity": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "value", "unit"],
+          "properties": {
+            "state": {"const": "KNOWN"},
+            "value": {"type": "number"},
+            "unit": {"enum": ["V", "A", "Hz"]}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["state", "value", "unit"],
+          "properties": {
+            "state": {"const": "UNKNOWN"},
+            "value": {"type": "null"},
+            "unit": {"enum": ["V", "A", "Hz"]}
+          }
+        }
+      ]
+    },
+    "voltageQuantity": {
+      "allOf": [
+        {"$ref": "#/$defs/quantity"},
+        {"type": "object", "properties": {"unit": {"const": "V"}}}
+      ]
+    },
+    "currentQuantity": {
+      "allOf": [
+        {"$ref": "#/$defs/quantity"},
+        {"type": "object", "properties": {"unit": {"const": "A"}}}
+      ]
+    },
+    "frequencyQuantity": {
+      "allOf": [
+        {"$ref": "#/$defs/quantity"},
+        {"type": "object", "properties": {"unit": {"const": "Hz"}}}
+      ]
+    }
+  }
+}
+

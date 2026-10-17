@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://contracts.rep02.invalid/v1/finding.schema.json",
+  "title": "REP-02 Finding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "entity_type",
+    "finding_id",
+    "subject_ref",
+    "rule_id",
+    "status",
+    "reason_code",
+    "message",
+    "source_refs",
+    "input_hash",
+    "tool_version",
+    "package_version",
+    "limit_context"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "entity_type": {"const": "finding"},
+    "finding_id": {"$ref": "#/$defs/id"},
+    "subject_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["entity_type", "entity_id"],
+      "properties": {
+        "entity_type": {"enum": ["rail", "load", "regulator", "source", "event"]},
+        "entity_id": {"$ref": "#/$defs/id"}
+      }
+    },
+    "rule_id": {"$ref": "#/$defs/id"},
+    "status": {"$ref": "#/$defs/status"},
+    "reason_code": {"$ref": "#/$defs/id"},
+    "message": {"type": "string", "minLength": 1},
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/versionedSourceRef"}
+    },
+    "input_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "tool_version": {"type": "string", "minLength": 1},
+    "package_version": {"type": "string", "minLength": 1},
+    "limit_context": {"$ref": "#/$defs/limitContext"}
+  },
+  "$defs": {
+    "id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"},
+    "status": {"enum": ["PASS", "FAIL", "UNKNOWN", "BLOCKED", "NOT_RUN"]},
+    "versionedSourceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "version"],
+      "properties": {
+        "source_id": {"$ref": "#/$defs/id"},
+        "version": {"type": "string", "minLength": 1}
+      }
+    },
+    "limitContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "state", "refs"],
+      "allOf": [
+        {
+          "if": {
+            "properties": {"required": {"const": true}},
+            "required": ["required"]
+          },
+          "then": {
+            "properties": {"refs": {"minItems": 1}}
+          }
+        }
+      ],
+      "properties": {
+        "required": {"type": "boolean"},
+        "state": {"enum": ["KNOWN", "MISSING", "UNKNOWN", "CONFLICT", "NOT_APPLICABLE"]},
+        "refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}
+
