@@ -1,0 +1,12 @@
+{
+  "case_patch_version": "1.0.0",
+  "base": "normal.json",
+  "scenario_id": "SEQ-TIMEOUT-001",
+  "keep_event_ids": ["EV-VIN", "EV-EN"],
+  "observation_end_offset": 0.8,
+  "expected": {
+    "status": "FAIL",
+    "reason_code_present": "REQUIRED_EVENT_TIMEOUT",
+    "final_state": "WAIT_PGOOD"
+  }
+}

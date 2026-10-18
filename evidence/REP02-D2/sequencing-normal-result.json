@@ -1,0 +1,267 @@
+{
+  "final_state": "RUNNING",
+  "fsm_version": "REP02-SEQ-FSM-1.0.0",
+  "input_hash": "74b230ac940eb36d4e54e76a4d27125b423ebe94f007bbc7196928337016a724",
+  "issues": [],
+  "limitations": [
+    "SYNTHETIC_TIMING_ONLY",
+    "NO_HARDWARE_VALIDATION_CLAIM",
+    "GAP_03_OPEN",
+    "POWER_OFF_SIGNAL_ORDER_NOT_INFERRED",
+    "ARRAY_ORDER_IS_INPUT_HASH_SIGNIFICANT"
+  ],
+  "observation": {
+    "end_at": "2026-10-18T12:00:01Z",
+    "end_offset": {
+      "decimal_text": "1",
+      "state": "KNOWN",
+      "unit": "s",
+      "value": 1
+    },
+    "provenance": "ENGINEERING_RULE",
+    "source_refs": [
+      "SRC-SEQ-RULES"
+    ]
+  },
+  "package_version": "0.3.0",
+  "policy": {
+    "decision_clock": "TIME_OFFSET_DECIMAL_SECONDS",
+    "missing_event_deadline": "UNKNOWN_AT_OR_BEFORE_MAXIMUM_FAIL_AFTER_MAXIMUM",
+    "power_off_policy": "POWER_OFF_ENTERED_TERMINATES_WITHOUT_ASSUMED_SHUTDOWN_ORDER",
+    "simultaneous_policy": "REJECT",
+    "sorting_policy": "TIME_OFFSET_ASCENDING",
+    "timestamp_role": "AUDIT_COORDINATE_ONLY",
+    "timing_interval": "CLOSED_MINIMUM_AND_MAXIMUM"
+  },
+  "reason_code": "SEQUENCE_COMPLETE",
+  "reason_codes": [
+    "SEQUENCE_COMPLETE"
+  ],
+  "rule_set_version": "REP02-SEQ-RULESET-1.0.0",
+  "scenario_id": "SEQ-NORMAL-SYNTHETIC-001",
+  "scenario_kind": "STARTUP",
+  "source_refs": [
+    {
+      "content_hash": "fc77ce66e85ad5f03019774f3135476d98cd9bc197422a7b00830d8c13b8278a",
+      "source_id": "SRC-SEQ-RULES",
+      "version": "fixture-1"
+    }
+  ],
+  "status": "PASS",
+  "tool_name": "power-rail-validation",
+  "tool_version": "0.3.0",
+  "trace": [
+    {
+      "event_id": "EV-VIN",
+      "event_kind": "VIN_VALID",
+      "event_state": "ASSERTED",
+      "event_type": "SIGNAL_TRANSITION",
+      "expected_event": {
+        "event_kind": "VIN_VALID",
+        "state": "ASSERTED",
+        "subject_refs": [
+          "RAIL-IN"
+        ]
+      },
+      "from_state": "WAIT_VIN_VALID",
+      "input_index": 0,
+      "outcome": "PASS",
+      "processing_index": 0,
+      "reason_code": "TRANSITION_WITHIN_WINDOW",
+      "rule_id": "SEQ.VIN_VALID",
+      "subject_refs": [
+        "RAIL-IN"
+      ],
+      "time_offset": {
+        "decimal_text": "0",
+        "state": "KNOWN",
+        "unit": "s",
+        "value": 0
+      },
+      "timing": {
+        "anchor_event_id": null,
+        "expected": {
+          "maximum": {
+            "decimal_text": "0.2",
+            "state": "KNOWN",
+            "unit": "s",
+            "value": 0.2
+          },
+          "minimum": {
+            "decimal_text": "0",
+            "state": "KNOWN",
+            "unit": "s",
+            "value": 0
+          }
+        },
+        "measured": {
+          "decimal_text": "0",
+          "state": "KNOWN",
+          "unit": "s",
+          "value": 0
+        },
+        "violated_bound": null
+      },
+      "to_state": "WAIT_EN"
+    },
+    {
+      "event_id": "EV-EN",
+      "event_kind": "EN",
+      "event_state": "ASSERTED",
+      "event_type": "SIGNAL_TRANSITION",
+      "expected_event": {
+        "event_kind": "EN",
+        "state": "ASSERTED",
+        "subject_refs": [
+          "CTRL-EN"
+        ]
+      },
+      "from_state": "WAIT_EN",
+      "input_index": 1,
+      "outcome": "PASS",
+      "processing_index": 1,
+      "reason_code": "TRANSITION_WITHIN_WINDOW",
+      "rule_id": "SEQ.EN",
+      "subject_refs": [
+        "CTRL-EN"
+      ],
+      "time_offset": {
+        "decimal_text": "0.1",
+        "state": "KNOWN",
+        "unit": "s",
+        "value": 0.1
+      },
+      "timing": {
+        "anchor_event_id": "EV-VIN",
+        "expected": {
+          "maximum": {
+            "decimal_text": "0.3",
+            "state": "KNOWN",
+            "unit": "s",
+            "value": 0.3
+          },
+          "minimum": {
+            "decimal_text": "0.1",
+            "state": "KNOWN",
+            "unit": "s",
+            "value": 0.1
+          }
+        },
+        "measured": {
+          "decimal_text": "0.1",
+          "state": "KNOWN",
+          "unit": "s",
+          "value": 0.1
+        },
+        "violated_bound": null
+      },
+      "to_state": "WAIT_PGOOD"
+    },
+    {
+      "event_id": "EV-PGOOD",
+      "event_kind": "PGOOD",
+      "event_state": "ASSERTED",
+      "event_type": "SIGNAL_TRANSITION",
+      "expected_event": {
+        "event_kind": "PGOOD",
+        "state": "ASSERTED",
+        "subject_refs": [
+          "RAIL-A"
+        ]
+      },
+      "from_state": "WAIT_PGOOD",
+      "input_index": 2,
+      "outcome": "PASS",
+      "processing_index": 2,
+      "reason_code": "TRANSITION_WITHIN_WINDOW",
+      "rule_id": "SEQ.PGOOD",
+      "subject_refs": [
+        "RAIL-A"
+      ],
+      "time_offset": {
+        "decimal_text": "0.3",
+        "state": "KNOWN",
+        "unit": "s",
+        "value": 0.3
+      },
+      "timing": {
+        "anchor_event_id": "EV-EN",
+        "expected": {
+          "maximum": {
+            "decimal_text": "0.4",
+            "state": "KNOWN",
+            "unit": "s",
+            "value": 0.4
+          },
+          "minimum": {
+            "decimal_text": "0.1",
+            "state": "KNOWN",
+            "unit": "s",
+            "value": 0.1
+          }
+        },
+        "measured": {
+          "decimal_text": "0.2",
+          "state": "KNOWN",
+          "unit": "s",
+          "value": 0.2
+        },
+        "violated_bound": null
+      },
+      "to_state": "WAIT_RESET_RELEASE"
+    },
+    {
+      "event_id": "EV-RESET",
+      "event_kind": "RESET",
+      "event_state": "DEASSERTED",
+      "event_type": "SIGNAL_TRANSITION",
+      "expected_event": {
+        "event_kind": "RESET",
+        "state": "DEASSERTED",
+        "subject_refs": [
+          "CTRL-RESET"
+        ]
+      },
+      "from_state": "WAIT_RESET_RELEASE",
+      "input_index": 3,
+      "outcome": "PASS",
+      "processing_index": 3,
+      "reason_code": "TRANSITION_WITHIN_WINDOW",
+      "rule_id": "SEQ.RESET_RELEASE",
+      "subject_refs": [
+        "CTRL-RESET"
+      ],
+      "time_offset": {
+        "decimal_text": "0.5",
+        "state": "KNOWN",
+        "unit": "s",
+        "value": 0.5
+      },
+      "timing": {
+        "anchor_event_id": "EV-PGOOD",
+        "expected": {
+          "maximum": {
+            "decimal_text": "0.4",
+            "state": "KNOWN",
+            "unit": "s",
+            "value": 0.4
+          },
+          "minimum": {
+            "decimal_text": "0.1",
+            "state": "KNOWN",
+            "unit": "s",
+            "value": 0.1
+          }
+        },
+        "measured": {
+          "decimal_text": "0.2",
+          "state": "KNOWN",
+          "unit": "s",
+          "value": 0.2
+        },
+        "violated_bound": null
+      },
+      "to_state": "RUNNING"
+    }
+  ]
+}

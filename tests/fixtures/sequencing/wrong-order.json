@@ -1,0 +1,15 @@
+{
+  "case_patch_version": "1.0.0",
+  "base": "normal.json",
+  "scenario_id": "SEQ-WRONG-ORDER-001",
+  "event_offsets": {
+    "EV-EN": 0.1,
+    "EV-VIN": 0.2,
+    "EV-PGOOD": 0.4,
+    "EV-RESET": 0.6
+  },
+  "expected": {
+    "status": "FAIL",
+    "reason_code_present": "EVENT_SEQUENCE_VIOLATION"
+  }
+}

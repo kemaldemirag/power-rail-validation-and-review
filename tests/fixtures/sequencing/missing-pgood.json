@@ -1,0 +1,12 @@
+{
+  "case_patch_version": "1.0.0",
+  "base": "normal.json",
+  "scenario_id": "SEQ-MISSING-PGOOD-AT-DEADLINE-001",
+  "keep_event_ids": ["EV-VIN", "EV-EN"],
+  "observation_end_offset": 0.5,
+  "expected": {
+    "status": "UNKNOWN",
+    "reason_code_present": "OBSERVATION_WINDOW_INCOMPLETE",
+    "final_state": "WAIT_PGOOD"
+  }
+}

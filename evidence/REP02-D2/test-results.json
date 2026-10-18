@@ -1,0 +1,124 @@
+{
+  "evidence_schema_version": "1.0.0",
+  "workflow": "WF-02-01..WF-02-03",
+  "deliverable": "REP02-D2-combined-synthetic-application",
+  "recorded_at": "2026-10-18T20:57:55.6589424+03:00",
+  "baseline_commit": "a72e0f2e3e510c8169ca3c5b730439c6a0d670a7",
+  "working_tree_state": "UNCOMMITTED_DELIVERABLES",
+  "package_version": "0.3.0",
+  "component_versions": {
+    "rail_budget_formula": "REP02-RB-1.0.0",
+    "sequencing_tool": "0.3.0",
+    "sequencing_fsm": "REP02-SEQ-FSM-1.0.0",
+    "sequencing_rule_set": "REP02-SEQ-RULESET-1.0.0"
+  },
+  "environment": {
+    "python": "3.12.10",
+    "implementation": "CPython",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "dependencies": "Python standard library only"
+  },
+  "test_run": {
+    "command": "$env:PYTHONDONTWRITEBYTECODE='1'; $env:PYTHONPATH='src'; python -m unittest discover -s tests -q",
+    "exit_code": 0,
+    "total": 143,
+    "passed": 143,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds_reported_by_unittest": 0.406,
+    "actual_log_tail": "Ran 143 tests in 0.406s\n\nOK",
+    "subsets": {
+      "WF-02-01-contracts": {
+        "total": 49,
+        "passed": 49,
+        "elapsed_seconds_reported_by_unittest": 0.107
+      },
+      "WF-02-02-rail-budget": {
+        "total": 34,
+        "passed": 34,
+        "elapsed_seconds_reported_by_unittest": 0.093
+      },
+      "WF-02-03-sequencing": {
+        "total": 60,
+        "passed": 60,
+        "elapsed_seconds_reported_by_unittest": 0.198
+      }
+    }
+  },
+  "validations": {
+    "python_ast_parse": {
+      "status": "PASS",
+      "files": 11,
+      "grammar_feature_version": "3.9"
+    },
+    "json_parse": {
+      "status": "PASS",
+      "valid_files": 27,
+      "deliberately_malformed_fixtures": 1,
+      "deliberately_malformed_rejected": 1,
+      "malformed_fixture": "tests/fixtures/contracts/malformed.json"
+    },
+    "rail_budget_nominal_replay": {
+      "status": "PASS",
+      "stored_result_equals_current_engine_output": true,
+      "result_status": "PASS",
+      "input_hash": "fda0e35cfd892d22b83364deccf40dc6c5d6d40453b0d46d39f394941111e10e",
+      "power_margin_W": 1.0
+    },
+    "sequencing_normal_replay": {
+      "status": "PASS",
+      "stored_result_equals_current_engine_output": true,
+      "result_status": "PASS",
+      "reason_code": "SEQUENCE_COMPLETE",
+      "final_state": "RUNNING",
+      "input_hash": "74b230ac940eb36d4e54e76a4d27125b423ebe94f007bbc7196928337016a724",
+      "synthetic_rule_source_canonical_sha256": "fc77ce66e85ad5f03019774f3135476d98cd9bc197422a7b00830d8c13b8278a"
+    },
+    "git_diff_check": {
+      "status": "PASS",
+      "note": "No whitespace errors; Git emitted informational LF-to-CRLF working-copy notices."
+    },
+    "bytecode_artifacts": {
+      "status": "PASS",
+      "pyc_files_remaining": 0
+    },
+    "independent_review": {
+      "status": "PASS",
+      "rail_budget_review": "34/34 regression tests plus prior numeric and JSON-safety review; no remaining reproducible finding",
+      "sequencing_review": "60/60 focused and 143/143 full; temporal-feasibility, subject-binding, power-off duplicate, source-hash, documentation, and evidence findings closed",
+      "remaining_reproducible_findings": 0
+    }
+  },
+  "artifacts": {
+    "pyproject.toml": "1dafb25c57e2e6832ff493c0f7dcdfd1d4cc02ce0a3dce3b59aaa6ed9e0f322b",
+    "src/power_rail_validation/__init__.py": "9a2d0dabe1a854e18b1a4d4b34f88bb723c31f199695837d383664bf37906ad4",
+    "src/power_rail_validation/contracts/canonical.py": "fbc25036e97dae9aac08d3f13e8034e9396f15a880da187701ee627ebb362cd5",
+    "src/power_rail_validation/contracts/validation.py": "3f3d89151f4a3ed6ba563998b7a340ec6d2dd0416011a2d194096306165e5e8f",
+    "src/power_rail_validation/rail_budget/calculator.py": "f186d87c5f8e3a9f09775247ab7c029919b26fc39ebde64f99b698fef5911254",
+    "tests/test_rail_budget.py": "a42544f483d5e55c23028d927fe7524d246176e931706d014aba19f22d6fd9e3",
+    "tests/fixtures/rail_budget/nominal.json": "f0c471e9dc57eff92cbad41c78e735f541929ce09362fc65adfc1f70514648b9",
+    "evidence/REP02-D2/nominal-result.json": "227b8781054a16bce379fb7bd42f2151943519dd787b1a09aae0de8aa6f7c461",
+    "docs/REP02-D2/REP02-D2-rail-budget-contract-and-completion.md": "18495e515c42589320a927221133e782cb9277f5148544e080d6d227b6db938d",
+    "src/power_rail_validation/sequencing/evaluator.py": "29cc2aa8a4d1fabe112eea79b78231da1c759f5e69e235462147763dba1f645e",
+    "tests/test_sequencing.py": "e16715f30e81d85d2850d2e62fe1a66c3a0221988cbe5e810288d20283170fba",
+    "tests/fixtures/sequencing/normal.json": "2808136b6dfbd80a8c54780c12af5c79d690dc75f522ea999031e98eca63dd34",
+    "tests/fixtures/sequencing/synthetic-rules-source.json": "32ac2ee2f205335d81276f95e57a02f4441228374b826d889acd747a3ccdcae4",
+    "evidence/REP02-D2/sequencing-normal-result.json": "5044cf5a297897b667ed2257af9bf6ab6dce15f1cfd5a066fd9974f0a6833f29",
+    "evidence/REP02-D2/sequencing-test-results.json": "992324ecca70f54a257b7599f809b0aac896bba4f753bb78bb891a8f6d6d8cb5",
+    "docs/REP02-D2/REP02-D2-sequencing-contract-and-completion.md": "7f43a53c9f0d8f6be6a3c13c09226f60cafaf217b280296641894d4343b215f2"
+  },
+  "actions_performed": {
+    "commit": false,
+    "push": false,
+    "package_installation": false
+  },
+  "claim_limits": [
+    "Synthetic D1 contract, static rail-budget, and sequencing evaluation only",
+    "GAP-03 is open; no manufacturer timing requirement is claimed",
+    "No live REP-01 envelope integration",
+    "No schematic, PCB, SPICE, laboratory, thermal, transient, loop-stability, EMC, ISO, AEC, or field validation",
+    "No G1-G6 hardware gate approval"
+  ],
+  "next_workflow": "WF-02-04 Fault Injection"
+}

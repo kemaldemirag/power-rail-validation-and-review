@@ -1,0 +1,11 @@
+{
+  "case_patch_version": "1.0.0",
+  "base": "normal.json",
+  "scenario_id": "SEQ-UNKNOWN-WINDOW-001",
+  "unknown_maximum_rule_id": "SEQ.PGOOD",
+  "expected": {
+    "status": "UNKNOWN",
+    "reason_code_present": "TIMING_WINDOW_UNKNOWN",
+    "final_state": "RUNNING"
+  }
+}

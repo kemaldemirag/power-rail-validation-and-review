@@ -1,0 +1,70 @@
+{
+  "input": {
+    "schema_version": "1.0.0",
+    "rail": {
+      "schema_version": "1.0.0",
+      "entity_type": "rail",
+      "rail_id": "VDD_5V",
+      "nominal_voltage": {"state": "KNOWN", "value": 5.0, "unit": "V"},
+      "voltage_limits": {
+        "minimum": {"state": "KNOWN", "value": 4.75, "unit": "V"},
+        "maximum": {"state": "KNOWN", "value": 5.25, "unit": "V"}
+      },
+      "provenance": "SOURCE_EXPLICIT",
+      "source_refs": ["SRC-1"]
+    },
+    "loads": [
+      {
+        "load_id": "LOAD-1",
+        "rail_id": "VDD_5V",
+        "currents": {
+          "Imin": {"state": "KNOWN", "value": 0.1, "unit": "A"},
+          "Ityp": {"state": "KNOWN", "value": 0.2, "unit": "A"},
+          "Imax": {"state": "KNOWN", "value": 0.4, "unit": "A"}
+        },
+        "backfeed_permitted": false,
+        "provenance": "SOURCE_EXPLICIT",
+        "source_refs": ["SRC-1"]
+      }
+    ],
+    "capacity": {
+      "regulator_id": "REG-5V",
+      "rail_id": "VDD_5V",
+      "rated_current": {"state": "KNOWN", "value": 1.0, "unit": "A"},
+      "current_limit": {"state": "UNKNOWN", "value": null, "unit": "A"},
+      "provenance": "SOURCE_EXPLICIT",
+      "source_refs": ["SRC-1"]
+    },
+    "derating": {
+      "factor": {"state": "KNOWN", "value": 0.8, "unit": "1"},
+      "provenance": "ENGINEERING_RULE",
+      "source_refs": ["SRC-1"]
+    },
+    "efficiency": {
+      "factor": {"state": "KNOWN", "value": 0.8, "unit": "1"},
+      "provenance": "SOURCE_EXPLICIT",
+      "source_refs": ["SRC-1"]
+    },
+    "sources": [
+      {
+        "schema_version": "1.0.0",
+        "entity_type": "source",
+        "source_id": "SRC-1",
+        "classification": "SOURCE_EXPLICIT",
+        "title": "Synthetic unknown-limit source",
+        "version": "fixture-1",
+        "locator": "tests/fixtures/rail_budget/unknown-limit.json",
+        "access_status": "AVAILABLE",
+        "content_hash": {
+          "state": "KNOWN",
+          "algorithm": "SHA-256",
+          "value": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+        }
+      }
+    ]
+  },
+  "expected": {
+    "status": "UNKNOWN",
+    "reason_code": "CURRENT_LIMIT_UNKNOWN"
+  }
+}

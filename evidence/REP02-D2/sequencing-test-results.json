@@ -1,0 +1,127 @@
+{
+  "evidence_schema_version": "1.0.0",
+  "workflow": "WF-02-03",
+  "deliverable": "REP02-D2-deterministic-sequencing-core",
+  "recorded_at": "2026-10-18T20:57:17.6612346+03:00",
+  "baseline_commit": "a72e0f2e3e510c8169ca3c5b730439c6a0d670a7",
+  "working_tree_state": "UNCOMMITTED_DELIVERABLES",
+  "package_version": "0.3.0",
+  "tool_version": "0.3.0",
+  "fsm_version": "REP02-SEQ-FSM-1.0.0",
+  "rule_set_version": "REP02-SEQ-RULESET-1.0.0",
+  "environment": {
+    "python": "3.12.10",
+    "implementation": "CPython",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "dependencies": "Python standard library only"
+  },
+  "test_run": {
+    "command": "$env:PYTHONDONTWRITEBYTECODE='1'; $env:PYTHONPATH='src'; python -m unittest discover -s tests -q",
+    "exit_code": 0,
+    "total": 143,
+    "passed": 143,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds_reported_by_unittest": 0.406,
+    "actual_log_tail": "Ran 143 tests in 0.406s\n\nOK",
+    "subsets": {
+      "WF-02-01-contracts": {
+        "total": 49,
+        "passed": 49,
+        "elapsed_seconds_reported_by_unittest": 0.107
+      },
+      "WF-02-02-rail-budget": {
+        "total": 34,
+        "passed": 34,
+        "elapsed_seconds_reported_by_unittest": 0.093
+      },
+      "WF-02-03-sequencing": {
+        "total": 60,
+        "passed": 60,
+        "elapsed_seconds_reported_by_unittest": 0.198
+      }
+    }
+  },
+  "validations": {
+    "python_ast_parse": {
+      "status": "PASS",
+      "files": 11,
+      "grammar_feature_version": "3.9"
+    },
+    "json_parse": {
+      "status": "PASS",
+      "expected_valid_files_after_this_evidence_is_added": 27,
+      "expected_valid_parsed": 27,
+      "deliberately_malformed_fixtures": 1,
+      "deliberately_malformed_rejected": 1,
+      "malformed_fixture": "tests/fixtures/contracts/malformed.json"
+    },
+    "normal_evidence_replay": {
+      "status": "PASS",
+      "stored_result_equals_current_engine_output": true,
+      "result_status": "PASS",
+      "reason_code": "SEQUENCE_COMPLETE",
+      "final_state": "RUNNING",
+      "input_hash": "74b230ac940eb36d4e54e76a4d27125b423ebe94f007bbc7196928337016a724"
+    },
+    "synthetic_rule_source_binding": {
+      "status": "PASS",
+      "canonical_json_sha256": "fc77ce66e85ad5f03019774f3135476d98cd9bc197422a7b00830d8c13b8278a",
+      "normal_fixture_bound_hash": "fc77ce66e85ad5f03019774f3135476d98cd9bc197422a7b00830d8c13b8278a",
+      "rule_content_matches_fixture": true
+    },
+    "git_diff_check": {
+      "status": "PASS",
+      "note": "No whitespace errors; Git emitted informational LF-to-CRLF working-copy notices."
+    },
+    "bytecode_artifacts": {
+      "status": "PASS",
+      "pyc_files_remaining": 0,
+      "pyc_files_removed_during_cleanup": 11
+    },
+    "independent_review": {
+      "status": "PASS",
+      "reviewers": 2,
+      "remaining_reproducible_code_or_contract_findings": 0,
+      "final_code_recheck": "60/60 sequencing and 143/143 full; three adversarial repros return deterministic FAIL and finite JSON",
+      "final_contract_recheck_basis": "closed power_off_rule, exact subject binding, evidence-bound observation horizon, canonical source hash, synchronized report and evidence"
+    }
+  },
+  "closed_reproductions": [
+    "a POWER_OFF event with the wrong subject set returns FAIL with POWER_OFF_SUBJECT_BINDING_MISMATCH in STARTUP and POWER_OFF profiles",
+    "an indeterminate PGOOD candidate before its anchor does not suppress a definite REQUIRED_EVENT_TIMEOUT",
+    "an indeterminate PGOOD candidate after RESET does not suppress a definite EVENT_SEQUENCE_VIOLATION",
+    "a second semantic POWER_OFF/ENTERED event after terminal power-off returns FAIL even when its time offset is UNKNOWN",
+    "an unrelated or wrong-subject indeterminate event does not mask a definite timeout",
+    "known minimum or maximum violations remain FAIL when the opposite bound is UNKNOWN",
+    "moving source versions, hash mismatches, source classification mismatches, and observation-coordinate conflicts fail closed",
+    "very small Decimal differences preserve the decision-changing digit and remain standards-compliant JSON"
+  ],
+  "artifacts": {
+    "pyproject.toml": "1dafb25c57e2e6832ff493c0f7dcdfd1d4cc02ce0a3dce3b59aaa6ed9e0f322b",
+    "src/power_rail_validation/__init__.py": "9a2d0dabe1a854e18b1a4d4b34f88bb723c31f199695837d383664bf37906ad4",
+    "src/power_rail_validation/sequencing/__init__.py": "e4f673e07f3818323f7e939a605945f3b45549adf5af5ebcd0f1c4ec736e7722",
+    "src/power_rail_validation/sequencing/evaluator.py": "29cc2aa8a4d1fabe112eea79b78231da1c759f5e69e235462147763dba1f645e",
+    "tests/test_sequencing.py": "e16715f30e81d85d2850d2e62fe1a66c3a0221988cbe5e810288d20283170fba",
+    "tests/fixtures/sequencing/normal.json": "2808136b6dfbd80a8c54780c12af5c79d690dc75f522ea999031e98eca63dd34",
+    "tests/fixtures/sequencing/synthetic-rules-source.json": "32ac2ee2f205335d81276f95e57a02f4441228374b826d889acd747a3ccdcae4",
+    "tests/fixtures/sequencing/power-off.json": "6d5fb893b2163b3b3c1368e3ff5c4ac2f7047ebdddbc94b367bdbc2c13f19ce9",
+    "evidence/REP02-D2/sequencing-normal-result.json": "5044cf5a297897b667ed2257af9bf6ab6dce15f1cfd5a066fd9974f0a6833f29",
+    "docs/REP02-D2/REP02-D2-sequencing-contract-and-completion.md": "7f43a53c9f0d8f6be6a3c13c09226f60cafaf217b280296641894d4343b215f2"
+  },
+  "actions_performed": {
+    "commit": false,
+    "push": false,
+    "package_installation": false
+  },
+  "claim_limits": [
+    "Synthetic sequencing and timing rules only",
+    "GAP-03 is open; no manufacturer timing requirement is claimed",
+    "No live REP-01 envelope integration",
+    "No real PGOOD, EN, RESET, or shutdown-order validation",
+    "No schematic, PCB, SPICE, laboratory, thermal, transient, loop-stability, EMC, ISO, AEC, or field validation",
+    "No G1-G6 hardware gate approval"
+  ],
+  "next_workflow": "WF-02-04 Fault Injection"
+}

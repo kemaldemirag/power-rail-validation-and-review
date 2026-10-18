@@ -1,0 +1,14 @@
+{
+  "case_patch_version": "1.0.0",
+  "base": "normal.json",
+  "scenario_id": "SEQ-DUPLICATE-TRANSITION-001",
+  "append_clone": {
+    "source_event_id": "EV-EN",
+    "event_id": "EV-EN-REPEAT",
+    "offset": 0.15
+  },
+  "expected": {
+    "status": "FAIL",
+    "reason_code_present": "DUPLICATE_TRANSITION"
+  }
+}

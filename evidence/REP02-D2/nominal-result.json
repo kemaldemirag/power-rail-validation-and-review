@@ -1,0 +1,179 @@
+{
+  "calculation_inputs": {
+    "capacity": {
+      "current_limit": {"state": "KNOWN", "unit": "A", "value": 0.9},
+      "provenance": "SOURCE_EXPLICIT",
+      "rail_id": "VDD_5V",
+      "rated_current": {"state": "KNOWN", "unit": "A", "value": 1.0},
+      "regulator_id": "REG-5V",
+      "source_refs": ["SRC-REGULATOR-DATASHEET", "SRC-DERATING-RULE"]
+    },
+    "derating": {
+      "factor": {"state": "KNOWN", "unit": "1", "value": 0.8},
+      "provenance": "ENGINEERING_RULE",
+      "source_refs": ["SRC-DERATING-RULE"]
+    },
+    "efficiency": {
+      "factor": {"state": "KNOWN", "unit": "1", "value": 0.8},
+      "provenance": "SOURCE_EXPLICIT",
+      "source_refs": ["SRC-REGULATOR-DATASHEET"]
+    },
+    "loads": [
+      {
+        "backfeed_permitted": false,
+        "currents": {
+          "Imax": {"state": "KNOWN", "unit": "A", "value": 0.4},
+          "Imin": {"state": "KNOWN", "unit": "A", "value": 0.1},
+          "Ityp": {"state": "KNOWN", "unit": "A", "value": 0.2}
+        },
+        "load_id": "LOAD-MCU",
+        "provenance": "SOURCE_EXPLICIT",
+        "rail_id": "VDD_5V",
+        "source_refs": ["SRC-LOAD-DATASHEET"]
+      },
+      {
+        "backfeed_permitted": false,
+        "currents": {
+          "Imax": {"state": "KNOWN", "unit": "A", "value": 0.2},
+          "Imin": {"state": "KNOWN", "unit": "A", "value": 0.05},
+          "Ityp": {"state": "KNOWN", "unit": "A", "value": 0.1}
+        },
+        "load_id": "LOAD-IO",
+        "provenance": "SOURCE_EXPLICIT",
+        "rail_id": "VDD_5V",
+        "source_refs": ["SRC-LOAD-DATASHEET"]
+      }
+    ],
+    "rail": {
+      "entity_type": "rail",
+      "nominal_voltage": {"state": "KNOWN", "unit": "V", "value": 5.0},
+      "provenance": "SOURCE_EXPLICIT",
+      "rail_id": "VDD_5V",
+      "schema_version": "1.0.0",
+      "source_refs": ["SRC-REGULATOR-DATASHEET"],
+      "voltage_limits": {
+        "maximum": {"state": "KNOWN", "unit": "V", "value": 5.25},
+        "minimum": {"state": "KNOWN", "unit": "V", "value": 4.75}
+      }
+    },
+    "schema_version": "1.0.0",
+    "sources": [
+      {
+        "access_status": "AVAILABLE",
+        "classification": "SOURCE_EXPLICIT",
+        "content_hash": {
+          "algorithm": "SHA-256",
+          "state": "KNOWN",
+          "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "entity_type": "source",
+        "locator": "tests/fixtures/rail_budget/nominal.json",
+        "schema_version": "1.0.0",
+        "source_id": "SRC-REGULATOR-DATASHEET",
+        "title": "Synthetic regulator data",
+        "version": "fixture-1"
+      },
+      {
+        "access_status": "AVAILABLE",
+        "classification": "SOURCE_EXPLICIT",
+        "content_hash": {
+          "algorithm": "SHA-256",
+          "state": "KNOWN",
+          "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "entity_type": "source",
+        "locator": "tests/fixtures/rail_budget/nominal.json",
+        "schema_version": "1.0.0",
+        "source_id": "SRC-LOAD-DATASHEET",
+        "title": "Synthetic load data",
+        "version": "fixture-1"
+      },
+      {
+        "access_status": "AVAILABLE",
+        "classification": "ENGINEERING_RULE",
+        "content_hash": {
+          "algorithm": "SHA-256",
+          "state": "KNOWN",
+          "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+        },
+        "entity_type": "source",
+        "locator": "tests/fixtures/rail_budget/nominal.json",
+        "schema_version": "1.0.0",
+        "source_id": "SRC-DERATING-RULE",
+        "title": "Synthetic derating rule",
+        "version": "fixture-1"
+      }
+    ]
+  },
+  "calculation_policy": {
+    "current_capacity_basis": "max(abs(Imin), abs(Imax))",
+    "effective_capacity": "min(rated_capacity * derating_factor, current_limit)",
+    "numeric_engine": "decimal.Decimal",
+    "rounding_mode": "ROUND_HALF_EVEN",
+    "significant_digits": 12
+  },
+  "formula_version": "REP02-RB-1.0.0",
+  "formulas": {
+    "capacity_margin": "effective_capacity - max(abs(Imin), abs(Imax))",
+    "capacity_utilization": "100 * max(abs(Imin), abs(Imax)) / effective_capacity",
+    "derated_capacity": "Irated * derating_factor",
+    "input_power": "Pin = Pout / efficiency",
+    "loss_power": "Ploss = Pin - Pout",
+    "output_power": "P = V * I",
+    "power_margin": "nominal_voltage * capacity_margin",
+    "total_current": "sum(load.current[profile])"
+  },
+  "input_hash": "fda0e35cfd892d22b83364deccf40dc6c5d6d40453b0d46d39f394941111e10e",
+  "issues": [],
+  "limitations": [
+    "STATIC_ALGEBRA_ONLY",
+    "NO_TRANSIENT_THERMAL_STABILITY_OR_PHYSICAL_VALIDATION",
+    "MODULE_LOCAL_RESULT_CONTRACT_NOT_D1_RESPONSE",
+    "ARRAY_ORDER_IS_HASH_SIGNIFICANT_BY_D1_CANONICALIZATION"
+  ],
+  "metrics": {
+    "capacity_margin": {"state": "KNOWN", "unit": "A", "value": 0.2},
+    "capacity_power": {"state": "KNOWN", "unit": "W", "value": 4.0},
+    "capacity_utilization": {"state": "KNOWN", "unit": "%", "value": 75.0},
+    "current_limit": {"state": "KNOWN", "unit": "A", "value": 0.9},
+    "derated_capacity": {"state": "KNOWN", "unit": "A", "value": 0.8},
+    "derating_factor": {"state": "KNOWN", "unit": "1", "value": 0.8},
+    "effective_capacity": {"state": "KNOWN", "unit": "A", "value": 0.8},
+    "efficiency": {"state": "KNOWN", "unit": "1", "value": 0.8},
+    "input_power": {
+      "Pmax": {"state": "KNOWN", "unit": "W", "value": 3.75},
+      "Pmin": {"state": "KNOWN", "unit": "W", "value": 0.9375},
+      "Ptyp": {"state": "KNOWN", "unit": "W", "value": 1.875}
+    },
+    "loss_power": {
+      "Pmax": {"state": "KNOWN", "unit": "W", "value": 0.75},
+      "Pmin": {"state": "KNOWN", "unit": "W", "value": 0.1875},
+      "Ptyp": {"state": "KNOWN", "unit": "W", "value": 0.375}
+    },
+    "nominal_voltage": {"state": "KNOWN", "unit": "V", "value": 5.0},
+    "output_power": {
+      "Pmax": {"state": "KNOWN", "unit": "W", "value": 3.0},
+      "Pmin": {"state": "KNOWN", "unit": "W", "value": 0.75},
+      "Ptyp": {"state": "KNOWN", "unit": "W", "value": 1.5}
+    },
+    "power_margin": {"state": "KNOWN", "unit": "W", "value": 1.0},
+    "rated_capacity": {"state": "KNOWN", "unit": "A", "value": 1.0},
+    "total_current": {
+      "Imax": {"state": "KNOWN", "unit": "A", "value": 0.6},
+      "Imin": {"state": "KNOWN", "unit": "A", "value": 0.15},
+      "Ityp": {"state": "KNOWN", "unit": "A", "value": 0.3}
+    }
+  },
+  "package_version": "0.3.0",
+  "reason_code": "WITHIN_DERATED_CAPACITY_AND_LIMITS",
+  "reason_codes": [],
+  "rule_id": "REP02.RAIL_BUDGET.STATIC",
+  "source_refs": [
+    {"source_id": "SRC-DERATING-RULE", "version": "fixture-1"},
+    {"source_id": "SRC-LOAD-DATASHEET", "version": "fixture-1"},
+    {"source_id": "SRC-REGULATOR-DATASHEET", "version": "fixture-1"}
+  ],
+  "status": "PASS",
+  "tool_name": "power-rail-validation",
+  "tool_version": "0.3.0"
+}

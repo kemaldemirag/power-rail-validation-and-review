@@ -1,0 +1,28 @@
+{
+  "case_patch_version": "1.0.0",
+  "base": "normal.json",
+  "scenario_id": "SEQ-POWER-OFF-001",
+  "scenario_kind": "POWER_OFF",
+  "replace_events": [
+    {
+      "schema_version": "1.0.0",
+      "entity_type": "event",
+      "event_id": "EV-POWER-OFF",
+      "event_type": "POWER_STATE",
+      "event_kind": "POWER_OFF",
+      "state": "ENTERED",
+      "occurred_at": "2026-10-18T12:00:00.05Z",
+      "time_offset": {"state": "KNOWN", "value": 0.05, "unit": "s"},
+      "subject_refs": ["SYSTEM-POWER"],
+      "measurements": [],
+      "provenance": "ENGINEERING_RULE",
+      "source_refs": ["SRC-SEQ-RULES"]
+    }
+  ],
+  "observation_end_offset": 0.1,
+  "expected": {
+    "status": "PASS",
+    "reason_code": "POWER_OFF_TERMINATED",
+    "final_state": "POWERED_OFF"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "input": {
+    "schema_version": "1.0.0",
+    "rail": {
+      "schema_version": "1.0.0",
+      "entity_type": "rail",
+      "rail_id": "VDD_5V",
+      "nominal_voltage": {"state": "KNOWN", "value": 5.0, "unit": "V"},
+      "voltage_limits": {
+        "minimum": {"state": "KNOWN", "value": 4.75, "unit": "V"},
+        "maximum": {"state": "KNOWN", "value": 5.25, "unit": "V"}
+      },
+      "provenance": "SOURCE_EXPLICIT",
+      "source_refs": ["SRC-REGULATOR-DATASHEET"]
+    },
+    "loads": [
+      {
+        "load_id": "LOAD-MCU",
+        "rail_id": "VDD_5V",
+        "currents": {
+          "Imin": {"state": "KNOWN", "value": 0.1, "unit": "A"},
+          "Ityp": {"state": "KNOWN", "value": 0.2, "unit": "A"},
+          "Imax": {"state": "KNOWN", "value": 0.4, "unit": "A"}
+        },
+        "backfeed_permitted": false,
+        "provenance": "SOURCE_EXPLICIT",
+        "source_refs": ["SRC-LOAD-DATASHEET"]
+      },
+      {
+        "load_id": "LOAD-IO",
+        "rail_id": "VDD_5V",
+        "currents": {
+          "Imin": {"state": "KNOWN", "value": 0.05, "unit": "A"},
+          "Ityp": {"state": "KNOWN", "value": 0.1, "unit": "A"},
+          "Imax": {"state": "KNOWN", "value": 0.2, "unit": "A"}
+        },
+        "backfeed_permitted": false,
+        "provenance": "SOURCE_EXPLICIT",
+        "source_refs": ["SRC-LOAD-DATASHEET"]
+      }
+    ],
+    "capacity": {
+      "regulator_id": "REG-5V",
+      "rail_id": "VDD_5V",
+      "rated_current": {"state": "KNOWN", "value": 1.0, "unit": "A"},
+      "current_limit": {"state": "KNOWN", "value": 0.9, "unit": "A"},
+      "provenance": "SOURCE_EXPLICIT",
+      "source_refs": ["SRC-REGULATOR-DATASHEET", "SRC-DERATING-RULE"]
+    },
+    "derating": {
+      "factor": {"state": "KNOWN", "value": 0.8, "unit": "1"},
+      "provenance": "ENGINEERING_RULE",
+      "source_refs": ["SRC-DERATING-RULE"]
+    },
+    "efficiency": {
+      "factor": {"state": "KNOWN", "value": 0.8, "unit": "1"},
+      "provenance": "SOURCE_EXPLICIT",
+      "source_refs": ["SRC-REGULATOR-DATASHEET"]
+    },
+    "sources": [
+      {
+        "schema_version": "1.0.0",
+        "entity_type": "source",
+        "source_id": "SRC-REGULATOR-DATASHEET",
+        "classification": "SOURCE_EXPLICIT",
+        "title": "Synthetic regulator data",
+        "version": "fixture-1",
+        "locator": "tests/fixtures/rail_budget/nominal.json",
+        "access_status": "AVAILABLE",
+        "content_hash": {
+          "state": "KNOWN",
+          "algorithm": "SHA-256",
+          "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      {
+        "schema_version": "1.0.0",
+        "entity_type": "source",
+        "source_id": "SRC-LOAD-DATASHEET",
+        "classification": "SOURCE_EXPLICIT",
+        "title": "Synthetic load data",
+        "version": "fixture-1",
+        "locator": "tests/fixtures/rail_budget/nominal.json",
+        "access_status": "AVAILABLE",
+        "content_hash": {
+          "state": "KNOWN",
+          "algorithm": "SHA-256",
+          "value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      },
+      {
+        "schema_version": "1.0.0",
+        "entity_type": "source",
+        "source_id": "SRC-DERATING-RULE",
+        "classification": "ENGINEERING_RULE",
+        "title": "Synthetic derating rule",
+        "version": "fixture-1",
+        "locator": "tests/fixtures/rail_budget/nominal.json",
+        "access_status": "AVAILABLE",
+        "content_hash": {
+          "state": "KNOWN",
+          "algorithm": "SHA-256",
+          "value": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+        }
+      }
+    ]
+  },
+  "expected": {
+    "status": "PASS",
+    "reason_code": "WITHIN_DERATED_CAPACITY_AND_LIMITS",
+    "total_current_A": {"Imin": 0.15, "Ityp": 0.3, "Imax": 0.6},
+    "output_power_W": {"Pmin": 0.75, "Ptyp": 1.5, "Pmax": 3.0},
+    "input_power_W": {"Pmin": 0.9375, "Ptyp": 1.875, "Pmax": 3.75},
+    "loss_power_W": {"Pmin": 0.1875, "Ptyp": 0.375, "Pmax": 0.75},
+    "derated_capacity_A": 0.8,
+    "effective_capacity_A": 0.8,
+    "capacity_utilization_percent": 75.0,
+    "capacity_margin_A": 0.2
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "REP02-SYNTHETIC-SEQUENCING-RULES",
+  "artifact_type": "ENGINEERING_RULE_FIXTURE",
+  "timing_rules": [
+    {
+      "rule_id": "SEQ.VIN_VALID",
+      "expected_event": {"event_kind": "VIN_VALID", "state": "ASSERTED", "subject_refs": ["RAIL-IN"]},
+      "minimum_delay": {"state": "KNOWN", "value": 0, "unit": "s"},
+      "maximum_delay": {"state": "KNOWN", "value": 0.2, "unit": "s"},
+      "limit_origin": "SYNTHETIC",
+      "provenance": "ENGINEERING_RULE",
+      "source_refs": ["SRC-SEQ-RULES"]
+    },
+    {
+      "rule_id": "SEQ.EN",
+      "expected_event": {"event_kind": "EN", "state": "ASSERTED", "subject_refs": ["CTRL-EN"]},
+      "minimum_delay": {"state": "KNOWN", "value": 0.1, "unit": "s"},
+      "maximum_delay": {"state": "KNOWN", "value": 0.3, "unit": "s"},
+      "limit_origin": "SYNTHETIC",
+      "provenance": "ENGINEERING_RULE",
+      "source_refs": ["SRC-SEQ-RULES"]
+    },
+    {
+      "rule_id": "SEQ.PGOOD",
+      "expected_event": {"event_kind": "PGOOD", "state": "ASSERTED", "subject_refs": ["RAIL-A"]},
+      "minimum_delay": {"state": "KNOWN", "value": 0.1, "unit": "s"},
+      "maximum_delay": {"state": "KNOWN", "value": 0.4, "unit": "s"},
+      "limit_origin": "SYNTHETIC",
+      "provenance": "ENGINEERING_RULE",
+      "source_refs": ["SRC-SEQ-RULES"]
+    },
+    {
+      "rule_id": "SEQ.RESET_RELEASE",
+      "expected_event": {"event_kind": "RESET", "state": "DEASSERTED", "subject_refs": ["CTRL-RESET"]},
+      "minimum_delay": {"state": "KNOWN", "value": 0.1, "unit": "s"},
+      "maximum_delay": {"state": "KNOWN", "value": 0.4, "unit": "s"},
+      "limit_origin": "SYNTHETIC",
+      "provenance": "ENGINEERING_RULE",
+      "source_refs": ["SRC-SEQ-RULES"]
+    }
+  ],
+  "power_off_rule": {
+    "rule_id": "REP02.SEQ.POWER_OFF",
+    "expected_event": {
+      "event_kind": "POWER_OFF",
+      "state": "ENTERED",
+      "subject_refs": ["SYSTEM-POWER"]
+    },
+    "provenance": "ENGINEERING_RULE",
+    "source_refs": ["SRC-SEQ-RULES"]
+  },
+  "limitations": [
+    "SYNTHETIC_TIMING_ONLY",
+    "NO_HARDWARE_VALIDATION_CLAIM",
+    "GAP_03_OPEN"
+  ]
+}

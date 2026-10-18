@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "power-rail-validation"
-version = "0.1.0"
-description = "REP-02 power-rail validation data contracts"
+version = "0.3.0"
+description = "REP-02 deterministic rail-budget and power-sequencing validation engines"
 requires-python = ">=3.9"
 dependencies = []
 
