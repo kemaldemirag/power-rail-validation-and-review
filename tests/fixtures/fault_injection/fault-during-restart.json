@@ -1,0 +1,11 @@
+{
+  "base": "brownout.json",
+  "scenario_id": "FI-FAULT-DURING-RESTART-001",
+  "fixture_id": "FIXTURE-FI-FAULT-DURING-RESTART-001",
+  "overlap_policy": "ALLOW_RESTART_RECOVERY",
+  "faults_from": ["restart.json", "rail-loss.json"],
+  "expected": {
+    "status": "FAIL",
+    "fault_statuses": {"FAULT-RESTART-001": "PASS", "FAULT-RAIL-LOSS-001": "FAIL"}
+  }
+}

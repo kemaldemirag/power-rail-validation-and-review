@@ -1,0 +1,13 @@
+{
+  "base": "brownout.json",
+  "scenario_id": "FI-UNKNOWN-THRESHOLD-001",
+  "fixture_id": "FIXTURE-FI-UNKNOWN-THRESHOLD-001",
+  "patch": {
+    "fault_id": "FAULT-BROWNOUT-001",
+    "effect_rule": {
+      "threshold": {"kind": "VOLTAGE_RATIO", "state": "UNKNOWN", "value": null, "unit": "1"}
+    },
+    "expected_status": "UNKNOWN"
+  },
+  "expected": {"status": "UNKNOWN", "fault_status": "UNKNOWN", "reason_code": "FAULT_EFFECT_UNKNOWN"}
+}

@@ -1,0 +1,718 @@
+{
+  "adapter_limitations": [
+    {
+      "adapter_id": "REP-01",
+      "message": "Live REP-01 integration was not executed in this reporting slice.",
+      "reason_code": "LIVE_ADAPTER_NOT_IMPLEMENTED",
+      "status": "NOT_RUN"
+    },
+    {
+      "adapter_id": "REP-03",
+      "message": "Live REP-03 integration was not executed in this reporting slice.",
+      "reason_code": "LIVE_ADAPTER_NOT_IMPLEMENTED",
+      "status": "NOT_RUN"
+    }
+  ],
+  "component_results": [
+    {
+      "component_id": "REP02.FAULT_INJECTION.CAMPAIGN:03904370d51ac80e",
+      "input_hash": "03904370d51ac80e4b276df715443ec987cb2ac481e356be0497ed8dcb803bf3",
+      "package_version": "0.3.0",
+      "rule_id": "REP02.FAULT_INJECTION.CAMPAIGN",
+      "status": "FAIL",
+      "technical_result_hash": "f5044a43518f8a1b24eb5d79de68512b62fbf6c0bde65ed8744b6d491b6d17bd",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "component_id": "REP02.FAULT_INJECTION.CAMPAIGN:2161ff7229be3ec8",
+      "input_hash": "2161ff7229be3ec85b1f1cf0d04caeaf0d5c7f8ec258cb8f239504606a269597",
+      "package_version": "0.3.0",
+      "rule_id": "REP02.FAULT_INJECTION.CAMPAIGN",
+      "status": "FAIL",
+      "technical_result_hash": "097fe42ade44f9e80e30572e91953274a7a1c3557591af9176809760bd890cf1",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "component_id": "REP02.FAULT_INJECTION.CAMPAIGN:4540ffba0dba3236",
+      "input_hash": "4540ffba0dba323688b297f5a7e36fa71b9b967636408dd95a4d62ac7140f253",
+      "package_version": "0.3.0",
+      "rule_id": "REP02.FAULT_INJECTION.CAMPAIGN",
+      "status": "FAIL",
+      "technical_result_hash": "6acc16aa0b1ce322b6387371da7de15ffc8ec901aab8f4b70202b5fb0d469504",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "component_id": "REP02.FAULT_INJECTION.CAMPAIGN:6790596712c3bcb9",
+      "input_hash": "6790596712c3bcb97f6bf044fd8354f4f01d207769f1a7f4352885f826462f1b",
+      "package_version": "0.3.0",
+      "rule_id": "REP02.FAULT_INJECTION.CAMPAIGN",
+      "status": "FAIL",
+      "technical_result_hash": "1541533e3d921a6821d8c0d292072f1d63471e20d3a9b77bb1966effcf871110",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "component_id": "REP02.FAULT_INJECTION.CAMPAIGN:9a0008e13240ba55",
+      "input_hash": "9a0008e13240ba5514651ddd84a44beeb406b784e2de6990a09714f9e69ba5ac",
+      "package_version": "0.3.0",
+      "rule_id": "REP02.FAULT_INJECTION.CAMPAIGN",
+      "status": "PASS",
+      "technical_result_hash": "87c08f12309aabcdb27555885481c84fd10c124c95a3f6057124caf045cba888",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "component_id": "REP02.FAULT_INJECTION.CAMPAIGN:a1c4a20242100683",
+      "input_hash": "a1c4a20242100683267d1083a790f6134ac3f415722f483000d4d03f3d657b64",
+      "package_version": "0.3.0",
+      "rule_id": "REP02.FAULT_INJECTION.CAMPAIGN",
+      "status": "FAIL",
+      "technical_result_hash": "704929a7020e94ddecd6bbd3e10132d3d7dbeb57e32849bac8f9353ab04fdfb2",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "component_id": "REP02.FAULT_INJECTION.CAMPAIGN:c6d7784c6d4bf9ea",
+      "input_hash": "c6d7784c6d4bf9ead7f12a4e24be172f7a12c6e4f5a224b2048196006874d4e6",
+      "package_version": "0.3.0",
+      "rule_id": "REP02.FAULT_INJECTION.CAMPAIGN",
+      "status": "UNKNOWN",
+      "technical_result_hash": "8cf807144038adda9b7332713a484c5a29f95f92acb73f0c272749061d5942bd",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "component_id": "REP02.FAULT_INJECTION.CAMPAIGN:f610b9a5450e2f2e",
+      "input_hash": "f610b9a5450e2f2e82b020b761cf01a1ed35ba56b19318a614a9091ecbfcbfb0",
+      "package_version": "0.3.0",
+      "rule_id": "REP02.FAULT_INJECTION.CAMPAIGN",
+      "status": "FAIL",
+      "technical_result_hash": "cfb2e86254e8fcc5a891f6ec338cf823b0c9ebc46fa64f99d054da89d4a72318",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "RPT-A0B2393DF8E7DB41177CE276",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "c6d7784c6d4bf9ead7f12a4e24be172f7a12c6e4f5a224b2048196006874d4e6",
+      "message": "fault effect rule was evaluated against the type-labelled severity",
+      "package_version": "0.3.0",
+      "reason_code": "FAULT_EFFECT_UNKNOWN",
+      "rule_id": "FI.BROWNOUT.THRESHOLD",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "UNKNOWN",
+      "technical_locator": "$.findings[1]",
+      "technical_result_hash": "8cf807144038adda9b7332713a484c5a29f95f92acb73f0c272749061d5942bd",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-0E1EEA3E0B9CC1FD52C57D4E",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "2161ff7229be3ec85b1f1cf0d04caeaf0d5c7f8ec258cb8f239504606a269597",
+      "message": "fault effect rule was evaluated against the type-labelled severity",
+      "package_version": "0.3.0",
+      "reason_code": "BROWNOUT_EFFECT_TRIGGERED",
+      "rule_id": "FI.BROWNOUT.THRESHOLD",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "FAIL",
+      "technical_locator": "$.findings[0]",
+      "technical_result_hash": "097fe42ade44f9e80e30572e91953274a7a1c3557591af9176809760bd890cf1",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-535EBAAD948C4F46F64CB256",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "03904370d51ac80e4b276df715443ec987cb2ac481e356be0497ed8dcb803bf3",
+      "message": "fault effect rule was evaluated against the type-labelled severity",
+      "package_version": "0.3.0",
+      "reason_code": "BROWNOUT_EFFECT_TRIGGERED",
+      "rule_id": "FI.BROWNOUT.THRESHOLD",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "FAIL",
+      "technical_locator": "$.findings[0]",
+      "technical_result_hash": "f5044a43518f8a1b24eb5d79de68512b62fbf6c0bde65ed8744b6d491b6d17bd",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-101CF85BCBEB683F83F49034",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "f610b9a5450e2f2e82b020b761cf01a1ed35ba56b19318a614a9091ecbfcbfb0",
+      "message": "fault effect rule was evaluated against the type-labelled severity",
+      "package_version": "0.3.0",
+      "reason_code": "DELAY_EFFECT_TRIGGERED",
+      "rule_id": "FI.DELAY.THRESHOLD",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "FAIL",
+      "technical_locator": "$.findings[0]",
+      "technical_result_hash": "cfb2e86254e8fcc5a891f6ec338cf823b0c9ebc46fa64f99d054da89d4a72318",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-D37367CEAAD352A4AD38E015",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "4540ffba0dba323688b297f5a7e36fa71b9b967636408dd95a4d62ac7140f253",
+      "message": "fault effect rule was evaluated against the type-labelled severity",
+      "package_version": "0.3.0",
+      "reason_code": "RAIL_LOSS_EFFECT_TRIGGERED",
+      "rule_id": "FI.RAIL_LOSS.STATE",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "FAIL",
+      "technical_locator": "$.findings[0]",
+      "technical_result_hash": "6acc16aa0b1ce322b6387371da7de15ffc8ec901aab8f4b70202b5fb0d469504",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-F5499758FEB43D7CB09D90C4",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "a1c4a20242100683267d1083a790f6134ac3f415722f483000d4d03f3d657b64",
+      "message": "fault effect rule was evaluated against the type-labelled severity",
+      "package_version": "0.3.0",
+      "reason_code": "RAIL_LOSS_EFFECT_TRIGGERED",
+      "rule_id": "FI.RAIL_LOSS.STATE",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "FAIL",
+      "technical_locator": "$.findings[0]",
+      "technical_result_hash": "704929a7020e94ddecd6bbd3e10132d3d7dbeb57e32849bac8f9353ab04fdfb2",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-096F2C3485A33C40A4D88E43",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "03904370d51ac80e4b276df715443ec987cb2ac481e356be0497ed8dcb803bf3",
+      "message": "fault recovery policy was evaluated against its closed deadline",
+      "package_version": "0.3.0",
+      "reason_code": "RECOVERY_WITHIN_DEADLINE",
+      "rule_id": "FI.RECOVERY.BROWNOUT.001",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "PASS",
+      "technical_locator": "$.findings[1]",
+      "technical_result_hash": "f5044a43518f8a1b24eb5d79de68512b62fbf6c0bde65ed8744b6d491b6d17bd",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-A58F9E8E0A0021604912BFA2",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "2161ff7229be3ec85b1f1cf0d04caeaf0d5c7f8ec258cb8f239504606a269597",
+      "message": "fault recovery policy was evaluated against its closed deadline",
+      "package_version": "0.3.0",
+      "reason_code": "RECOVERY_WITHIN_DEADLINE",
+      "rule_id": "FI.RECOVERY.BROWNOUT.001",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "PASS",
+      "technical_locator": "$.findings[1]",
+      "technical_result_hash": "097fe42ade44f9e80e30572e91953274a7a1c3557591af9176809760bd890cf1",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-DEDAF58FCAE47C3FBA6459AF",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "c6d7784c6d4bf9ead7f12a4e24be172f7a12c6e4f5a224b2048196006874d4e6",
+      "message": "fault recovery policy was evaluated against its closed deadline",
+      "package_version": "0.3.0",
+      "reason_code": "RECOVERY_WITHIN_DEADLINE",
+      "rule_id": "FI.RECOVERY.BROWNOUT.001",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "PASS",
+      "technical_locator": "$.findings[0]",
+      "technical_result_hash": "8cf807144038adda9b7332713a484c5a29f95f92acb73f0c272749061d5942bd",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-EAC396F2B02C3AE4AED87597",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "f610b9a5450e2f2e82b020b761cf01a1ed35ba56b19318a614a9091ecbfcbfb0",
+      "message": "fault recovery policy was evaluated against its closed deadline",
+      "package_version": "0.3.0",
+      "reason_code": "RECOVERY_WITHIN_DEADLINE",
+      "rule_id": "FI.RECOVERY.DELAY.001",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "PASS",
+      "technical_locator": "$.findings[1]",
+      "technical_result_hash": "cfb2e86254e8fcc5a891f6ec338cf823b0c9ebc46fa64f99d054da89d4a72318",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-4C847E4BADF2E5B09284FD5A",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "4540ffba0dba323688b297f5a7e36fa71b9b967636408dd95a4d62ac7140f253",
+      "message": "fault recovery policy was evaluated against its closed deadline",
+      "package_version": "0.3.0",
+      "reason_code": "RECOVERY_WITHIN_DEADLINE",
+      "rule_id": "FI.RECOVERY.RAIL_LOSS.001",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "PASS",
+      "technical_locator": "$.findings[1]",
+      "technical_result_hash": "6acc16aa0b1ce322b6387371da7de15ffc8ec901aab8f4b70202b5fb0d469504",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-67D8786AF7C95F79BA2A1E5A",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "a1c4a20242100683267d1083a790f6134ac3f415722f483000d4d03f3d657b64",
+      "message": "fault recovery policy was evaluated against its closed deadline",
+      "package_version": "0.3.0",
+      "reason_code": "RECOVERY_WITHIN_DEADLINE",
+      "rule_id": "FI.RECOVERY.RAIL_LOSS.001",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "PASS",
+      "technical_locator": "$.findings[2]",
+      "technical_result_hash": "704929a7020e94ddecd6bbd3e10132d3d7dbeb57e32849bac8f9353ab04fdfb2",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-1FA2D882C8E8DF96BC576EEF",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "9a0008e13240ba5514651ddd84a44beeb406b784e2de6990a09714f9e69ba5ac",
+      "message": "fault recovery policy was evaluated against its closed deadline",
+      "package_version": "0.3.0",
+      "reason_code": "RECOVERY_WITHIN_DEADLINE",
+      "rule_id": "FI.RECOVERY.RESTART.001",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "PASS",
+      "technical_locator": "$.findings[0]",
+      "technical_result_hash": "87c08f12309aabcdb27555885481c84fd10c124c95a3f6057124caf045cba888",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-70AEAB7FB11920D7E4EE8AD2",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "a1c4a20242100683267d1083a790f6134ac3f415722f483000d4d03f3d657b64",
+      "message": "fault recovery policy was evaluated against its closed deadline",
+      "package_version": "0.3.0",
+      "reason_code": "RECOVERY_WITHIN_DEADLINE",
+      "rule_id": "FI.RECOVERY.RESTART.001",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "PASS",
+      "technical_locator": "$.findings[1]",
+      "technical_result_hash": "704929a7020e94ddecd6bbd3e10132d3d7dbeb57e32849bac8f9353ab04fdfb2",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-C59D7F4605D8F22B5C338FF5",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "2161ff7229be3ec85b1f1cf0d04caeaf0d5c7f8ec258cb8f239504606a269597",
+      "message": "fault recovery policy was evaluated against its closed deadline",
+      "package_version": "0.3.0",
+      "reason_code": "RECOVERY_WITHIN_DEADLINE",
+      "rule_id": "FI.RECOVERY.RESTART.001",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "PASS",
+      "technical_locator": "$.findings[2]",
+      "technical_result_hash": "097fe42ade44f9e80e30572e91953274a7a1c3557591af9176809760bd890cf1",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-FDD3FC7C149B73DDAA278FA9",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "6790596712c3bcb97f6bf044fd8354f4f01d207769f1a7f4352885f826462f1b",
+      "message": "fault recovery policy was evaluated against its closed deadline",
+      "package_version": "0.3.0",
+      "reason_code": "RECOVERY_WITHIN_DEADLINE",
+      "rule_id": "FI.RECOVERY.STUCK_LOW.001",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "PASS",
+      "technical_locator": "$.findings[1]",
+      "technical_result_hash": "1541533e3d921a6821d8c0d292072f1d63471e20d3a9b77bb1966effcf871110",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-70ACECEFADD50DAA752F270B",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "9a0008e13240ba5514651ddd84a44beeb406b784e2de6990a09714f9e69ba5ac",
+      "message": "fault effect rule was evaluated against the type-labelled severity",
+      "package_version": "0.3.0",
+      "reason_code": "RESTART_REQUEST_ACCEPTED",
+      "rule_id": "FI.RESTART.REQUEST",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "PASS",
+      "technical_locator": "$.findings[1]",
+      "technical_result_hash": "87c08f12309aabcdb27555885481c84fd10c124c95a3f6057124caf045cba888",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-79AB1B4A3973139490A09B86",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "2161ff7229be3ec85b1f1cf0d04caeaf0d5c7f8ec258cb8f239504606a269597",
+      "message": "fault effect rule was evaluated against the type-labelled severity",
+      "package_version": "0.3.0",
+      "reason_code": "RESTART_REQUEST_ACCEPTED",
+      "rule_id": "FI.RESTART.REQUEST",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "PASS",
+      "technical_locator": "$.findings[3]",
+      "technical_result_hash": "097fe42ade44f9e80e30572e91953274a7a1c3557591af9176809760bd890cf1",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-D04FFABA0DC0D760F993EF92",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "a1c4a20242100683267d1083a790f6134ac3f415722f483000d4d03f3d657b64",
+      "message": "fault effect rule was evaluated against the type-labelled severity",
+      "package_version": "0.3.0",
+      "reason_code": "RESTART_REQUEST_ACCEPTED",
+      "rule_id": "FI.RESTART.REQUEST",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "PASS",
+      "technical_locator": "$.findings[3]",
+      "technical_result_hash": "704929a7020e94ddecd6bbd3e10132d3d7dbeb57e32849bac8f9353ab04fdfb2",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-98ED4EF223AB4595A492D7F3",
+      "finding_kind": "COMPONENT_ISSUE",
+      "input_hash": "6790596712c3bcb97f6bf044fd8354f4f01d207769f1a7f4352885f826462f1b",
+      "message": "fault effect rule was evaluated against the type-labelled severity",
+      "package_version": "0.3.0",
+      "reason_code": "STUCK_LOW_EFFECT_TRIGGERED",
+      "rule_id": "FI.STUCK_LOW.LEVEL",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "FAIL",
+      "technical_locator": "$.findings[0]",
+      "technical_result_hash": "1541533e3d921a6821d8c0d292072f1d63471e20d3a9b77bb1966effcf871110",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-872F003E2BB96B618BA3ACAD",
+      "finding_kind": "COMPONENT_RESULT",
+      "input_hash": "9a0008e13240ba5514651ddd84a44beeb406b784e2de6990a09714f9e69ba5ac",
+      "message": "REP02.FAULT_INJECTION.CAMPAIGN returned PASS: FAULT_SCENARIO_COMPLETE.",
+      "package_version": "0.3.0",
+      "reason_code": "FAULT_SCENARIO_COMPLETE",
+      "rule_id": "REP02.FAULT_INJECTION.CAMPAIGN",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "PASS",
+      "technical_locator": "$",
+      "technical_result_hash": "87c08f12309aabcdb27555885481c84fd10c124c95a3f6057124caf045cba888",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-23C6F2D5B3C63229B5013048",
+      "finding_kind": "COMPONENT_RESULT",
+      "input_hash": "c6d7784c6d4bf9ead7f12a4e24be172f7a12c6e4f5a224b2048196006874d4e6",
+      "message": "REP02.FAULT_INJECTION.CAMPAIGN returned UNKNOWN: FAULT_EFFECT_UNKNOWN.",
+      "package_version": "0.3.0",
+      "reason_code": "FAULT_EFFECT_UNKNOWN",
+      "rule_id": "REP02.FAULT_INJECTION.CAMPAIGN",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "UNKNOWN",
+      "technical_locator": "$",
+      "technical_result_hash": "8cf807144038adda9b7332713a484c5a29f95f92acb73f0c272749061d5942bd",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-672362EE359DA6E429EA0048",
+      "finding_kind": "COMPONENT_RESULT",
+      "input_hash": "03904370d51ac80e4b276df715443ec987cb2ac481e356be0497ed8dcb803bf3",
+      "message": "REP02.FAULT_INJECTION.CAMPAIGN returned FAIL: BROWNOUT_EFFECT_TRIGGERED.",
+      "package_version": "0.3.0",
+      "reason_code": "BROWNOUT_EFFECT_TRIGGERED",
+      "rule_id": "REP02.FAULT_INJECTION.CAMPAIGN",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "FAIL",
+      "technical_locator": "$",
+      "technical_result_hash": "f5044a43518f8a1b24eb5d79de68512b62fbf6c0bde65ed8744b6d491b6d17bd",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-AE8B4C2B7D3E0EDDCABA3399",
+      "finding_kind": "COMPONENT_RESULT",
+      "input_hash": "2161ff7229be3ec85b1f1cf0d04caeaf0d5c7f8ec258cb8f239504606a269597",
+      "message": "REP02.FAULT_INJECTION.CAMPAIGN returned FAIL: BROWNOUT_EFFECT_TRIGGERED.",
+      "package_version": "0.3.0",
+      "reason_code": "BROWNOUT_EFFECT_TRIGGERED",
+      "rule_id": "REP02.FAULT_INJECTION.CAMPAIGN",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "FAIL",
+      "technical_locator": "$",
+      "technical_result_hash": "097fe42ade44f9e80e30572e91953274a7a1c3557591af9176809760bd890cf1",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-736563A62A4E25367D23C0F1",
+      "finding_kind": "COMPONENT_RESULT",
+      "input_hash": "f610b9a5450e2f2e82b020b761cf01a1ed35ba56b19318a614a9091ecbfcbfb0",
+      "message": "REP02.FAULT_INJECTION.CAMPAIGN returned FAIL: DELAY_EFFECT_TRIGGERED.",
+      "package_version": "0.3.0",
+      "reason_code": "DELAY_EFFECT_TRIGGERED",
+      "rule_id": "REP02.FAULT_INJECTION.CAMPAIGN",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "FAIL",
+      "technical_locator": "$",
+      "technical_result_hash": "cfb2e86254e8fcc5a891f6ec338cf823b0c9ebc46fa64f99d054da89d4a72318",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-A3A850203524415C623B52FF",
+      "finding_kind": "COMPONENT_RESULT",
+      "input_hash": "a1c4a20242100683267d1083a790f6134ac3f415722f483000d4d03f3d657b64",
+      "message": "REP02.FAULT_INJECTION.CAMPAIGN returned FAIL: RAIL_LOSS_EFFECT_TRIGGERED.",
+      "package_version": "0.3.0",
+      "reason_code": "RAIL_LOSS_EFFECT_TRIGGERED",
+      "rule_id": "REP02.FAULT_INJECTION.CAMPAIGN",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "FAIL",
+      "technical_locator": "$",
+      "technical_result_hash": "704929a7020e94ddecd6bbd3e10132d3d7dbeb57e32849bac8f9353ab04fdfb2",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-E9B154C673D877A0474502D0",
+      "finding_kind": "COMPONENT_RESULT",
+      "input_hash": "4540ffba0dba323688b297f5a7e36fa71b9b967636408dd95a4d62ac7140f253",
+      "message": "REP02.FAULT_INJECTION.CAMPAIGN returned FAIL: RAIL_LOSS_EFFECT_TRIGGERED.",
+      "package_version": "0.3.0",
+      "reason_code": "RAIL_LOSS_EFFECT_TRIGGERED",
+      "rule_id": "REP02.FAULT_INJECTION.CAMPAIGN",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "FAIL",
+      "technical_locator": "$",
+      "technical_result_hash": "6acc16aa0b1ce322b6387371da7de15ffc8ec901aab8f4b70202b5fb0d469504",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    },
+    {
+      "finding_id": "RPT-8A5D8671B48B56E9EF22BDAA",
+      "finding_kind": "COMPONENT_RESULT",
+      "input_hash": "6790596712c3bcb97f6bf044fd8354f4f01d207769f1a7f4352885f826462f1b",
+      "message": "REP02.FAULT_INJECTION.CAMPAIGN returned FAIL: STUCK_LOW_EFFECT_TRIGGERED.",
+      "package_version": "0.3.0",
+      "reason_code": "STUCK_LOW_EFFECT_TRIGGERED",
+      "rule_id": "REP02.FAULT_INJECTION.CAMPAIGN",
+      "source_refs": [
+        {
+          "sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8",
+          "source_id": "SRC-FI-RULES",
+          "version": "fixture-1"
+        }
+      ],
+      "status": "FAIL",
+      "technical_locator": "$",
+      "technical_result_hash": "1541533e3d921a6821d8c0d292072f1d63471e20d3a9b77bb1966effcf871110",
+      "tool_name": "power-rail-validation",
+      "tool_version": "0.1.0"
+    }
+  ],
+  "generated_at": "2026-10-19T15:02:30+03:00",
+  "hash_policy": {
+    "algorithm": "SHA-256",
+    "canonicalization": "REP02_SORTED_MINIFIED_UTF8_JSON",
+    "report_model_scope": "ALL_REPORT_MODEL_FIELDS_EXCEPT_GENERATED_AT_AND_REPORT_MODEL_HASH",
+    "technical_result_scope": "EXACT_COMPONENT_RESULT_EXCLUDING_EXPLICIT_REPORT_GENERATED_AT"
+  },
+  "limitations": [
+    "ARRAY_ORDER_IS_INPUT_HASH_SIGNIFICANT",
+    "FAULT_CONTEXT_NOT_ADDED_TO_SEQUENCING_EVENTS",
+    "GAP_02_OPEN",
+    "GAP_03_OPEN",
+    "LIVE_REP01_REP03_ADAPTERS_NOT_IMPLEMENTED",
+    "MODULE_LOCAL_RESULTS_ARE_NOT_COERCED_TO_D1_FINDINGS",
+    "NO_ANALOG_TRANSIENT_PHYSICS_MODEL",
+    "NO_HARDWARE_RELIABILITY_CLAIM",
+    "SYNTHETIC_FAULT_FIXTURES_ONLY"
+  ],
+  "package_version": "0.3.0",
+  "report_model_hash": "f65c501df92e6fec8f63135a59c0a795faab19412fd4fdd09422491d2873ecb5",
+  "reporter_version": "0.1.0",
+  "schema_version": "1.0.0",
+  "status": "FAIL",
+  "status_counts": {
+    "BLOCKED": 0,
+    "FAIL": 12,
+    "NOT_RUN": 0,
+    "PASS": 14,
+    "UNKNOWN": 2
+  }
+}

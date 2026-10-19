@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "rule_set_version": "REP02-FI-RULESET-1.0.0",
+  "generation": {
+    "mode": "FIXTURE",
+    "runner_version": "0.1.0"
+  },
+  "effect_profiles": [
+    {"fault_type": "BROWNOUT", "rule_id": "FI.BROWNOUT.THRESHOLD", "severity_kind": "VOLTAGE_RATIO", "unit": "1", "operator": "LESS_THAN"},
+    {"fault_type": "STUCK_LOW", "rule_id": "FI.STUCK_LOW.LEVEL", "severity_kind": "LOGIC_LEVEL", "unit": "logic", "operator": "EQUALS"},
+    {"fault_type": "DELAY", "rule_id": "FI.DELAY.THRESHOLD", "severity_kind": "TIME_EXTENSION", "unit": "s", "operator": "GREATER_THAN"},
+    {"fault_type": "RAIL_LOSS", "rule_id": "FI.RAIL_LOSS.STATE", "severity_kind": "AVAILABILITY", "unit": "state", "operator": "EQUALS"},
+    {"fault_type": "RESTART", "rule_id": "FI.RESTART.REQUEST", "severity_kind": "RESTART_REQUEST", "unit": "state", "operator": "EQUALS"}
+  ],
+  "recovery_policy": {
+    "deadline_interval": "CLOSED_MAXIMUM",
+    "missing_at_or_before_deadline": "UNKNOWN",
+    "missing_after_deadline": "FAIL"
+  },
+  "duration_policy": {
+    "BROWNOUT": "POSITIVE",
+    "STUCK_LOW": "POSITIVE",
+    "DELAY": "POSITIVE",
+    "RAIL_LOSS": "POSITIVE",
+    "RESTART": "NONNEGATIVE_INSTANTANEOUS_ALLOWED"
+  },
+  "overlap_policy": {
+    "default": "REJECT",
+    "restart_recovery_profile": "ALLOW_RESTART_RECOVERY",
+    "interval_semantics": "HALF_OPEN"
+  },
+  "claim_limits": [
+    "SYNTHETIC_FIXTURE_ONLY",
+    "NO_ANALOG_TRANSIENT_PHYSICS_MODEL",
+    "NO_HARDWARE_RELIABILITY_CLAIM"
+  ]
+}

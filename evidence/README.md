@@ -21,3 +21,13 @@ Bu çıktılardaki `PASS`, yalnız statik ve sentetik cebirsel bütçe hesabın�
 - `REP02-D2/sequencing-normal-result.json`: Normal sentetik startup fixture'ının gerçek, deterministik motor çıktısı.
 
 Sequencing kanıtındaki `PASS`, yalnız hash bağlı sentetik mühendislik kuralına uyumu ifade eder. GAP-03 açık olduğu için üretici zaman gereksinimi, gerçek PGOOD/EN/RESET davranışı veya donanım kapısı sonucu değildir.
+
+## WF-02-04 ve ilk WF-02-06 / D3 kanıtları
+
+- `REP02-D3/fault-campaign-results.json`: Zorunlu fault ailesi ve recovery kombinasyonlarının gerçek runner çıktıları.
+- `REP02-D3/report-model.json`: Aynı teknik finding setinin normalize JSON raporu.
+- `REP02-D3/report.md`: `report-model.json` ile aynı finding setinden üretilen Markdown görünümü.
+- `REP02-D3/manifest.json`: Girdi, kaynak, model, araç ve çıktı dosyalarının byte-exact SHA-256 manifesti.
+- `REP02-D3/test-results.json`: Test, statik doğrulama, replay ve bağımsız QA kanıtı.
+
+D3 kanıtındaki `FAIL`, bilinen sentetik fault kuralının tetiklendiğini veya recovery kuralının sağlanmadığını belirtir. `PASS`, yalnız sürümlü sentetik teknik kural ve recovery değerlendirmesinin geçtiğini gösterir; fixture beklentisiyle eşleşme ayrı bir alandır ve teknik durumu değiştirmez. Bu dilim D3 ya da canlı entegrasyon kapanışı değildir.

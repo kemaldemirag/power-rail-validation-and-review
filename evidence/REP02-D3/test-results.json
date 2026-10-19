@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.0.0",
+  "deliverable": "REP02-D3-INITIAL-VERIFICATION",
+  "generated_at": "2026-10-19T15:02:30+03:00",
+  "verification_status": "PASS",
+  "scope_status": {
+    "WF-02-04": "IMPLEMENTED",
+    "WF-02-06": "INITIAL_REPORTING_STARTED",
+    "D3": "TEST_EVIDENCE_STARTED_NOT_CLOSED"
+  },
+  "baseline": {
+    "commit": "4f2a4cc74b4dcb632ede027fbe24b3bee2ee7de1",
+    "working_tree": "UNCOMMITTED_DELIVERABLES"
+  },
+  "environment": {
+    "operating_system": "Windows",
+    "python_runtime": "3.12.10",
+    "minimum_supported_python": "3.9",
+    "package_version": "0.3.0",
+    "fault_engine_version": "0.1.0",
+    "fault_rule_set_version": "REP02-FI-RULESET-1.0.0",
+    "reporter_version": "0.1.0",
+    "external_test_dependencies": []
+  },
+  "test_runs": [
+    {
+      "id": "FULL-UNITTEST",
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m unittest discover -s tests -q",
+      "tests_run": 228,
+      "passed": 228,
+      "failed": 0,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "FAULT-INJECTION-FOCUSED",
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m unittest discover -s tests -p test_fault_injection.py -q",
+      "tests_run": 62,
+      "passed": 62,
+      "failed": 0,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "id": "REPORTING-FOCUSED",
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m unittest discover -s tests -p test_reporting.py -q",
+      "tests_run": 23,
+      "passed": 23,
+      "failed": 0,
+      "errors": 0,
+      "status": "PASS"
+    }
+  ],
+  "static_checks": [
+    {
+      "id": "PYTHON-3.9-AST",
+      "files_checked": 17,
+      "status": "PASS"
+    },
+    {
+      "id": "FAULT-FIXTURE-JSON-PARSE",
+      "files_checked": 9,
+      "status": "PASS"
+    },
+    {
+      "id": "GIT-DIFF-CHECK",
+      "status": "PASS",
+      "note": "No whitespace errors; Git emitted only line-ending conversion warnings."
+    },
+    {
+      "id": "REPO-PYC-HYGIENE",
+      "expected_count": 0,
+      "status": "PASS"
+    }
+  ],
+  "fault_campaign": {
+    "fixture_count": 8,
+    "replay_equality": "PASS",
+    "input_immutability": "PASS",
+    "finite_json": "PASS",
+    "scenario_status_counts": {
+      "FAIL": 6,
+      "PASS": 1,
+      "UNKNOWN": 1
+    },
+    "all_fixture_expectations_match": true,
+    "expectation_policy": "Expectation matching is separate from and cannot change technical status.",
+    "canonical_rule_source_sha256": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8"
+  },
+  "reporting_checks": {
+    "report_status": "FAIL",
+    "report_status_interpretation": "Aggregate technical injected-fault status; not a test-suite failure.",
+    "finding_count": 28,
+    "report_model_hash": "f65c501df92e6fec8f63135a59c0a795faab19412fd4fdd09422491d2873ecb5",
+    "report_model_rebuild_equality": "PASS",
+    "json_render_equality": "PASS",
+    "markdown_render_equality": "PASS",
+    "finding_id_equality": "PASS",
+    "finding_rule_status_reason_equality": "PASS",
+    "live_adapters": {
+      "REP-01": "NOT_RUN",
+      "REP-03": "NOT_RUN"
+    }
+  },
+  "independent_reviews": [
+    {
+      "scope": "FAULT-INJECTION-ADVERSARIAL",
+      "status": "CLEAN",
+      "open_findings": 0,
+      "regression_areas": [
+        "untrusted provenance",
+        "exact baseline domain binding",
+        "sequencing subject semantic typing",
+        "target polarity profile",
+        "recovery causality and horizon",
+        "observation provenance",
+        "signed zero normalization",
+        "completion state and time coherence"
+      ]
+    },
+    {
+      "scope": "REPORTING-ADVERSARIAL",
+      "status": "CLEAN",
+      "open_findings": 0
+    }
+  ],
+  "document_qa": {
+    "docx_zip_integrity": "PASS",
+    "required_ooxml_parts": "PASS",
+    "placeholder_scan": "PASS",
+    "required_text_coverage": "PASS",
+    "page_size": "LETTER_PORTRAIT",
+    "canonical_renderer": {
+      "status": "BLOCKED",
+      "reason": "BUNDLED_LIBREOFFICE_NOT_PRESENT_IN_WORKSPACE_RUNTIME"
+    },
+    "fallback_render": {
+      "status": "PASS",
+      "method": "DOCX structure rendered with bundled python-docx and ReportLab, then rasterized with bundled Poppler",
+      "page_count": 5,
+      "visual_inspection": "PASS",
+      "checks": [
+        "no clipped text",
+        "no overlapping content",
+        "tables fit page width",
+        "headers and body text are readable",
+        "no missing Turkish glyphs"
+      ]
+    }
+  },
+  "artifact_hashes": {
+    "src/power_rail_validation/fault_injection/runner.py": "e44ac917a40543df8a880b678a3708455a99dfc198318e2c892ac789a360b874",
+    "src/power_rail_validation/reporting/reporter.py": "f5deb111c5f424848f9e52d6e9bb92ecbf4ed990e9d857843b959f03ff1a252c",
+    "tests/test_fault_injection.py": "ee89619dee09c44bbdddb9710f22f3bf99be841b4a81f17d6aa1a93b682259d6",
+    "tests/test_reporting.py": "28ffb5b83d8d06a19eb0d10ac89afa9e86e686d37aa954254f5870052b1f537f",
+    "tests/fixtures/fault_injection/synthetic-fault-rules-source.json": "34f5582e13ae92bb22656b3ac1ff799cdfbdb9da3f03a35982f9f4fde18026e6",
+    "evidence/REP02-D3/fault-campaign-results.json": "12d8cdfd47a73baa85da73b16bbedb9cd8fea6d5554d7a598782e90772ea4b52",
+    "evidence/REP02-D3/report-model.json": "173c771688b67fd7f8d8b7b57657798eba7f9864c576b9836dc75c0bdb92049d",
+    "evidence/REP02-D3/report.md": "84dcef6cc0252b8250af664deba6dffca7f7a58aa352d5c444844eb9b480f054",
+    "docs/REP02-D3/REP02-D3-fault-injection-and-initial-reporting.md": "a4fc9cb973d6ecb37b3d8cb8967aa983370e0e5f6a5306a78c1d9123d7b1966e",
+    "docs/REP02-D3/REP02-D3-fault-injection-and-initial-reporting.docx": "f7f8125959fe047a1b94dccadd06622953cee98379187a03f869860374a9a41c"
+  },
+  "actions": {
+    "commit": false,
+    "push": false,
+    "package_installation": false,
+    "physical_test": false,
+    "live_rep01_rep03_integration": false
+  },
+  "claim_limits": [
+    "SYNTHETIC_FIXTURES_ONLY",
+    "NO_ANALOG_TRANSIENT_OR_WAVEFORM_MODEL",
+    "NO_SPICE_SCHEMATIC_OR_PCB_VALIDATION",
+    "NO_PHYSICAL_HARDWARE_OR_LAB_VALIDATION",
+    "NO_THERMAL_OR_LOOP_STABILITY_VALIDATION",
+    "NO_EMC_ISO_AEC_OR_FIELD_COMPLIANCE_CLAIM",
+    "G1_SOURCE_GATE_BLOCKED",
+    "G1_TO_G6_HARDWARE_GATES_NOT_OPENED",
+    "D3_AND_WF_02_06_ARE_NOT_CLOSED"
+  ],
+  "next_work": [
+    "WF-02-05 Regulator Review",
+    "remaining WF-02-06 Evidence and Integration",
+    "live REP-01 and REP-03 envelope mapping after source and normalization decisions"
+  ]
+}

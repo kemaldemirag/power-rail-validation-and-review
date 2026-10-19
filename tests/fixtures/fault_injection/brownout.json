@@ -1,0 +1,114 @@
+{
+  "baseline_fixtures": {
+    "rail_budget": "../rail_budget/nominal.json",
+    "sequencing": "../sequencing/normal.json"
+  },
+  "input": {
+    "schema_version": "1.0.0",
+    "scenario_id": "FI-BROWNOUT-001",
+    "generation": {
+      "mode": "FIXTURE",
+      "fixture_id": "FIXTURE-FI-BROWNOUT-001",
+      "seed": null,
+      "runner_version": "0.1.0",
+      "provenance": "ENGINEERING_RULE",
+      "source_refs": ["SRC-FI-RULES"]
+    },
+    "targets": [
+      {
+        "target_id": "VDD_5V",
+        "target_type": "RAIL",
+        "baseline_binding": "RAIL_BUDGET_RAIL",
+        "baseline_ref": "VDD_5V",
+        "polarity": "NOT_APPLICABLE",
+        "provenance": "ENGINEERING_RULE",
+        "source_refs": ["SRC-FI-RULES"]
+      },
+      {
+        "target_id": "CTRL-EN",
+        "target_type": "SIGNAL",
+        "baseline_binding": "SEQUENCING_SUBJECT",
+        "baseline_ref": "CTRL-EN",
+        "polarity": "ACTIVE_HIGH",
+        "provenance": "ENGINEERING_RULE",
+        "source_refs": ["SRC-FI-RULES"]
+      },
+      {
+        "target_id": "CTRL-RESET",
+        "target_type": "SIGNAL",
+        "baseline_binding": "SEQUENCING_SUBJECT",
+        "baseline_ref": "CTRL-RESET",
+        "polarity": "ACTIVE_LOW",
+        "provenance": "ENGINEERING_RULE",
+        "source_refs": ["SRC-FI-RULES"]
+      },
+      {
+        "target_id": "SYSTEM-POWER",
+        "target_type": "SYSTEM",
+        "baseline_binding": "SEQUENCING_SUBJECT",
+        "baseline_ref": "SYSTEM-POWER",
+        "polarity": "NOT_APPLICABLE",
+        "provenance": "ENGINEERING_RULE",
+        "source_refs": ["SRC-FI-RULES"]
+      }
+    ],
+    "faults": [
+      {
+        "fault_id": "FAULT-BROWNOUT-001",
+        "fault_type": "BROWNOUT",
+        "target": {"target_id": "VDD_5V", "target_type": "RAIL"},
+        "start_time": {"state": "KNOWN", "value": 0.6, "unit": "s"},
+        "duration": {"state": "KNOWN", "value": 0.2, "unit": "s"},
+        "severity": {"kind": "VOLTAGE_RATIO", "state": "KNOWN", "value": 0.7, "unit": "1"},
+        "effect_rule": {
+          "rule_id": "FI.BROWNOUT.THRESHOLD",
+          "operator": "LESS_THAN",
+          "threshold": {"kind": "VOLTAGE_RATIO", "state": "KNOWN", "value": 0.8, "unit": "1"},
+          "provenance": "ENGINEERING_RULE",
+          "source_refs": ["SRC-FI-RULES"]
+        },
+        "recovery": {
+          "policy_id": "FI.RECOVERY.BROWNOUT.001",
+          "mode": "AUTO",
+          "required": true,
+          "completion": {"state": "KNOWN", "value": true},
+          "completion_time": {"state": "KNOWN", "value": 0.9, "unit": "s"},
+          "maximum_delay": {"state": "KNOWN", "value": 0.2, "unit": "s"},
+          "provenance": "ENGINEERING_RULE",
+          "source_refs": ["SRC-FI-RULES"]
+        },
+        "expected_status": "FAIL",
+        "provenance": "ENGINEERING_RULE",
+        "source_refs": ["SRC-FI-RULES"]
+      }
+    ],
+    "sources": [
+      {
+        "schema_version": "1.0.0",
+        "entity_type": "source",
+        "source_id": "SRC-FI-RULES",
+        "classification": "ENGINEERING_RULE",
+        "title": "REP-02 synthetic fault and recovery fixture rules",
+        "version": "fixture-1",
+        "locator": "tests/fixtures/fault_injection/synthetic-fault-rules-source.json",
+        "access_status": "AVAILABLE",
+        "content_hash": {
+          "state": "KNOWN",
+          "algorithm": "SHA-256",
+          "value": "ae66faf5ca460f6ab1b9be70d7b844b32f512ddd0d3bf1fa486a046baff263b8"
+        }
+      }
+    ],
+    "observation": {
+      "end_time": {"state": "KNOWN", "value": 2, "unit": "s"},
+      "provenance": "ENGINEERING_RULE",
+      "source_refs": ["SRC-FI-RULES"]
+    },
+    "overlap_policy": "REJECT"
+  },
+  "expected": {
+    "status": "FAIL",
+    "fault_status": "FAIL",
+    "reason_code": "BROWNOUT_EFFECT_TRIGGERED"
+  }
+}

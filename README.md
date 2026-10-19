@@ -1,6 +1,6 @@
 # power-rail-validation-and-review
 
-Durum: WF-02-03_SEQUENCING_IMPLEMENTED — D2_SYNTHETIC_APPLICATION_COMPLETE
+Durum: WF-02-04_FAULT_INJECTION_IMPLEMENTED — WF-02-06_INITIAL_REPORTING_STARTED — D3_TEST_EVIDENCE_STARTED
 
 Bu repo güç rayı bütçesi, derating, sıralama, sentetik hata senaryoları ve kanıt sınıflı inceleme raporları için yeniden kullanılabilir bir araç seti geliştirir.
 
@@ -32,6 +32,23 @@ Bu repo güç rayı bütçesi, derating, sıralama, sentetik hata senaryoları v
 
 Rail-budget ve sequencing sentetik çekirdeklerinin birlikte tamamlanmasıyla D2 sentetik uygulama kapısı kapanmıştır. Bu kapanış yalnız yazılım sözleşmeleri ve sentetik fixture'lar içindir.
 
+`WF-02-04 Fault Injection` dilimi aşağıdaki çıktıları ekler:
+
+- Brownout, stuck-low, delay, rail-loss ve restart için kapalı, sürümlü fault sözleşmesi
+- Mevcut rail-budget ve sequencing motorlarını değiştirmeden çağıran deterministik fixture runner'ı
+- Exact target, kaynak, sürüm, hash, provenance, baseline causality ve overlap kapıları
+- Fault effect ile recovery sonucunu ayrı gösteren olay izi ve finding seti
+- Teknik `FAIL`i başarılı recovery veya fixture beklentisi nedeniyle `PASS`e çevirmeyen durum kararı
+
+`WF-02-06 Evidence and Integration` için ilk raporlama dilimi de başlamıştır:
+
+- Aynı normalize finding listesinden deterministik JSON ve Markdown üretimi
+- Teknik sonuç, girdi, kaynak, araç ve paket sürümü bağları
+- `inputs / sources / models / tools / outputs` kategorili, gerçek dosya hashlerini doğrulayan evidence manifest
+- Canlı REP-01/03 adaptörlerini açık `NOT_RUN` bırakan fail-closed raporlama sınırı
+
+Bu kapsam D3 test ve kanıt başlangıcıdır; D3 veya WF-02-06 kapanışı değildir.
+
 ## Güvenlik ve iddia sınırı
 
 G1 kaynak kapısı `BLOCKED` durumundadır. Bu repo şu aşamada gerçek müşteri şeması, exact-part regülatör modeli, fiziksel ölçüm veya EMC, ISO, AEC ve saha uygunluk kanıtı üretmez. Testlerdeki `PASS`, yalnız test edilen sözleşme davranışını ifade eder; donanım veya proje kapısı onayı değildir. Eksik karar girdisi sayısal varsayılanla doldurulmaz ve `PASS` sonucuna yükseltilmez.
@@ -51,8 +68,8 @@ POSIX kabuk:
 PYTHONPATH=src python -m unittest discover -s tests -v
 ```
 
-Testler yalnız Python standart kütüphanesini kullanır. Rail-budget örnekleri `W`, `%` ve `1` birimlerini; sequencing örnekleri ise zaman penceresi ve olay izini modül-yerel sonuç sözleşmelerinde taşır. Bu sonuçlar D1 yanıtına sözleşme değişikliği olmadan eklenmez.
+Testler yalnız Python standart kütüphanesini kullanır. Rail-budget örnekleri `W`, `%` ve `1` birimlerini; sequencing ve fault-injection örnekleri zaman penceresi, recovery ve olay izini modül-yerel sonuç sözleşmelerinde taşır. Raporlayıcı bu sonuçları ortak görünümde birleştirir ancak D1 finding sözleşmesine zorla dönüştürmez.
 
 ## Sonraki çalışma dilimi
 
-Bir sonraki ana dilim `WF-02-04 Fault Injection`dır. Brownout, stuck-low, delay, rail-loss ve restart; açık fault sözleşmesi, sabit fixture veya açık seed ve gözlenebilir kurtarma iziyle ele alınacaktır. Canlı REP-01 entegrasyonu; zarf eşlemesi, hash normalizasyonu, kanıt bütünlüğü ve GAP-03 zaman/eşik kaynakları çözülene kadar `BLOCKED` kalır. Repo bağımsız Git deposudur; bu çalışma commit veya push yapmaz.
+Bir sonraki ana dilim `WF-02-05 Regulator Review` ile kalan `WF-02-06 Evidence and Integration` çalışmasıdır. Canlı REP-01/03 entegrasyonu; zarf eşlemesi, hash normalizasyonu, kanıt bütünlüğü ve GAP-02/GAP-03 kaynakları çözülene kadar `BLOCKED` kalır. Repo bağımsız Git deposudur; bu çalışma commit veya push yapmaz.

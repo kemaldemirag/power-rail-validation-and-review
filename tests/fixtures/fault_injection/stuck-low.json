@@ -1,0 +1,36 @@
+{
+  "base": "brownout.json",
+  "scenario_id": "FI-STUCK-LOW-001",
+  "fixture_id": "FIXTURE-FI-STUCK-LOW-001",
+  "faults": [
+    {
+      "fault_id": "FAULT-STUCK-LOW-001",
+      "fault_type": "STUCK_LOW",
+      "target": {"target_id": "CTRL-EN", "target_type": "SIGNAL"},
+      "start_time": {"state": "KNOWN", "value": 0.6, "unit": "s"},
+      "duration": {"state": "KNOWN", "value": 0.2, "unit": "s"},
+      "severity": {"kind": "LOGIC_LEVEL", "state": "KNOWN", "value": "LOW", "unit": "logic"},
+      "effect_rule": {
+        "rule_id": "FI.STUCK_LOW.LEVEL",
+        "operator": "EQUALS",
+        "threshold": {"kind": "LOGIC_LEVEL", "state": "KNOWN", "value": "LOW", "unit": "logic"},
+        "provenance": "ENGINEERING_RULE",
+        "source_refs": ["SRC-FI-RULES"]
+      },
+      "recovery": {
+        "policy_id": "FI.RECOVERY.STUCK_LOW.001",
+        "mode": "AUTO",
+        "required": true,
+        "completion": {"state": "KNOWN", "value": true},
+        "completion_time": {"state": "KNOWN", "value": 0.9, "unit": "s"},
+        "maximum_delay": {"state": "KNOWN", "value": 0.2, "unit": "s"},
+        "provenance": "ENGINEERING_RULE",
+        "source_refs": ["SRC-FI-RULES"]
+      },
+      "expected_status": "FAIL",
+      "provenance": "ENGINEERING_RULE",
+      "source_refs": ["SRC-FI-RULES"]
+    }
+  ],
+  "expected": {"status": "FAIL", "fault_status": "FAIL", "reason_code": "STUCK_LOW_EFFECT_TRIGGERED"}
+}

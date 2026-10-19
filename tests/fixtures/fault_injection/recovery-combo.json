@@ -1,0 +1,11 @@
+{
+  "base": "brownout.json",
+  "scenario_id": "FI-RECOVERY-COMBO-001",
+  "fixture_id": "FIXTURE-FI-RECOVERY-COMBO-001",
+  "overlap_policy": "ALLOW_RESTART_RECOVERY",
+  "faults_from": ["brownout.json", "restart.json"],
+  "expected": {
+    "status": "FAIL",
+    "fault_statuses": {"FAULT-BROWNOUT-001": "FAIL", "FAULT-RESTART-001": "PASS"}
+  }
+}
