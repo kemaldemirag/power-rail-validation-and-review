@@ -1,0 +1,48 @@
+{
+  "api_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "descriptor_id": "SYNTH-REP03-HANDOFF-001",
+  "producer": {
+    "repository_id": "REP-03",
+    "api_version": "1.0.0",
+    "schema_version": "1.0.0"
+  },
+  "consumer": {
+    "repository_id": "REP-02",
+    "api_version": "1.0.0",
+    "schema_version": "1.0.0"
+  },
+  "compatibility": {
+    "api_version_match": "EXACT",
+    "schema_version_match": "EXACT",
+    "incompatible_version_status": "BLOCKED",
+    "malformed_json_status": "BLOCKED",
+    "hash_mismatch_status": "BLOCKED",
+    "missing_artifact_status": "NOT_RUN"
+  },
+  "configurations": [
+    {
+      "configuration_id": "CFG-A",
+      "profile_id": "PROFILE-NOMINAL",
+      "artifacts": [
+        {
+          "artifact_id": "REP03-ASSESSMENT-A",
+          "role": "ASSESSMENT_INPUT",
+          "file_name": "artifacts/rep03-assessment-a.json",
+          "media_type": "application/json",
+          "access_status": "AVAILABLE",
+          "sha256": "534167fcc97b8ee402ee340e8a84b492690fa04ac6fb4e99ccb5f60e1987473a"
+        }
+      ],
+      "artifact_gaps": []
+    }
+  ],
+  "claim_limits": [
+    "DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+    "SYNTHETIC_FIXTURES_ONLY",
+    "LIVE_ADAPTERS_NOT_RUN",
+    "NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+    "NO_HARDWARE_COMPLIANCE_CLAIM"
+  ],
+  "input_hash": "fa1aafab30896cdd463e45257d243052fbfd1fc1b46380e32d5aef3b97dc01c6"
+}

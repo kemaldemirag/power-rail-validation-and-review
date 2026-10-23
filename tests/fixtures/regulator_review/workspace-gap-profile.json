@@ -1,0 +1,69 @@
+{
+  "fixture_schema_version": "1.0.0",
+  "base_fixture": "nominal-synthetic.json",
+  "case_id": "CURRENT_WORKSPACE_GAP_PROFILE",
+  "description": "Represents unresolved GAP-02 without inventing source or model hashes; it is not an exact-part candidate record.",
+  "patches": [
+    {
+      "path": ["fixture_scope"],
+      "value": "PROJECT"
+    },
+    {
+      "path": ["review_id"],
+      "value": "RR-WORKSPACE-GAP-02"
+    },
+    {
+      "path": ["regulator", "manufacturer"],
+      "value": "UNSELECTED"
+    },
+    {
+      "path": ["regulator", "part_number"],
+      "value": "UNSELECTED"
+    },
+    {
+      "path": ["sources", 0, "access_status"],
+      "value": "MISSING"
+    },
+    {
+      "path": ["sources", 0, "content_hash"],
+      "value": {"state": "UNKNOWN", "algorithm": "SHA-256", "value": null}
+    },
+    {
+      "path": ["model", "access_status"],
+      "value": "MISSING"
+    },
+    {
+      "path": ["model", "file_hash"],
+      "value": {"state": "UNKNOWN", "algorithm": "SHA-256", "value": null}
+    },
+    {
+      "path": ["analyses", "transient", "execution_status"],
+      "value": "BLOCKED"
+    },
+    {
+      "path": ["analyses", "transient", "result_hash"],
+      "value": {"state": "UNKNOWN", "algorithm": "SHA-256", "value": null}
+    },
+    {
+      "path": ["analyses", "transient", "tool"],
+      "value": {"state": "UNKNOWN", "name": null, "version": null}
+    },
+    {
+      "path": ["analyses", "loop_stability", "execution_status"],
+      "value": "BLOCKED"
+    },
+    {
+      "path": ["analyses", "loop_stability", "result_hash"],
+      "value": {"state": "UNKNOWN", "algorithm": "SHA-256", "value": null}
+    },
+    {
+      "path": ["analyses", "loop_stability", "tool"],
+      "value": {"state": "UNKNOWN", "name": null, "version": null}
+    }
+  ],
+  "expected": {
+    "overall_status": "BLOCKED",
+    "gap": "GAP-02",
+    "hardware_gate": "G1_BLOCKED"
+  }
+}

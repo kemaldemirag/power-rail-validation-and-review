@@ -6,6 +6,7 @@ import math
 import unittest
 from pathlib import Path
 
+from power_rail_validation import __version__ as PACKAGE_VERSION
 from power_rail_validation.contracts import sha256_hexdigest
 from power_rail_validation.fault_injection import (
     ENGINE_VERSION,
@@ -116,7 +117,7 @@ class FaultInjectionTests(unittest.TestCase):
         self.assertEqual(ENGINE_VERSION, result["engine_version"])
         self.assertEqual(RULE_SET_VERSION, result["rule_set_version"])
         self.assertEqual(TOOL_NAME, result["tool_name"])
-        self.assertEqual("0.3.0", result["package_version"])
+        self.assertEqual(PACKAGE_VERSION, result["package_version"])
         self.assertEqual(ENGINE_VERSION, result["versions"]["fault_engine"])
         self.assertEqual(RULE_SET_VERSION, result["versions"]["fault_rule_set"])
         self.assertEqual("REP02-RB-1.0.0", result["versions"]["rail_budget_formula"])

@@ -1,0 +1,592 @@
+{
+  "generated_at": "2026-10-19T23:00:00+03:00",
+  "hash_policy": {
+    "algorithm": "SHA-256",
+    "canonicalization": "REP02_SORTED_MINIFIED_UTF8_JSON",
+    "file_hash_scope": "EXACT_FILE_BYTES",
+    "manifest_hash_scope": "ALL_MANIFEST_FIELDS_EXCEPT_GENERATED_AT_AND_MANIFEST_HASH"
+  },
+  "inputs": [
+    {
+      "id": "INPUT-FAULT-BROWNOUT",
+      "path": "tests/fixtures/fault_injection/brownout.json",
+      "sha256": "5de63e356dbe1372b9175996b8f3f5f827c0d575b62999ed8481153194820c4e",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-FAULT-DELAY",
+      "path": "tests/fixtures/fault_injection/delay.json",
+      "sha256": "d47ca278ec3976e75c85dc7f9da152b8d0b22ceb55ea34e769bd5488af2eec3f",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-FAULT-DURING-RESTART",
+      "path": "tests/fixtures/fault_injection/fault-during-restart.json",
+      "sha256": "70ead664bba544597efc9dcec1ba4a960509c49a4293d33f33c7731102b0a4e9",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-FAULT-RAIL-LOSS",
+      "path": "tests/fixtures/fault_injection/rail-loss.json",
+      "sha256": "d72b550ebf7569166d518268355d6b7642f0e6c136d6ba89d7b06f7760492b55",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-FAULT-RECOVERY-COMBO",
+      "path": "tests/fixtures/fault_injection/recovery-combo.json",
+      "sha256": "b8c9ba538f5484813e8023ffc8af9d178927720b1178d6333009fed77784fec8",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-FAULT-RESTART",
+      "path": "tests/fixtures/fault_injection/restart.json",
+      "sha256": "3070162461a251c6075775e63a3f383b97f6ea90b9ff6f481fe7ab9aecc593a5",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-FAULT-STUCK-LOW",
+      "path": "tests/fixtures/fault_injection/stuck-low.json",
+      "sha256": "fcf5dad61c3d356e464002864f563c46236d55034b8f6a8b017e6025a376b99c",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-FAULT-UNKNOWN-THRESHOLD",
+      "path": "tests/fixtures/fault_injection/unknown-threshold.json",
+      "sha256": "e85ba19f0d224bbd24a423de41c413752101730d0b246a6f989b33bf6d957fc2",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-INTEGRATION-ARTIFACT-CONFIG-A",
+      "path": "tests/fixtures/integration/artifacts/rep01-configuration-a.json",
+      "sha256": "78c1c15075eb79c5089d1aefdef1b3ab0d80f2af9cca7b81e8d60a9e63142887",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-INTEGRATION-ARTIFACT-CONFIG-B",
+      "path": "tests/fixtures/integration/artifacts/rep01-configuration-b.json",
+      "sha256": "d0f7fa42f412eb95cce6c94867586e6ba788c05ba9245adc5bfce4c4f7e993df",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-INTEGRATION-ARTIFACT-PROFILE-COLD",
+      "path": "tests/fixtures/integration/artifacts/rep01-profile-cold.json",
+      "sha256": "46c673f30c0a429efc187784baca46ec0d926882d964130aecebacde798b61e5",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-INTEGRATION-ARTIFACT-PROFILE-NOMINAL",
+      "path": "tests/fixtures/integration/artifacts/rep01-profile-nominal.json",
+      "sha256": "bdb8d84cf056ed0b2e34217dad2d88793e4c0b9e430ce0d95e9873fe50a0a846",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-INTEGRATION-ARTIFACT-REP03-ASSESSMENT-A",
+      "path": "tests/fixtures/integration/artifacts/rep03-assessment-a.json",
+      "sha256": "534167fcc97b8ee402ee340e8a84b492690fa04ac6fb4e99ccb5f60e1987473a",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-INTEGRATION-MALFORMED",
+      "path": "tests/fixtures/integration/malformed.json",
+      "sha256": "897193555d31c9f273be56b760900519686c67ad750e7e6f7febe7da6880b646",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-INTEGRATION-MISSING-ARTIFACT",
+      "path": "tests/fixtures/integration/missing-artifact.json",
+      "sha256": "3dd0ceec353a032a16557907a9f31b94fdc4404c4f5ef6ec84072a462a9222e7",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-INTEGRATION-MULTIPLE-PROFILES",
+      "path": "tests/fixtures/integration/multiple-profiles.json",
+      "sha256": "f92aba540fce4efe4f42e7734c5fb6ebd2f3cda29daa5f6047ee8053ec27526f",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-INTEGRATION-REP03-VALID",
+      "path": "tests/fixtures/integration/rep03-valid.json",
+      "sha256": "e9069cfc35455773018bcc4fd3be25daf98685b40845849432dccec7a26e9de9",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-INTEGRATION-VALID",
+      "path": "tests/fixtures/integration/valid.json",
+      "sha256": "c72e23d47af8231bbfedaecc35d513299c3fab59b5a73287a79773900d8f7140",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-RAIL-BASELINE",
+      "path": "tests/fixtures/rail_budget/nominal.json",
+      "sha256": "f0c471e9dc57eff92cbad41c78e735f541929ce09362fc65adfc1f70514648b9",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-REGULATOR-NEGATIVE",
+      "path": "tests/fixtures/regulator_review/negative-cases.json",
+      "sha256": "d926e0a6abda6296efa7802a456547b351cf94d1f9f5a0c084a87c71b846fc60",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-REGULATOR-NOMINAL",
+      "path": "tests/fixtures/regulator_review/nominal-synthetic.json",
+      "sha256": "f764402187e1efef2b7d828885547191b7f76ff48a76a5a663f91a5cfa31bcb8",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-REGULATOR-TRANSIENT-PRESENT-STABILITY-MISSING",
+      "path": "tests/fixtures/regulator_review/transient-present-stability-missing.json",
+      "sha256": "a65dbb6cc20c8c550201dadaee9a6f0cc6d159c1925e2b1c27c5b49057f4ffc8",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-REGULATOR-WORKSPACE-GAP",
+      "path": "tests/fixtures/regulator_review/workspace-gap-profile.json",
+      "sha256": "75bea4995f4b5e62175ef991bfae0ac85d443304770f57e8bb7d050c60b73cf8",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-SEQUENCING-BASELINE",
+      "path": "tests/fixtures/sequencing/normal.json",
+      "sha256": "2808136b6dfbd80a8c54780c12af5c79d690dc75f522ea999031e98eca63dd34",
+      "version": "fixture-1"
+    },
+    {
+      "id": "INPUT-TEST-CORPUS-1D784336708C2816B9F0",
+      "path": "tests/fixtures/sequencing/missing-pgood.json",
+      "sha256": "cc4784e7a554656b37463641f93864d87de279709ac13196a6f06e03df68b810",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "INPUT-TEST-CORPUS-27076E9D1774E55B8E13",
+      "path": "tests/fixtures/contracts/conflict.json",
+      "sha256": "3db242142f2c0c7c346251fb7ec77a8449f3481b8e1bba8cdc57a8bf62bdcee0",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "INPUT-TEST-CORPUS-2740E720B94ECE9907AA",
+      "path": "tests/fixtures/contracts/unknown-limit.json",
+      "sha256": "f235d4d912ed868b3590f7d5c3817e6b2ae80588296dc4252b43d049f2bfb5de",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "INPUT-TEST-CORPUS-3090A878AC53D586049A",
+      "path": "tests/fixtures/sequencing/wrong-order.json",
+      "sha256": "1261ce0e06c0345ac8248f4455ff3d3c906fde986093ba2bbece074ebf5ac548",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "INPUT-TEST-CORPUS-4C83C20032DAC2C61590",
+      "path": "tests/fixtures/sequencing/unknown-window.json",
+      "sha256": "1371dd1c3200d09314dc6322c3ba0346ca1f25a25153fdf874505e76fab31bef",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "INPUT-TEST-CORPUS-62FE71E87BABEF26FBB9",
+      "path": "tests/fixtures/rail_budget/unknown-limit.json",
+      "sha256": "d391b66062d969c86cce42e35b1f051dc3946f47f3ae11a741cbf3d507832d56",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "INPUT-TEST-CORPUS-72BD1FE62C108182D6FA",
+      "path": "tests/fixtures/sequencing/timeout.json",
+      "sha256": "18282358b11e79ab12ab9b02befc2f62f48abdc9bb9918a595edf2753d0ead54",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "INPUT-TEST-CORPUS-793FD179B525B8DE1807",
+      "path": "tests/fixtures/sequencing/power-off.json",
+      "sha256": "6d5fb893b2163b3b3c1368e3ff5c4ac2f7047ebdddbc94b367bdbc2c13f19ce9",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "INPUT-TEST-CORPUS-9250B18C1F5970E1B94A",
+      "path": "tests/fixtures/contracts/wrong-type.json",
+      "sha256": "476dd2910c99c693e2515ab5a274561a8630912a4f7c32a0e015defe1ba90c1c",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "INPUT-TEST-CORPUS-9F4B9AEE181E744E2AFB",
+      "path": "tests/fixtures/regulator_review/synthetic-transient-result-copy.json",
+      "sha256": "20e63ec3a4662d8511584fa4c5984adaf3d0ad901fc3c6fb8b642c1a3a6d3a11",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "INPUT-TEST-CORPUS-B0A347ACA227D4152D3A",
+      "path": "tests/fixtures/contracts/valid.json",
+      "sha256": "df60d5ee99d224a4ed79fc68e6ac40302751ea78939907112b1ff6df200f7999",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "INPUT-TEST-CORPUS-C58BE268D8C67C8FC874",
+      "path": "tests/fixtures/contracts/missing.json",
+      "sha256": "d80fbdff78f2040e0853a8bff98b90cd728221f9fff521620a9bd7ef71662171",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "INPUT-TEST-CORPUS-CE593BC11471B8E91B5D",
+      "path": "tests/fixtures/rail_budget/blocked-source.json",
+      "sha256": "564b61e2a994c9ed168ce91f3ba372fc52291ecdc02ccf0aac17c63e6307f846",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "INPUT-TEST-CORPUS-ED6E600AAED1CCD6F7AD",
+      "path": "tests/fixtures/contracts/malformed.json",
+      "sha256": "73490a804f1dd03f784b6fc2f58f311074d07daf58f3ecad5c2816be4b757fcf",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "INPUT-TEST-CORPUS-FFCF3DC1CEE864C9340C",
+      "path": "tests/fixtures/sequencing/duplicate-event.json",
+      "sha256": "b61f306bc0ade23c083f6de2abdbb0959a02add6097eb2458ad058a1c5fcb20c",
+      "version": "session-5-byte-bound"
+    }
+  ],
+  "manifest_hash": "dff67ec8137da93d2b9d72a709e7e2761e7d859c6475a406314415992aacadf6",
+  "models": [
+    {
+      "id": "MODEL-REGULATOR-SYNTHETIC",
+      "path": "tests/fixtures/regulator_review/synthetic-model.lib",
+      "sha256": "11ca82cb786083775b9a0157d97911187e9ab8e0bcd65c2ee69acb109da3e4f7",
+      "version": "fixture-model-1.0.0"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "OUTPUT-CLOSEOUT-REPORT-MARKDOWN",
+      "path": "evidence/REP02-D3/report-closeout.md",
+      "sha256": "60cc77aff330f6cc8aaab05af523fce74c31acddba7dd461173784a0d984fc18",
+      "version": "0.1.0"
+    },
+    {
+      "id": "OUTPUT-CLOSEOUT-REPORT-MODEL",
+      "path": "evidence/REP02-D3/report-model-closeout.json",
+      "sha256": "671d45ffbcfe8a8f154276616f017c9a50cf5de9a7ef83339b230c90c89607a4",
+      "version": "1.0.0"
+    },
+    {
+      "id": "OUTPUT-CLOSEOUT-TEST-RESULTS",
+      "path": "evidence/REP02-D3/test-results-closeout.json",
+      "sha256": "d24f5f08fdb254e7f930d6e717f73da228333e1a853493805fd082c99e27e7b0",
+      "version": "1.0.0"
+    },
+    {
+      "id": "OUTPUT-DELIVERY-REPORT-DOCX",
+      "path": "docs/REP02-D3/REP02-D3-regulator-integration-and-closeout.docx",
+      "sha256": "2e3dfcd384baef1509390ab58c081240fad13a65ec1dd14a5ef2e8d75c98f5bc",
+      "version": "1.0.0"
+    },
+    {
+      "id": "OUTPUT-DELIVERY-REPORT-MARKDOWN",
+      "path": "docs/REP02-D3/REP02-D3-regulator-integration-and-closeout.md",
+      "sha256": "09d1a81af45e022362a0306f56555b27aa921ac9c3d05ec9ef6777d88d609bdc",
+      "version": "1.0.0"
+    },
+    {
+      "id": "OUTPUT-FAULT-CAMPAIGN",
+      "path": "evidence/REP02-D3/fault-campaign-results.json",
+      "sha256": "12d8cdfd47a73baa85da73b16bbedb9cd8fea6d5554d7a598782e90772ea4b52",
+      "version": "1.0.0"
+    },
+    {
+      "id": "OUTPUT-INTEGRATION-RESULTS",
+      "path": "evidence/REP02-D3/integration-results.json",
+      "sha256": "c7166929d54c6a459de7936c6e727bc1be9bdb7a7069924c8b69a83b80337546",
+      "version": "1.0.0"
+    },
+    {
+      "id": "OUTPUT-REGULATOR-RESULTS",
+      "path": "evidence/REP02-D3/regulator-review-results.json",
+      "sha256": "4c91ffe74b7bf4898ddebc88a2d3e8fffaca560c705dae37b65abe6ba3658c92",
+      "version": "1.0.0"
+    },
+    {
+      "id": "OUTPUT-SOURCE-MODEL-REGISTER",
+      "path": "evidence/REP02-D3/source-model-provenance-register.json",
+      "sha256": "3538af25df8830d216593a755db1924d014a7470c6e1bc05de1c454bd2d9ec15",
+      "version": "1.0.0"
+    }
+  ],
+  "reporter_version": "0.1.0",
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "id": "SOURCE-FAULT-RULES",
+      "path": "tests/fixtures/fault_injection/synthetic-fault-rules-source.json",
+      "sha256": "34f5582e13ae92bb22656b3ac1ff799cdfbdb9da3f03a35982f9f4fde18026e6",
+      "version": "REP02-FI-RULESET-1.0.0"
+    },
+    {
+      "id": "SOURCE-FILE-API-CONTRACT",
+      "path": "src/power_rail_validation/integration/file_api_contract.json",
+      "sha256": "e1a40ffd49fb126152a89e37e173ca8aeb87c76f9dc6477540a4b0708c2857da",
+      "version": "1.0.0"
+    },
+    {
+      "id": "SOURCE-REGULATOR-DATASHEET",
+      "path": "tests/fixtures/regulator_review/synthetic-exact-part-source.json",
+      "sha256": "cf7bd314b294e8b908142a6b51151133a718b8345449d28118dfffb909137565",
+      "version": "fixture-datasheet-1.0.0"
+    },
+    {
+      "id": "SOURCE-REGULATOR-RAIL-BUDGET",
+      "path": "tests/fixtures/regulator_review/synthetic-rail-budget-source.json",
+      "sha256": "3d3228db3e48958aadf1fc665de93e59aa4454f74401d9841ff84270b5a8f199",
+      "version": "fixture-rail-1.0.0"
+    },
+    {
+      "id": "SOURCE-REGULATOR-RULES",
+      "path": "src/power_rail_validation/regulator_review/review-rules.json",
+      "sha256": "92ab4059050fb5d381fa4b7c7cbf2301212c6956be0255d39f8da15ccb85187b",
+      "version": "REP02-RR-RULESET-1.0.0"
+    },
+    {
+      "id": "SOURCE-REGULATOR-STABILITY",
+      "path": "tests/fixtures/regulator_review/synthetic-stability-result.json",
+      "sha256": "e38be42da25d64da514b9283fcb456e6d8b9d3108b852ace26b0c860c97bd72c",
+      "version": "fixture-stability-1.0.0"
+    },
+    {
+      "id": "SOURCE-REGULATOR-TRANSIENT",
+      "path": "tests/fixtures/regulator_review/synthetic-transient-result.json",
+      "sha256": "20e63ec3a4662d8511584fa4c5984adaf3d0ad901fc3c6fb8b642c1a3a6d3a11",
+      "version": "fixture-transient-1.0.0"
+    },
+    {
+      "id": "SOURCE-SEQUENCING-RULES",
+      "path": "tests/fixtures/sequencing/synthetic-rules-source.json",
+      "sha256": "32ac2ee2f205335d81276f95e57a02f4441228374b826d889acd747a3ccdcae4",
+      "version": "REP02-SEQ-RULESET-1.0.0"
+    }
+  ],
+  "tools": [
+    {
+      "id": "TOOL-CLOSEOUT-FINALIZER",
+      "path": "scripts/finalize_d3_closeout.py",
+      "sha256": "ce74804d8bf3f09c52679d76ede9ebc495e85eed389a36c7a414dc2ce7faa23a",
+      "version": "session-5"
+    },
+    {
+      "id": "TOOL-DOCX-FALLBACK-RENDERER",
+      "path": "scripts/render_docx_fallback_pdf.py",
+      "sha256": "e814105b0e1388c649efbd8b7485bbc422af9bd4406ee111fa919c44a4620efa",
+      "version": "session-5"
+    },
+    {
+      "id": "TOOL-DOCX-RENDERER",
+      "path": "scripts/render_closeout_docx.py",
+      "sha256": "56a8cbea8ea5d6721f7c116fd6bf7fb535e6155860e4ae325e0fac351dd87c9f",
+      "version": "session-5"
+    },
+    {
+      "id": "TOOL-EVIDENCE-GENERATOR",
+      "path": "scripts/generate_d3_closeout.py",
+      "sha256": "ef18e1caab1fb92a9f0c7098e000dee732093838c72a0289f2a7de0dac581689",
+      "version": "session-5"
+    },
+    {
+      "id": "TOOL-FAULT-RUNNER",
+      "path": "src/power_rail_validation/fault_injection/runner.py",
+      "sha256": "e44ac917a40543df8a880b678a3708455a99dfc198318e2c892ac789a360b874",
+      "version": "0.1.0"
+    },
+    {
+      "id": "TOOL-FAULT-TESTS",
+      "path": "tests/test_fault_injection.py",
+      "sha256": "ae93cc5a9486b5084feabc9f0b82efa2888f9cfec7fd8bd29bf2b0531978e143",
+      "version": "session-5"
+    },
+    {
+      "id": "TOOL-FILE-API",
+      "path": "src/power_rail_validation/integration/file_api.py",
+      "sha256": "6f149539dec8ae114073ad8524e8a0afdd2ef933b61f9a072a4bfe1b69514829",
+      "version": "0.1.0"
+    },
+    {
+      "id": "TOOL-INTEGRATION-TESTS",
+      "path": "tests/test_integration.py",
+      "sha256": "026cfa6a92925adbbbd401c1e44ce64e333efb174c3e687610fe42e5c8922dca",
+      "version": "session-5"
+    },
+    {
+      "id": "TOOL-LINE-END-POLICY",
+      "path": ".gitattributes",
+      "sha256": "0b9449944643f26a8bbd7a6bab534d05d283ea827c310c70e4aa437075bd0f4d",
+      "version": "policy-1"
+    },
+    {
+      "id": "TOOL-RAIL-BUDGET",
+      "path": "src/power_rail_validation/rail_budget/calculator.py",
+      "sha256": "f186d87c5f8e3a9f09775247ab7c029919b26fc39ebde64f99b698fef5911254",
+      "version": "REP02-RB-1.0.0"
+    },
+    {
+      "id": "TOOL-REGULATOR-REVIEW",
+      "path": "src/power_rail_validation/regulator_review/reviewer.py",
+      "sha256": "ea0f87c6f4dd783f49e562b708806ebb8803c11f16e54c4a362a743c7c650992",
+      "version": "0.1.0"
+    },
+    {
+      "id": "TOOL-REGULATOR-TESTS",
+      "path": "tests/test_regulator_review.py",
+      "sha256": "9d91d93fa3e1154296055548da194d92e5d1b3b75c0df8c3b6b498499af76c54",
+      "version": "session-5"
+    },
+    {
+      "id": "TOOL-REPORTER",
+      "path": "src/power_rail_validation/reporting/reporter.py",
+      "sha256": "f5deb111c5f424848f9e52d6e9bb92ecbf4ed990e9d857843b959f03ff1a252c",
+      "version": "0.1.0"
+    },
+    {
+      "id": "TOOL-REPORTING-TESTS",
+      "path": "tests/test_reporting.py",
+      "sha256": "28ffb5b83d8d06a19eb0d10ac89afa9e86e686d37aa954254f5870052b1f537f",
+      "version": "session-5"
+    },
+    {
+      "id": "TOOL-SEQUENCING",
+      "path": "src/power_rail_validation/sequencing/evaluator.py",
+      "sha256": "29cc2aa8a4d1fabe112eea79b78231da1c759f5e69e235462147763dba1f645e",
+      "version": "0.3.0"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-038F39464129758F140A",
+      "path": "tests/test_rail_budget.py",
+      "sha256": "a42544f483d5e55c23028d927fe7524d246176e931706d014aba19f22d6fd9e3",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-0CEA2B1BA629AD4744EB",
+      "path": "src/power_rail_validation/contracts/schemas/load.schema.json",
+      "sha256": "7abadca4f7bde68c3d5b9c0084fbcc127740d14669f5b44dcf961e055ee2b800",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-2129C3C14F52A6388C3E",
+      "path": "src/power_rail_validation/regulator_review/__init__.py",
+      "sha256": "d53f9815c347d65fdaa900566898038b244f088d9e3e47aadf883b0eb706d4b2",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-2615879C0AC69360478A",
+      "path": "src/power_rail_validation/contracts/field_dictionary.csv",
+      "sha256": "4e91a8dd1733604823353b857eb80ed211f2551ccc34149635922ae779abdce4",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-4395CCE45AA37C01EDEB",
+      "path": "src/power_rail_validation/contracts/schemas/event.schema.json",
+      "sha256": "77cc37694a7d9cb445f244b2f3f75184a28c658a7b140bd7cd3ba6f162745b52",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-50C86B7ED8AC2CF95BD4",
+      "path": "pyproject.toml",
+      "sha256": "d13f01f309cf9dcd6d5b28f9e9c61cb56661311b9de50562a07e97845eefe0e1",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-577DB892EEC15AC0409F",
+      "path": "src/power_rail_validation/sequencing/__init__.py",
+      "sha256": "e4f673e07f3818323f7e939a605945f3b45549adf5af5ebcd0f1c4ec736e7722",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-715F7D3285DBD1E3A42F",
+      "path": "src/power_rail_validation/contracts/canonical.py",
+      "sha256": "fbc25036e97dae9aac08d3f13e8034e9396f15a880da187701ee627ebb362cd5",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-7353F20F080AFDF22D5A",
+      "path": "tests/test_sequencing.py",
+      "sha256": "e16715f30e81d85d2850d2e62fe1a66c3a0221988cbe5e810288d20283170fba",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-7573865D4DFA38EC5846",
+      "path": "src/power_rail_validation/rail_budget/__init__.py",
+      "sha256": "23f831c736532b928be3cffe833b9cf9a3cfeecc189bc72a1cc30fa7871674a3",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-792854903FF0787CA7A6",
+      "path": "src/power_rail_validation/__init__.py",
+      "sha256": "027e61570b2525e4dbd406097e4d13a05cca6badc9210439a2d7b7c1e1ed9b5b",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-7C740F972E521EE89903",
+      "path": "src/power_rail_validation/contracts/schemas/source.schema.json",
+      "sha256": "c7708c3e5621afce00ace690c32ca18e31c8180c4797168fcec88d90a1ffe4e5",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-8BCA7D0E764CC6A86FD8",
+      "path": "src/power_rail_validation/contracts/schemas/regulator.schema.json",
+      "sha256": "ac12f6e73cd8d5590696ce41d29ab526a3b87b029edb63e7d8e7b00dbc8c6d69",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-9C0E3B07C0955EDC9977",
+      "path": "src/power_rail_validation/integration/__init__.py",
+      "sha256": "e9822250f77d0ddf86c59577a9a6f20c459f5ec54d9b4f83f18dfce1078e0a4c",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-9FBBD750612250C15A57",
+      "path": "src/power_rail_validation/contracts/schemas/rail.schema.json",
+      "sha256": "74ee3aa718adf43d08f439a374adcab990ee2ee896299d9dae21fc1ddf083cb2",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-A722A8FE1BFA4EECAF5C",
+      "path": "src/power_rail_validation/contracts/validation.py",
+      "sha256": "3f3d89151f4a3ed6ba563998b7a340ec6d2dd0416011a2d194096306165e5e8f",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-A8E8B64BE33EE822EC4F",
+      "path": "src/power_rail_validation/contracts/schemas/finding.schema.json",
+      "sha256": "057226c7fccdb939d8b040dc83f7f3807f111b311cca2503e6a0572c77c52ae1",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-B1F529EF12DF5B233D19",
+      "path": "src/power_rail_validation/contracts/contracts.csv",
+      "sha256": "2e19e219b50936ab3c7c36282f1242e4de17ba8bb226edd973bfd13e73d67689",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-BB1DBE1E91DFBF28A303",
+      "path": "tests/test_contracts.py",
+      "sha256": "faadf8db2898c4048cfb1cfacb23b759d2d0c8e1f6fdfa5db8d523dc0b6e3b79",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-D8C41D99F4E0EEDB7727",
+      "path": "src/power_rail_validation/fault_injection/__init__.py",
+      "sha256": "a8f0200940d45dc3099d6e2df5efc7d1c2175fe0b8ee293fbf121f256d1df926",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-E185C59BB30FB887E6C2",
+      "path": "src/power_rail_validation/reporting/__init__.py",
+      "sha256": "757df4721161900d66cbe88b1f8fd01c9112b7f9135deed9070eb8a2203de687",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-E1D5879CE3E222EB0CDD",
+      "path": "src/README.md",
+      "sha256": "24bfa550184b2e2efcd96928e90d0ad0ba4157402c157ee36e2d45a58d16bd85",
+      "version": "session-5-byte-bound"
+    },
+    {
+      "id": "TOOL-TEST-CORPUS-EEAC0FE5C5BA19D3A259",
+      "path": "src/power_rail_validation/contracts/__init__.py",
+      "sha256": "6f9be78a12416d3d96a28c1bb2d8dc1c0cedfcc958e403a819ab6a7609952ce3",
+      "version": "session-5-byte-bound"
+    }
+  ]
+}

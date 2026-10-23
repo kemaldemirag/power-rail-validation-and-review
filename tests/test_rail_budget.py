@@ -89,14 +89,20 @@ class RailBudgetCalculationTests(unittest.TestCase):
             result["source_refs"],
         )
 
-    def test_nominal_evidence_is_exact_current_engine_output(self) -> None:
+    def test_nominal_evidence_preserves_exact_technical_engine_output(self) -> None:
         with NOMINAL_EVIDENCE.open("r", encoding="utf-8") as handle:
             recorded = json.load(handle)
 
-        self.assertEqual(
-            calculate_rail_budget(self.nominal_case["input"]),
-            recorded,
-        )
+        current = calculate_rail_budget(self.nominal_case["input"])
+        self.assertEqual(recorded["package_version"], recorded["tool_version"])
+        self.assertRegex(recorded["package_version"], r"^\d+\.\d+\.\d+$")
+
+        # D2 evidence retains the release identity that produced it.  Later
+        # package releases must remain technically replay-compatible without
+        # rewriting that historical artifact solely to change version text.
+        current["package_version"] = recorded["package_version"]
+        current["tool_version"] = recorded["tool_version"]
+        self.assertEqual(current, recorded)
 
     def test_same_input_is_deterministic_and_not_mutated(self) -> None:
         input_value = self.nominal_case["input"]

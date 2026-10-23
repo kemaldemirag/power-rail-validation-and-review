@@ -8,6 +8,10 @@
 
 `fault_injection` modülü WF-02-04 için brownout, stuck-low, delay, rail-loss ve restart fixture'larını; baseline causality, effect ve recovery kurallarıyla değerlendirir. Analog transient çözmez ve fault olaylarını sequencing olaylarına eklemez.
 
-`reporting` modülü WF-02-06'nın ilk diliminde modül-yerel sonuçları ortak finding modeline bağlar; aynı modelden JSON ve Markdown üretir ve dosya hashli evidence manifest oluşturur. Canlı REP-01/03 adaptörleri uygulanmamıştır.
+`regulator_review` modülü WF-02-05 için VIN, IOUT, sıcaklık ve parça-bağımlı derating kurallarını; absolute-maximum ve recommended-operating sınırlarını ayrı kimliklerle değerlendirir. Exact-part limitlerini ve bölüm göstergesini, rail-budget zarfını, model çalışma sınırlarını ve analiz türü/araç/durum/kayıt-revizyonu alanlarını byte-doğrulanmış artifact içeriğinden ayrıştırılan semantik kayıtlarla bağlar; hareketli sürüm adlarını reddeder, model kimlik başlığı ile dengeli exact-part `.SUBCKT/.ENDS` yapısını denetler ve transient ile loop-stability kanıtlarını ayrı fail-closed kapılarda tutar. Sentetik `PASS`, proje veya donanım onayı değildir.
 
-Regulator review, kalan entegrasyon ve CLI çalışmaları sonraki dilimlerde ele alınır.
+`integration` modülü WF-02-06 için REP-01/REP-03 dosya descriptor'larını sürümlü, kapalı ve byte-exact hash politikasıyla çevrimdışı doğrular. Çoklu configuration/profile, eksik artifact, uyumsuz sürüm ve bozuk JSON sonuçları açık durumlarla kaydedilir. Bu modül canlı adaptör çalıştırmaz.
+
+`reporting` modülü modül-yerel sonuçları ortak finding modeline bağlar; aynı modelden JSON ve Markdown üretir ve dosya hashli evidence manifest oluşturur. Canlı REP-01/03 adaptörleri uygulanmamış ve `NOT_RUN/BLOCKED` durumunda bırakılmıştır.
+
+Paket kökündeki CLI, bu motorları değiştirmeden `validate`, `rail-budget`, `sequence`, `inject-fault`, `review` ve `report` alt komutlarıyla sunar. `contracts/schemas/report-model.schema.json`, ortak rapor modelinin ayrı public sözleşmesidir; D1 `finding` entity şemasına zorla dönüştürülmez. D4 wheel/sdist, clean-install, package-data ve release smoke işleri ayrı scriptlerle doğrulanır.

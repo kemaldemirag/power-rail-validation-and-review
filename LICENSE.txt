@@ -1,0 +1,15 @@
+Copyright (c) 2026. All rights reserved.
+
+This software and its accompanying documentation are proprietary. No
+permission is granted to use, copy, modify, publish, distribute, sublicense,
+or sell any portion of the software without prior written authorization from
+the copyright holder.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING
+FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR ITS USE.
+
+Third-party documents, models, data, and other artifacts retain their
+respective licenses and are not relicensed by this notice.

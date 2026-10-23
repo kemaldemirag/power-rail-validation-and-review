@@ -1,13 +1,29 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "power-rail-validation"
-version = "0.3.0"
-description = "REP-02 deterministic rail-budget, sequencing, fault-injection, and evidence-reporting tools"
+version = "0.5.0"
+description = "REP-02 deterministic power-rail validation, regulator-review, and evidence-integration tools"
+readme = "README.md"
+license = "LicenseRef-Proprietary"
+license-files = ["LICENSE.txt"]
 requires-python = ">=3.9"
 dependencies = []
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+
+[project.scripts]
+power-rail-validation = "power_rail_validation.cli:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
@@ -17,6 +33,8 @@ where = ["src"]
 
 [tool.setuptools.package-data]
 "power_rail_validation.contracts" = ["contracts.csv", "field_dictionary.csv", "schemas/*.schema.json"]
+"power_rail_validation.integration" = ["file_api_contract.json"]
+"power_rail_validation.regulator_review" = ["review-rules.json"]
 
 [tool.unittest]
 start-directory = "tests"

@@ -1,0 +1,9 @@
+{
+  "fixture_notice": "Synthetic recorded result for provenance-path testing; no loop simulation is claimed.",
+  "version": "fixture-stability-1.0.0",
+  "document_revision": "fixture-stability-1.0.0",
+  "analysis_kind": "LOOP_GAIN_AC",
+  "part_number": "RR-TEST-5V",
+  "tool": {"name": "fixture-stability-recorder", "version": "1.0.0"},
+  "status": "PASS"
+}

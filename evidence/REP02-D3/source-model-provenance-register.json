@@ -1,0 +1,157 @@
+{
+  "claim_limits": [
+    "SYNTHETIC_SOURCE_AND_MODEL_BYTES_ONLY",
+    "NO_PROJECT_EXACT_PART_SOURCE_HASH",
+    "NO_PROJECT_EXACT_PART_MODEL_HASH",
+    "NO_G1_TO_G6_HARDWARE_GATE_APPROVAL"
+  ],
+  "gap_status": {
+    "GAP-02": "OPEN",
+    "GAP-03": "OPEN"
+  },
+  "hardware_gate_status": {
+    "G1": "BLOCKED",
+    "G2": "NOT_OPENED",
+    "G3": "NOT_OPENED",
+    "G4": "NOT_OPENED",
+    "G5": "NOT_OPENED",
+    "G6": "NOT_OPENED"
+  },
+  "hash_policy": {
+    "algorithm": "SHA-256",
+    "missing_record_policy": "NO_SYNTHESIZED_PATH_VERSION_OR_HASH",
+    "scope": "EXACT_FILE_BYTES"
+  },
+  "project_requirements": [
+    {
+      "access_status": "MISSING",
+      "gap_id": "GAP-02",
+      "gap_status": "OPEN",
+      "gate_id": "G1",
+      "gate_status": "BLOCKED",
+      "path": null,
+      "reason_code": "EXACT_PART_SOURCE_NOT_PROVIDED",
+      "record_kind": "PROJECT_SOURCE",
+      "requirement_id": "PROJECT-EXACT-PART-REGULATOR-SOURCE",
+      "sha256": null,
+      "version": null
+    },
+    {
+      "access_status": "MISSING",
+      "gap_id": "GAP-02",
+      "gap_status": "OPEN",
+      "gate_id": "G1",
+      "gate_status": "BLOCKED",
+      "path": null,
+      "reason_code": "EXACT_PART_MODEL_NOT_PROVIDED",
+      "record_kind": "PROJECT_MODEL",
+      "requirement_id": "PROJECT-EXACT-PART-REGULATOR-MODEL",
+      "sha256": null,
+      "version": null
+    },
+    {
+      "access_status": "MISSING",
+      "gap_id": "GAP-03",
+      "gap_status": "OPEN",
+      "gate_id": "G1",
+      "gate_status": "BLOCKED",
+      "path": null,
+      "reason_code": "MANUFACTURER_TIMING_SOURCE_NOT_PROVIDED",
+      "record_kind": "PROJECT_SOURCE",
+      "requirement_id": "PROJECT-SEQUENCING-TIMING-SOURCE",
+      "sha256": null,
+      "version": null
+    }
+  ],
+  "reason_code": "PROJECT_SOURCE_AND_MODEL_REQUIREMENTS_OPEN",
+  "register_id": "REP02-D3-SOURCE-MODEL-PROVENANCE",
+  "schema_version": "1.0.0",
+  "status": "BLOCKED",
+  "synthetic_records": [
+    {
+      "access_status": "AVAILABLE",
+      "claim_scope": "SYNTHETIC_FIXTURE_ONLY",
+      "classification": "SOURCE_EXPLICIT",
+      "document_revision": "fixture-datasheet-1.0.0",
+      "hash_verification": "PASS",
+      "license_status": "DECLARED",
+      "manufacturer": "SYNTHETIC-SEMI",
+      "page_section": "sections 1-3",
+      "part_number": "RR-TEST-5V",
+      "path": "tests/fixtures/regulator_review/synthetic-exact-part-source.json",
+      "record_id": "SRC-RR-DATASHEET",
+      "record_kind": "SYNTHETIC_SOURCE",
+      "sha256": "cf7bd314b294e8b908142a6b51151133a718b8345449d28118dfffb909137565",
+      "source_role": "DATASHEET",
+      "version": "fixture-datasheet-1.0.0"
+    },
+    {
+      "access_status": "AVAILABLE",
+      "claim_scope": "SYNTHETIC_FIXTURE_ONLY",
+      "classification": "SOURCE_EXPLICIT",
+      "document_revision": "fixture-model-1.0.0",
+      "hash_verification": "PASS",
+      "license_status": "DECLARED",
+      "manufacturer": "SYNTHETIC-SEMI",
+      "page_section": "model file",
+      "part_number": "RR-TEST-5V",
+      "path": "tests/fixtures/regulator_review/synthetic-model.lib",
+      "record_id": "SRC-RR-MODEL",
+      "record_kind": "SYNTHETIC_MODEL",
+      "sha256": "11ca82cb786083775b9a0157d97911187e9ab8e0bcd65c2ee69acb109da3e4f7",
+      "source_role": "MODEL",
+      "version": "fixture-model-1.0.0"
+    },
+    {
+      "access_status": "AVAILABLE",
+      "claim_scope": "SYNTHETIC_FIXTURE_ONLY",
+      "classification": "SOURCE_EXPLICIT",
+      "document_revision": "fixture-rail-1.0.0",
+      "hash_verification": "PASS",
+      "license_status": "DECLARED",
+      "manufacturer": "SYNTHETIC-SEMI",
+      "page_section": "rail-budget fixture",
+      "part_number": "RR-TEST-5V",
+      "path": "tests/fixtures/regulator_review/synthetic-rail-budget-source.json",
+      "record_id": "SRC-RR-RAIL-FIXTURE",
+      "record_kind": "SYNTHETIC_SOURCE",
+      "sha256": "3d3228db3e48958aadf1fc665de93e59aa4454f74401d9841ff84270b5a8f199",
+      "source_role": "RAIL_BUDGET",
+      "version": "fixture-rail-1.0.0"
+    },
+    {
+      "access_status": "AVAILABLE",
+      "claim_scope": "SYNTHETIC_FIXTURE_ONLY",
+      "classification": "DERIVED",
+      "document_revision": "fixture-stability-1.0.0",
+      "hash_verification": "PASS",
+      "license_status": "DECLARED",
+      "manufacturer": "SYNTHETIC-SEMI",
+      "page_section": "result",
+      "part_number": "RR-TEST-5V",
+      "path": "tests/fixtures/regulator_review/synthetic-stability-result.json",
+      "record_id": "SRC-RR-STABILITY",
+      "record_kind": "SYNTHETIC_RESULT_EVIDENCE",
+      "sha256": "e38be42da25d64da514b9283fcb456e6d8b9d3108b852ace26b0c860c97bd72c",
+      "source_role": "STABILITY_RESULT",
+      "version": "fixture-stability-1.0.0"
+    },
+    {
+      "access_status": "AVAILABLE",
+      "claim_scope": "SYNTHETIC_FIXTURE_ONLY",
+      "classification": "DERIVED",
+      "document_revision": "fixture-transient-1.0.0",
+      "hash_verification": "PASS",
+      "license_status": "DECLARED",
+      "manufacturer": "SYNTHETIC-SEMI",
+      "page_section": "result",
+      "part_number": "RR-TEST-5V",
+      "path": "tests/fixtures/regulator_review/synthetic-transient-result.json",
+      "record_id": "SRC-RR-TRANSIENT",
+      "record_kind": "SYNTHETIC_RESULT_EVIDENCE",
+      "sha256": "20e63ec3a4662d8511584fa4c5984adaf3d0ad901fc3c6fb8b642c1a3a6d3a11",
+      "source_role": "TRANSIENT_RESULT",
+      "version": "fixture-transient-1.0.0"
+    }
+  ]
+}

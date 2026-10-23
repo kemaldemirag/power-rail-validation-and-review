@@ -1,0 +1,5 @@
+* SYNTHETIC fixture model - not a manufacturer model and not for circuit design
+* part: RR-TEST-5V; version: fixture-model-1.0.0
+.SUBCKT RR_TEST_5V VIN VOUT GND
+R_FIXTURE VIN VOUT 1000000
+.ENDS RR_TEST_5V

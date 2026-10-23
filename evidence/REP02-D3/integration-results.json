@@ -1,0 +1,909 @@
+{
+  "api_version": "1.0.0",
+  "case_count": 7,
+  "cases": [
+    {
+      "case_id": "REP01_VALID",
+      "expectation_match": true,
+      "fixture": "tests/fixtures/integration/valid.json",
+      "technical_result": {
+        "adapter_results": [
+          {
+            "adapter_id": "REP-01",
+            "reason_code": "LIVE_ADAPTER_NOT_EXECUTED",
+            "status": "NOT_RUN"
+          },
+          {
+            "adapter_id": "REP-03",
+            "reason_code": "LIVE_ADAPTER_NOT_EXECUTED",
+            "status": "NOT_RUN"
+          }
+        ],
+        "api_version": "1.0.0",
+        "artifact_gaps": [],
+        "artifact_results": [
+          {
+            "access_status": "AVAILABLE",
+            "artifact_id": "REP01-CONFIG-A",
+            "expected_sha256": "78c1c15075eb79c5089d1aefdef1b3ab0d80f2af9cca7b81e8d60a9e63142887",
+            "file_name": "artifacts/rep01-configuration-a.json",
+            "media_type": "application/json",
+            "observed_sha256": "78c1c15075eb79c5089d1aefdef1b3ab0d80f2af9cca7b81e8d60a9e63142887",
+            "reason_code": "ARTIFACT_BYTES_VERIFIED",
+            "role": "CONFIGURATION_INPUT",
+            "status": "PASS"
+          },
+          {
+            "access_status": "AVAILABLE",
+            "artifact_id": "REP01-PROFILE-NOMINAL",
+            "expected_sha256": "bdb8d84cf056ed0b2e34217dad2d88793e4c0b9e430ce0d95e9873fe50a0a846",
+            "file_name": "artifacts/rep01-profile-nominal.json",
+            "media_type": "application/json",
+            "observed_sha256": "bdb8d84cf056ed0b2e34217dad2d88793e4c0b9e430ce0d95e9873fe50a0a846",
+            "reason_code": "ARTIFACT_BYTES_VERIFIED",
+            "role": "PROFILE_INPUT",
+            "status": "PASS"
+          }
+        ],
+        "claim_limits": [
+          "DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+          "SYNTHETIC_FIXTURES_ONLY",
+          "LIVE_ADAPTERS_NOT_RUN",
+          "NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+          "NO_HARDWARE_COMPLIANCE_CLAIM"
+        ],
+        "compatibility_policy": {
+          "api_version_match": "EXACT",
+          "hash_mismatch_status": "BLOCKED",
+          "incompatible_version_status": "BLOCKED",
+          "malformed_json_status": "BLOCKED",
+          "missing_artifact_status": "NOT_RUN",
+          "schema_version_match": "EXACT"
+        },
+        "descriptor_identity": {
+          "configuration_profile_count": 1,
+          "consumer": "REP-02",
+          "descriptor_id": "SYNTH-REP01-HANDOFF-001",
+          "producer": "REP-01"
+        },
+        "input_binding": {
+          "algorithm": "SHA-256",
+          "kind": "CANONICAL_DESCRIPTOR_FIELDS_EXCLUDING_INPUT_HASH"
+        },
+        "input_hash": "f738678d80ef5bb6bd4a4c054e7429eccfee5fce44d594d685091d9f721b3b94",
+        "issues": [],
+        "limitations": [
+          "OFFLINE_DESCRIPTOR_CONTRACT_ONLY",
+          "LIVE_REP01_ADAPTER_NOT_EXECUTED",
+          "LIVE_REP03_ADAPTER_NOT_EXECUTED",
+          "NO_CROSS_REPOSITORY_IMPORT_OR_MUTATION",
+          "ARRAY_ORDER_IS_INPUT_HASH_SIGNIFICANT",
+          "NO_SEMANTIC_ENVELOPE_MAPPING_CLAIM",
+          "ARTIFACT_MEDIA_TYPE_DECLARATION_NOT_CONTENT_SNIFFED",
+          "NO_HARDWARE_OR_PHYSICAL_VALIDATION",
+          "CLAIM_LIMIT:DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+          "CLAIM_LIMIT:SYNTHETIC_FIXTURES_ONLY",
+          "CLAIM_LIMIT:LIVE_ADAPTERS_NOT_RUN",
+          "CLAIM_LIMIT:NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+          "CLAIM_LIMIT:NO_HARDWARE_COMPLIANCE_CLAIM"
+        ],
+        "package_version": "0.4.0",
+        "reason_code": "FILE_API_DESCRIPTOR_VALID",
+        "rule_id": "REP02.INTEGRATION.FILE_API",
+        "schema_version": "1.0.0",
+        "source_refs": [
+          {
+            "content_hash": "e1a40ffd49fb126152a89e37e173ca8aeb87c76f9dc6477540a4b0708c2857da",
+            "source_id": "REP02-FILE-API-CONTRACT",
+            "version": "1.0.0"
+          }
+        ],
+        "sources": [
+          {
+            "content_hash": "e1a40ffd49fb126152a89e37e173ca8aeb87c76f9dc6477540a4b0708c2857da",
+            "source_id": "REP02-FILE-API-CONTRACT",
+            "version": "1.0.0"
+          }
+        ],
+        "status": "PASS",
+        "tool_name": "power-rail-file-api-validator",
+        "tool_version": "0.1.0"
+      },
+      "verification": {
+        "expected_status": "PASS",
+        "observed_reason_codes": [],
+        "observed_status": "PASS",
+        "required_reason_codes": [],
+        "required_reason_codes_present": true,
+        "status_match": true
+      }
+    },
+    {
+      "case_id": "REP03_VALID",
+      "expectation_match": true,
+      "fixture": "tests/fixtures/integration/rep03-valid.json",
+      "technical_result": {
+        "adapter_results": [
+          {
+            "adapter_id": "REP-01",
+            "reason_code": "LIVE_ADAPTER_NOT_EXECUTED",
+            "status": "NOT_RUN"
+          },
+          {
+            "adapter_id": "REP-03",
+            "reason_code": "LIVE_ADAPTER_NOT_EXECUTED",
+            "status": "NOT_RUN"
+          }
+        ],
+        "api_version": "1.0.0",
+        "artifact_gaps": [],
+        "artifact_results": [
+          {
+            "access_status": "AVAILABLE",
+            "artifact_id": "REP03-ASSESSMENT-A",
+            "expected_sha256": "534167fcc97b8ee402ee340e8a84b492690fa04ac6fb4e99ccb5f60e1987473a",
+            "file_name": "artifacts/rep03-assessment-a.json",
+            "media_type": "application/json",
+            "observed_sha256": "534167fcc97b8ee402ee340e8a84b492690fa04ac6fb4e99ccb5f60e1987473a",
+            "reason_code": "ARTIFACT_BYTES_VERIFIED",
+            "role": "ASSESSMENT_INPUT",
+            "status": "PASS"
+          }
+        ],
+        "claim_limits": [
+          "DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+          "SYNTHETIC_FIXTURES_ONLY",
+          "LIVE_ADAPTERS_NOT_RUN",
+          "NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+          "NO_HARDWARE_COMPLIANCE_CLAIM"
+        ],
+        "compatibility_policy": {
+          "api_version_match": "EXACT",
+          "hash_mismatch_status": "BLOCKED",
+          "incompatible_version_status": "BLOCKED",
+          "malformed_json_status": "BLOCKED",
+          "missing_artifact_status": "NOT_RUN",
+          "schema_version_match": "EXACT"
+        },
+        "descriptor_identity": {
+          "configuration_profile_count": 1,
+          "consumer": "REP-02",
+          "descriptor_id": "SYNTH-REP03-HANDOFF-001",
+          "producer": "REP-03"
+        },
+        "input_binding": {
+          "algorithm": "SHA-256",
+          "kind": "CANONICAL_DESCRIPTOR_FIELDS_EXCLUDING_INPUT_HASH"
+        },
+        "input_hash": "fa1aafab30896cdd463e45257d243052fbfd1fc1b46380e32d5aef3b97dc01c6",
+        "issues": [],
+        "limitations": [
+          "OFFLINE_DESCRIPTOR_CONTRACT_ONLY",
+          "LIVE_REP01_ADAPTER_NOT_EXECUTED",
+          "LIVE_REP03_ADAPTER_NOT_EXECUTED",
+          "NO_CROSS_REPOSITORY_IMPORT_OR_MUTATION",
+          "ARRAY_ORDER_IS_INPUT_HASH_SIGNIFICANT",
+          "NO_SEMANTIC_ENVELOPE_MAPPING_CLAIM",
+          "ARTIFACT_MEDIA_TYPE_DECLARATION_NOT_CONTENT_SNIFFED",
+          "NO_HARDWARE_OR_PHYSICAL_VALIDATION",
+          "CLAIM_LIMIT:DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+          "CLAIM_LIMIT:SYNTHETIC_FIXTURES_ONLY",
+          "CLAIM_LIMIT:LIVE_ADAPTERS_NOT_RUN",
+          "CLAIM_LIMIT:NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+          "CLAIM_LIMIT:NO_HARDWARE_COMPLIANCE_CLAIM"
+        ],
+        "package_version": "0.4.0",
+        "reason_code": "FILE_API_DESCRIPTOR_VALID",
+        "rule_id": "REP02.INTEGRATION.FILE_API",
+        "schema_version": "1.0.0",
+        "source_refs": [
+          {
+            "content_hash": "e1a40ffd49fb126152a89e37e173ca8aeb87c76f9dc6477540a4b0708c2857da",
+            "source_id": "REP02-FILE-API-CONTRACT",
+            "version": "1.0.0"
+          }
+        ],
+        "sources": [
+          {
+            "content_hash": "e1a40ffd49fb126152a89e37e173ca8aeb87c76f9dc6477540a4b0708c2857da",
+            "source_id": "REP02-FILE-API-CONTRACT",
+            "version": "1.0.0"
+          }
+        ],
+        "status": "PASS",
+        "tool_name": "power-rail-file-api-validator",
+        "tool_version": "0.1.0"
+      },
+      "verification": {
+        "expected_status": "PASS",
+        "observed_reason_codes": [],
+        "observed_status": "PASS",
+        "required_reason_codes": [],
+        "required_reason_codes_present": true,
+        "status_match": true
+      }
+    },
+    {
+      "case_id": "MULTIPLE_PROFILES",
+      "expectation_match": true,
+      "fixture": "tests/fixtures/integration/multiple-profiles.json",
+      "technical_result": {
+        "adapter_results": [
+          {
+            "adapter_id": "REP-01",
+            "reason_code": "LIVE_ADAPTER_NOT_EXECUTED",
+            "status": "NOT_RUN"
+          },
+          {
+            "adapter_id": "REP-03",
+            "reason_code": "LIVE_ADAPTER_NOT_EXECUTED",
+            "status": "NOT_RUN"
+          }
+        ],
+        "api_version": "1.0.0",
+        "artifact_gaps": [],
+        "artifact_results": [
+          {
+            "access_status": "AVAILABLE",
+            "artifact_id": "CONFIG-B-NOMINAL",
+            "expected_sha256": "d0f7fa42f412eb95cce6c94867586e6ba788c05ba9245adc5bfce4c4f7e993df",
+            "file_name": "artifacts/rep01-configuration-b.json",
+            "media_type": "application/json",
+            "observed_sha256": "d0f7fa42f412eb95cce6c94867586e6ba788c05ba9245adc5bfce4c4f7e993df",
+            "reason_code": "ARTIFACT_BYTES_VERIFIED",
+            "role": "CONFIGURATION_INPUT",
+            "status": "PASS"
+          },
+          {
+            "access_status": "AVAILABLE",
+            "artifact_id": "PROFILE-A-COLD",
+            "expected_sha256": "46c673f30c0a429efc187784baca46ec0d926882d964130aecebacde798b61e5",
+            "file_name": "artifacts/rep01-profile-cold.json",
+            "media_type": "application/json",
+            "observed_sha256": "46c673f30c0a429efc187784baca46ec0d926882d964130aecebacde798b61e5",
+            "reason_code": "ARTIFACT_BYTES_VERIFIED",
+            "role": "PROFILE_INPUT",
+            "status": "PASS"
+          },
+          {
+            "access_status": "AVAILABLE",
+            "artifact_id": "PROFILE-A-NOMINAL",
+            "expected_sha256": "bdb8d84cf056ed0b2e34217dad2d88793e4c0b9e430ce0d95e9873fe50a0a846",
+            "file_name": "artifacts/rep01-profile-nominal.json",
+            "media_type": "application/json",
+            "observed_sha256": "bdb8d84cf056ed0b2e34217dad2d88793e4c0b9e430ce0d95e9873fe50a0a846",
+            "reason_code": "ARTIFACT_BYTES_VERIFIED",
+            "role": "PROFILE_INPUT",
+            "status": "PASS"
+          }
+        ],
+        "claim_limits": [
+          "DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+          "SYNTHETIC_FIXTURES_ONLY",
+          "LIVE_ADAPTERS_NOT_RUN",
+          "NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+          "NO_HARDWARE_COMPLIANCE_CLAIM"
+        ],
+        "compatibility_policy": {
+          "api_version_match": "EXACT",
+          "hash_mismatch_status": "BLOCKED",
+          "incompatible_version_status": "BLOCKED",
+          "malformed_json_status": "BLOCKED",
+          "missing_artifact_status": "NOT_RUN",
+          "schema_version_match": "EXACT"
+        },
+        "descriptor_identity": {
+          "configuration_profile_count": 3,
+          "consumer": "REP-02",
+          "descriptor_id": "SYNTH-REP01-HANDOFF-MULTI",
+          "producer": "REP-01"
+        },
+        "input_binding": {
+          "algorithm": "SHA-256",
+          "kind": "CANONICAL_DESCRIPTOR_FIELDS_EXCLUDING_INPUT_HASH"
+        },
+        "input_hash": "2e14df1813bba52c259368a250c5e4d33b5978a10fcc265cd40eca1716388fe5",
+        "issues": [],
+        "limitations": [
+          "OFFLINE_DESCRIPTOR_CONTRACT_ONLY",
+          "LIVE_REP01_ADAPTER_NOT_EXECUTED",
+          "LIVE_REP03_ADAPTER_NOT_EXECUTED",
+          "NO_CROSS_REPOSITORY_IMPORT_OR_MUTATION",
+          "ARRAY_ORDER_IS_INPUT_HASH_SIGNIFICANT",
+          "NO_SEMANTIC_ENVELOPE_MAPPING_CLAIM",
+          "ARTIFACT_MEDIA_TYPE_DECLARATION_NOT_CONTENT_SNIFFED",
+          "NO_HARDWARE_OR_PHYSICAL_VALIDATION",
+          "CLAIM_LIMIT:DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+          "CLAIM_LIMIT:SYNTHETIC_FIXTURES_ONLY",
+          "CLAIM_LIMIT:LIVE_ADAPTERS_NOT_RUN",
+          "CLAIM_LIMIT:NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+          "CLAIM_LIMIT:NO_HARDWARE_COMPLIANCE_CLAIM"
+        ],
+        "package_version": "0.4.0",
+        "reason_code": "FILE_API_DESCRIPTOR_VALID",
+        "rule_id": "REP02.INTEGRATION.FILE_API",
+        "schema_version": "1.0.0",
+        "source_refs": [
+          {
+            "content_hash": "e1a40ffd49fb126152a89e37e173ca8aeb87c76f9dc6477540a4b0708c2857da",
+            "source_id": "REP02-FILE-API-CONTRACT",
+            "version": "1.0.0"
+          }
+        ],
+        "sources": [
+          {
+            "content_hash": "e1a40ffd49fb126152a89e37e173ca8aeb87c76f9dc6477540a4b0708c2857da",
+            "source_id": "REP02-FILE-API-CONTRACT",
+            "version": "1.0.0"
+          }
+        ],
+        "status": "PASS",
+        "tool_name": "power-rail-file-api-validator",
+        "tool_version": "0.1.0"
+      },
+      "verification": {
+        "expected_status": "PASS",
+        "observed_reason_codes": [],
+        "observed_status": "PASS",
+        "required_reason_codes": [],
+        "required_reason_codes_present": true,
+        "status_match": true
+      }
+    },
+    {
+      "case_id": "MISSING_ARTIFACT",
+      "expectation_match": true,
+      "fixture": "tests/fixtures/integration/missing-artifact.json",
+      "technical_result": {
+        "adapter_results": [
+          {
+            "adapter_id": "REP-01",
+            "reason_code": "LIVE_ADAPTER_NOT_EXECUTED",
+            "status": "NOT_RUN"
+          },
+          {
+            "adapter_id": "REP-03",
+            "reason_code": "LIVE_ADAPTER_NOT_EXECUTED",
+            "status": "NOT_RUN"
+          }
+        ],
+        "api_version": "1.0.0",
+        "artifact_gaps": [
+          {
+            "access_status": "MISSING",
+            "artifact_id": "REP01-SOURCE-MISSING",
+            "file_name": "external/rep01-source-bundle.json",
+            "media_type": "application/json",
+            "reason_code": "EXTERNAL_SOURCE_NOT_PROVIDED",
+            "role": "SOURCE_INPUT"
+          },
+          {
+            "access_status": "MISSING",
+            "artifact_id": "REP03-ASSESSMENT-MISSING",
+            "file_name": "external/rep03-assessment.json",
+            "media_type": "application/json",
+            "reason_code": "EXTERNAL_ARTIFACT_NOT_PROVIDED",
+            "role": "ASSESSMENT_INPUT"
+          }
+        ],
+        "artifact_results": [
+          {
+            "access_status": "AVAILABLE",
+            "artifact_id": "REP01-CONFIG-A",
+            "expected_sha256": "78c1c15075eb79c5089d1aefdef1b3ab0d80f2af9cca7b81e8d60a9e63142887",
+            "file_name": "artifacts/rep01-configuration-a.json",
+            "media_type": "application/json",
+            "observed_sha256": "78c1c15075eb79c5089d1aefdef1b3ab0d80f2af9cca7b81e8d60a9e63142887",
+            "reason_code": "ARTIFACT_BYTES_VERIFIED",
+            "role": "CONFIGURATION_INPUT",
+            "status": "PASS"
+          }
+        ],
+        "claim_limits": [
+          "DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+          "SYNTHETIC_FIXTURES_ONLY",
+          "LIVE_ADAPTERS_NOT_RUN",
+          "NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+          "NO_HARDWARE_COMPLIANCE_CLAIM"
+        ],
+        "compatibility_policy": {
+          "api_version_match": "EXACT",
+          "hash_mismatch_status": "BLOCKED",
+          "incompatible_version_status": "BLOCKED",
+          "malformed_json_status": "BLOCKED",
+          "missing_artifact_status": "NOT_RUN",
+          "schema_version_match": "EXACT"
+        },
+        "descriptor_identity": {
+          "configuration_profile_count": 1,
+          "consumer": "REP-02",
+          "descriptor_id": "SYNTH-REP01-HANDOFF-GAP",
+          "producer": "REP-01"
+        },
+        "input_binding": {
+          "algorithm": "SHA-256",
+          "kind": "CANONICAL_DESCRIPTOR_FIELDS_EXCLUDING_INPUT_HASH"
+        },
+        "input_hash": "76fc12e9c61bc049ca202764ee5e99adbb0da1db8bfe198861360ececf28edbb",
+        "issues": [
+          {
+            "finding_id": "INT-0001",
+            "message": "external artifact is explicitly unavailable; no content hash was synthesized",
+            "path": "$.configurations[0].artifact_gaps[0]",
+            "reason_code": "EXTERNAL_ARTIFACT_NOT_PROVIDED",
+            "rule_id": "REP02.INTEGRATION.FILE_API",
+            "source_refs": [
+              "REP02-FILE-API-CONTRACT"
+            ],
+            "status": "NOT_RUN"
+          },
+          {
+            "finding_id": "INT-0002",
+            "message": "external artifact is explicitly unavailable; no content hash was synthesized",
+            "path": "$.configurations[0].artifact_gaps[1]",
+            "reason_code": "EXTERNAL_SOURCE_NOT_PROVIDED",
+            "rule_id": "REP02.INTEGRATION.FILE_API",
+            "source_refs": [
+              "REP02-FILE-API-CONTRACT"
+            ],
+            "status": "NOT_RUN"
+          }
+        ],
+        "limitations": [
+          "OFFLINE_DESCRIPTOR_CONTRACT_ONLY",
+          "LIVE_REP01_ADAPTER_NOT_EXECUTED",
+          "LIVE_REP03_ADAPTER_NOT_EXECUTED",
+          "NO_CROSS_REPOSITORY_IMPORT_OR_MUTATION",
+          "ARRAY_ORDER_IS_INPUT_HASH_SIGNIFICANT",
+          "NO_SEMANTIC_ENVELOPE_MAPPING_CLAIM",
+          "ARTIFACT_MEDIA_TYPE_DECLARATION_NOT_CONTENT_SNIFFED",
+          "NO_HARDWARE_OR_PHYSICAL_VALIDATION",
+          "CLAIM_LIMIT:DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+          "CLAIM_LIMIT:SYNTHETIC_FIXTURES_ONLY",
+          "CLAIM_LIMIT:LIVE_ADAPTERS_NOT_RUN",
+          "CLAIM_LIMIT:NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+          "CLAIM_LIMIT:NO_HARDWARE_COMPLIANCE_CLAIM"
+        ],
+        "package_version": "0.4.0",
+        "reason_code": "EXTERNAL_ARTIFACT_NOT_PROVIDED",
+        "rule_id": "REP02.INTEGRATION.FILE_API",
+        "schema_version": "1.0.0",
+        "source_refs": [
+          {
+            "content_hash": "e1a40ffd49fb126152a89e37e173ca8aeb87c76f9dc6477540a4b0708c2857da",
+            "source_id": "REP02-FILE-API-CONTRACT",
+            "version": "1.0.0"
+          }
+        ],
+        "sources": [
+          {
+            "content_hash": "e1a40ffd49fb126152a89e37e173ca8aeb87c76f9dc6477540a4b0708c2857da",
+            "source_id": "REP02-FILE-API-CONTRACT",
+            "version": "1.0.0"
+          }
+        ],
+        "status": "NOT_RUN",
+        "tool_name": "power-rail-file-api-validator",
+        "tool_version": "0.1.0"
+      },
+      "verification": {
+        "expected_status": "NOT_RUN",
+        "observed_reason_codes": [
+          "EXTERNAL_ARTIFACT_NOT_PROVIDED",
+          "EXTERNAL_SOURCE_NOT_PROVIDED"
+        ],
+        "observed_status": "NOT_RUN",
+        "required_reason_codes": [
+          "EXTERNAL_ARTIFACT_NOT_PROVIDED",
+          "EXTERNAL_SOURCE_NOT_PROVIDED"
+        ],
+        "required_reason_codes_present": true,
+        "status_match": true
+      }
+    },
+    {
+      "case_id": "INCOMPATIBLE_API",
+      "expectation_match": true,
+      "fixture": "tests/fixtures/integration/valid.json#api_version=2.0.0;input_hash=rebound",
+      "technical_result": {
+        "adapter_results": [
+          {
+            "adapter_id": "REP-01",
+            "reason_code": "DESCRIPTOR_VALIDATION_BLOCKED",
+            "status": "BLOCKED"
+          },
+          {
+            "adapter_id": "REP-03",
+            "reason_code": "DESCRIPTOR_VALIDATION_BLOCKED",
+            "status": "BLOCKED"
+          }
+        ],
+        "api_version": "1.0.0",
+        "artifact_gaps": [],
+        "artifact_results": [
+          {
+            "access_status": "AVAILABLE",
+            "artifact_id": "REP01-CONFIG-A",
+            "expected_sha256": "78c1c15075eb79c5089d1aefdef1b3ab0d80f2af9cca7b81e8d60a9e63142887",
+            "file_name": "artifacts/rep01-configuration-a.json",
+            "media_type": "application/json",
+            "observed_sha256": "78c1c15075eb79c5089d1aefdef1b3ab0d80f2af9cca7b81e8d60a9e63142887",
+            "reason_code": "ARTIFACT_BYTES_VERIFIED",
+            "role": "CONFIGURATION_INPUT",
+            "status": "PASS"
+          },
+          {
+            "access_status": "AVAILABLE",
+            "artifact_id": "REP01-PROFILE-NOMINAL",
+            "expected_sha256": "bdb8d84cf056ed0b2e34217dad2d88793e4c0b9e430ce0d95e9873fe50a0a846",
+            "file_name": "artifacts/rep01-profile-nominal.json",
+            "media_type": "application/json",
+            "observed_sha256": "bdb8d84cf056ed0b2e34217dad2d88793e4c0b9e430ce0d95e9873fe50a0a846",
+            "reason_code": "ARTIFACT_BYTES_VERIFIED",
+            "role": "PROFILE_INPUT",
+            "status": "PASS"
+          }
+        ],
+        "claim_limits": [
+          "DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+          "SYNTHETIC_FIXTURES_ONLY",
+          "LIVE_ADAPTERS_NOT_RUN",
+          "NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+          "NO_HARDWARE_COMPLIANCE_CLAIM"
+        ],
+        "compatibility_policy": {
+          "api_version_match": "EXACT",
+          "hash_mismatch_status": "BLOCKED",
+          "incompatible_version_status": "BLOCKED",
+          "malformed_json_status": "BLOCKED",
+          "missing_artifact_status": "NOT_RUN",
+          "schema_version_match": "EXACT"
+        },
+        "descriptor_identity": {
+          "configuration_profile_count": 1,
+          "consumer": "REP-02",
+          "descriptor_id": "SYNTH-REP01-HANDOFF-001",
+          "producer": "REP-01"
+        },
+        "input_binding": {
+          "algorithm": "SHA-256",
+          "kind": "CANONICAL_DESCRIPTOR_FIELDS_EXCLUDING_INPUT_HASH"
+        },
+        "input_hash": "a38d04364317a376d9a254ac44225b68ea16e4349fe2bca229b775956791bb81",
+        "issues": [
+          {
+            "finding_id": "INT-0001",
+            "message": "only '1.0.0' is compatible with this validator",
+            "path": "$.api_version",
+            "reason_code": "API_VERSION_INCOMPATIBLE",
+            "rule_id": "REP02.INTEGRATION.FILE_API",
+            "source_refs": [
+              "REP02-FILE-API-CONTRACT"
+            ],
+            "status": "BLOCKED"
+          }
+        ],
+        "limitations": [
+          "OFFLINE_DESCRIPTOR_CONTRACT_ONLY",
+          "LIVE_REP01_ADAPTER_NOT_EXECUTED",
+          "LIVE_REP03_ADAPTER_NOT_EXECUTED",
+          "NO_CROSS_REPOSITORY_IMPORT_OR_MUTATION",
+          "ARRAY_ORDER_IS_INPUT_HASH_SIGNIFICANT",
+          "NO_SEMANTIC_ENVELOPE_MAPPING_CLAIM",
+          "ARTIFACT_MEDIA_TYPE_DECLARATION_NOT_CONTENT_SNIFFED",
+          "NO_HARDWARE_OR_PHYSICAL_VALIDATION",
+          "CLAIM_LIMIT:DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+          "CLAIM_LIMIT:SYNTHETIC_FIXTURES_ONLY",
+          "CLAIM_LIMIT:LIVE_ADAPTERS_NOT_RUN",
+          "CLAIM_LIMIT:NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+          "CLAIM_LIMIT:NO_HARDWARE_COMPLIANCE_CLAIM"
+        ],
+        "package_version": "0.4.0",
+        "reason_code": "API_VERSION_INCOMPATIBLE",
+        "rule_id": "REP02.INTEGRATION.FILE_API",
+        "schema_version": "1.0.0",
+        "source_refs": [
+          {
+            "content_hash": "e1a40ffd49fb126152a89e37e173ca8aeb87c76f9dc6477540a4b0708c2857da",
+            "source_id": "REP02-FILE-API-CONTRACT",
+            "version": "1.0.0"
+          }
+        ],
+        "sources": [
+          {
+            "content_hash": "e1a40ffd49fb126152a89e37e173ca8aeb87c76f9dc6477540a4b0708c2857da",
+            "source_id": "REP02-FILE-API-CONTRACT",
+            "version": "1.0.0"
+          }
+        ],
+        "status": "BLOCKED",
+        "tool_name": "power-rail-file-api-validator",
+        "tool_version": "0.1.0"
+      },
+      "verification": {
+        "expected_status": "BLOCKED",
+        "observed_reason_codes": [
+          "API_VERSION_INCOMPATIBLE"
+        ],
+        "observed_status": "BLOCKED",
+        "required_reason_codes": [
+          "API_VERSION_INCOMPATIBLE"
+        ],
+        "required_reason_codes_present": true,
+        "status_match": true
+      }
+    },
+    {
+      "case_id": "INCOMPATIBLE_SCHEMA",
+      "expectation_match": true,
+      "fixture": "tests/fixtures/integration/valid.json#schema_version=2.0.0;input_hash=rebound",
+      "technical_result": {
+        "adapter_results": [
+          {
+            "adapter_id": "REP-01",
+            "reason_code": "DESCRIPTOR_VALIDATION_BLOCKED",
+            "status": "BLOCKED"
+          },
+          {
+            "adapter_id": "REP-03",
+            "reason_code": "DESCRIPTOR_VALIDATION_BLOCKED",
+            "status": "BLOCKED"
+          }
+        ],
+        "api_version": "1.0.0",
+        "artifact_gaps": [],
+        "artifact_results": [
+          {
+            "access_status": "AVAILABLE",
+            "artifact_id": "REP01-CONFIG-A",
+            "expected_sha256": "78c1c15075eb79c5089d1aefdef1b3ab0d80f2af9cca7b81e8d60a9e63142887",
+            "file_name": "artifacts/rep01-configuration-a.json",
+            "media_type": "application/json",
+            "observed_sha256": "78c1c15075eb79c5089d1aefdef1b3ab0d80f2af9cca7b81e8d60a9e63142887",
+            "reason_code": "ARTIFACT_BYTES_VERIFIED",
+            "role": "CONFIGURATION_INPUT",
+            "status": "PASS"
+          },
+          {
+            "access_status": "AVAILABLE",
+            "artifact_id": "REP01-PROFILE-NOMINAL",
+            "expected_sha256": "bdb8d84cf056ed0b2e34217dad2d88793e4c0b9e430ce0d95e9873fe50a0a846",
+            "file_name": "artifacts/rep01-profile-nominal.json",
+            "media_type": "application/json",
+            "observed_sha256": "bdb8d84cf056ed0b2e34217dad2d88793e4c0b9e430ce0d95e9873fe50a0a846",
+            "reason_code": "ARTIFACT_BYTES_VERIFIED",
+            "role": "PROFILE_INPUT",
+            "status": "PASS"
+          }
+        ],
+        "claim_limits": [
+          "DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+          "SYNTHETIC_FIXTURES_ONLY",
+          "LIVE_ADAPTERS_NOT_RUN",
+          "NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+          "NO_HARDWARE_COMPLIANCE_CLAIM"
+        ],
+        "compatibility_policy": {
+          "api_version_match": "EXACT",
+          "hash_mismatch_status": "BLOCKED",
+          "incompatible_version_status": "BLOCKED",
+          "malformed_json_status": "BLOCKED",
+          "missing_artifact_status": "NOT_RUN",
+          "schema_version_match": "EXACT"
+        },
+        "descriptor_identity": {
+          "configuration_profile_count": 1,
+          "consumer": "REP-02",
+          "descriptor_id": "SYNTH-REP01-HANDOFF-001",
+          "producer": "REP-01"
+        },
+        "input_binding": {
+          "algorithm": "SHA-256",
+          "kind": "CANONICAL_DESCRIPTOR_FIELDS_EXCLUDING_INPUT_HASH"
+        },
+        "input_hash": "218283ce6d01cda9f446f66165f02e0a142cc1e4b562ada7c4f42a9ad0c26cab",
+        "issues": [
+          {
+            "finding_id": "INT-0001",
+            "message": "only '1.0.0' is compatible with this validator",
+            "path": "$.schema_version",
+            "reason_code": "SCHEMA_VERSION_INCOMPATIBLE",
+            "rule_id": "REP02.INTEGRATION.FILE_API",
+            "source_refs": [
+              "REP02-FILE-API-CONTRACT"
+            ],
+            "status": "BLOCKED"
+          }
+        ],
+        "limitations": [
+          "OFFLINE_DESCRIPTOR_CONTRACT_ONLY",
+          "LIVE_REP01_ADAPTER_NOT_EXECUTED",
+          "LIVE_REP03_ADAPTER_NOT_EXECUTED",
+          "NO_CROSS_REPOSITORY_IMPORT_OR_MUTATION",
+          "ARRAY_ORDER_IS_INPUT_HASH_SIGNIFICANT",
+          "NO_SEMANTIC_ENVELOPE_MAPPING_CLAIM",
+          "ARTIFACT_MEDIA_TYPE_DECLARATION_NOT_CONTENT_SNIFFED",
+          "NO_HARDWARE_OR_PHYSICAL_VALIDATION",
+          "CLAIM_LIMIT:DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+          "CLAIM_LIMIT:SYNTHETIC_FIXTURES_ONLY",
+          "CLAIM_LIMIT:LIVE_ADAPTERS_NOT_RUN",
+          "CLAIM_LIMIT:NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+          "CLAIM_LIMIT:NO_HARDWARE_COMPLIANCE_CLAIM"
+        ],
+        "package_version": "0.4.0",
+        "reason_code": "SCHEMA_VERSION_INCOMPATIBLE",
+        "rule_id": "REP02.INTEGRATION.FILE_API",
+        "schema_version": "1.0.0",
+        "source_refs": [
+          {
+            "content_hash": "e1a40ffd49fb126152a89e37e173ca8aeb87c76f9dc6477540a4b0708c2857da",
+            "source_id": "REP02-FILE-API-CONTRACT",
+            "version": "1.0.0"
+          }
+        ],
+        "sources": [
+          {
+            "content_hash": "e1a40ffd49fb126152a89e37e173ca8aeb87c76f9dc6477540a4b0708c2857da",
+            "source_id": "REP02-FILE-API-CONTRACT",
+            "version": "1.0.0"
+          }
+        ],
+        "status": "BLOCKED",
+        "tool_name": "power-rail-file-api-validator",
+        "tool_version": "0.1.0"
+      },
+      "verification": {
+        "expected_status": "BLOCKED",
+        "observed_reason_codes": [
+          "SCHEMA_VERSION_INCOMPATIBLE"
+        ],
+        "observed_status": "BLOCKED",
+        "required_reason_codes": [
+          "SCHEMA_VERSION_INCOMPATIBLE"
+        ],
+        "required_reason_codes_present": true,
+        "status_match": true
+      }
+    },
+    {
+      "case_id": "MALFORMED_JSON",
+      "expectation_match": true,
+      "fixture": "tests/fixtures/integration/malformed.json",
+      "technical_result": {
+        "adapter_results": [
+          {
+            "adapter_id": "REP-01",
+            "reason_code": "DESCRIPTOR_VALIDATION_BLOCKED",
+            "status": "BLOCKED"
+          },
+          {
+            "adapter_id": "REP-03",
+            "reason_code": "DESCRIPTOR_VALIDATION_BLOCKED",
+            "status": "BLOCKED"
+          }
+        ],
+        "api_version": "1.0.0",
+        "artifact_gaps": [],
+        "artifact_results": [],
+        "claim_limits": [
+          "DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+          "SYNTHETIC_FIXTURES_ONLY",
+          "LIVE_ADAPTERS_NOT_RUN",
+          "NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+          "NO_HARDWARE_COMPLIANCE_CLAIM"
+        ],
+        "compatibility_policy": {
+          "api_version_match": "EXACT",
+          "hash_mismatch_status": "BLOCKED",
+          "incompatible_version_status": "BLOCKED",
+          "malformed_json_status": "BLOCKED",
+          "missing_artifact_status": "NOT_RUN",
+          "schema_version_match": "EXACT"
+        },
+        "descriptor_identity": {
+          "configuration_profile_count": 0,
+          "consumer": null,
+          "descriptor_id": null,
+          "producer": null
+        },
+        "input_binding": {
+          "algorithm": "SHA-256",
+          "binding_version": "REP02-FILE-LOAD-ERROR-1.0.0",
+          "descriptor_file_name": "malformed.json",
+          "kind": "CANONICAL_LOAD_ERROR_ENVELOPE",
+          "raw_file_access_status": "AVAILABLE",
+          "raw_file_sha256": "897193555d31c9f273be56b760900519686c67ad750e7e6f7febe7da6880b646",
+          "reason_code": "MALFORMED_JSON"
+        },
+        "input_hash": "c9f7cf33384b79dac760c2308eff6438bfbf76f0028118af8b0dfb44de905cc2",
+        "issues": [
+          {
+            "finding_id": "INT-0001",
+            "message": "descriptor file is malformed JSON",
+            "path": "$",
+            "reason_code": "MALFORMED_JSON",
+            "rule_id": "REP02.INTEGRATION.FILE_API",
+            "source_refs": [
+              "REP02-FILE-API-CONTRACT"
+            ],
+            "status": "BLOCKED"
+          }
+        ],
+        "limitations": [
+          "OFFLINE_DESCRIPTOR_CONTRACT_ONLY",
+          "LIVE_REP01_ADAPTER_NOT_EXECUTED",
+          "LIVE_REP03_ADAPTER_NOT_EXECUTED",
+          "NO_CROSS_REPOSITORY_IMPORT_OR_MUTATION",
+          "ARRAY_ORDER_IS_INPUT_HASH_SIGNIFICANT",
+          "NO_SEMANTIC_ENVELOPE_MAPPING_CLAIM",
+          "ARTIFACT_MEDIA_TYPE_DECLARATION_NOT_CONTENT_SNIFFED",
+          "NO_HARDWARE_OR_PHYSICAL_VALIDATION",
+          "CLAIM_LIMIT:DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+          "CLAIM_LIMIT:SYNTHETIC_FIXTURES_ONLY",
+          "CLAIM_LIMIT:LIVE_ADAPTERS_NOT_RUN",
+          "CLAIM_LIMIT:NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+          "CLAIM_LIMIT:NO_HARDWARE_COMPLIANCE_CLAIM"
+        ],
+        "package_version": "0.4.0",
+        "reason_code": "MALFORMED_JSON",
+        "rule_id": "REP02.INTEGRATION.FILE_API",
+        "schema_version": "1.0.0",
+        "source_refs": [
+          {
+            "content_hash": "e1a40ffd49fb126152a89e37e173ca8aeb87c76f9dc6477540a4b0708c2857da",
+            "source_id": "REP02-FILE-API-CONTRACT",
+            "version": "1.0.0"
+          }
+        ],
+        "sources": [
+          {
+            "content_hash": "e1a40ffd49fb126152a89e37e173ca8aeb87c76f9dc6477540a4b0708c2857da",
+            "source_id": "REP02-FILE-API-CONTRACT",
+            "version": "1.0.0"
+          }
+        ],
+        "status": "BLOCKED",
+        "tool_name": "power-rail-file-api-validator",
+        "tool_version": "0.1.0"
+      },
+      "verification": {
+        "expected_status": "BLOCKED",
+        "observed_reason_codes": [
+          "MALFORMED_JSON"
+        ],
+        "observed_status": "BLOCKED",
+        "required_reason_codes": [
+          "MALFORMED_JSON"
+        ],
+        "required_reason_codes_present": true,
+        "status_match": true
+      }
+    }
+  ],
+  "claim_limits": [
+    "DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+    "SYNTHETIC_FIXTURES_ONLY",
+    "LIVE_ADAPTERS_NOT_RUN",
+    "NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+    "NO_HARDWARE_COMPLIANCE_CLAIM"
+  ],
+  "descriptor_schema_version": "1.0.0",
+  "engine_version": "0.1.0",
+  "expectation_policy": "Fixture expectation matching is verification metadata and never changes the technical result status.",
+  "package_version": "0.4.0",
+  "schema_version": "1.0.0",
+  "scope_status": {
+    "REP-01_LIVE_ADAPTER": "NOT_RUN",
+    "REP-03_LIVE_ADAPTER": "NOT_RUN",
+    "WF-02-06_OFFLINE_FILE_API": "IMPLEMENTED_SYNTHETIC"
+  },
+  "suite_id": "REP02-D3-WF-02-06-OFFLINE-INTEGRATION-CLOSEOUT",
+  "technical_status_counts": {
+    "BLOCKED": 3,
+    "FAIL": 0,
+    "NOT_RUN": 1,
+    "PASS": 3,
+    "UNKNOWN": 0
+  },
+  "verification_status": "PASS"
+}

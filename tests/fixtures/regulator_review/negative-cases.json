@@ -1,0 +1,54 @@
+{
+  "fixture_schema_version": "1.0.0",
+  "base_fixture": "nominal-synthetic.json",
+  "cases": [
+    {
+      "case_id": "VIN_RECOMMENDED_FAIL_ABS_PASS",
+      "path": ["operating_point", "input_voltage"],
+      "value": {"state": "KNOWN", "value": 40, "unit": "V"},
+      "expected_status": "FAIL",
+      "expected_rule": "REP02.REGULATOR.VIN.RECOMMENDED_OPERATING",
+      "expected_reason": "RECOMMENDED_RANGE_EXCEEDED"
+    },
+    {
+      "case_id": "MISSING_TEMPERATURE",
+      "path": ["operating_point", "ambient_temperature"],
+      "value": {"state": "UNKNOWN", "value": null, "unit": "degC"},
+      "expected_status": "UNKNOWN",
+      "expected_rule": "REP02.REGULATOR.TEMPERATURE.RECOMMENDED_OPERATING",
+      "expected_reason": "OPERATING_VALUE_UNKNOWN"
+    },
+    {
+      "case_id": "CONFLICTING_EXACT_SOURCE",
+      "path": ["sources", 0, "classification"],
+      "value": "CONFLICT",
+      "expected_status": "BLOCKED",
+      "expected_rule": "REP02.REGULATOR.SOURCE.EXACT_PART",
+      "expected_reason": "SOURCE_CONFLICT"
+    },
+    {
+      "case_id": "MODEL_MISSING",
+      "path": ["model", "access_status"],
+      "value": "MISSING",
+      "expected_status": "BLOCKED",
+      "expected_rule": "REP02.REGULATOR.MODEL.PROVENANCE",
+      "expected_reason": "MODEL_MISSING"
+    },
+    {
+      "case_id": "MODEL_OUT_OF_BOUNDS",
+      "path": ["model", "validity_bounds", "input_voltage_max", "value"],
+      "value": 10,
+      "expected_status": "FAIL",
+      "expected_rule": "REP02.REGULATOR.MODEL.APPLICABILITY",
+      "expected_reason": "MODEL_OUT_OF_BOUNDS"
+    },
+    {
+      "case_id": "TRANSIENT_IS_NOT_STABILITY",
+      "path": ["analyses", "loop_stability", "evidence_kind"],
+      "value": "TIME_DOMAIN_TRANSIENT",
+      "expected_status": "BLOCKED",
+      "expected_rule": "REP02.REGULATOR.LOOP_STABILITY.EVIDENCE",
+      "expected_reason": "TRANSIENT_NOT_STABILITY_EVIDENCE"
+    }
+  ]
+}

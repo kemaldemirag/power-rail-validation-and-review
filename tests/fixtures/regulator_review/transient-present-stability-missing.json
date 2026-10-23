@@ -1,0 +1,33 @@
+{
+  "fixture_schema_version": "1.0.0",
+  "base_fixture": "nominal-synthetic.json",
+  "case_id": "TRANSIENT_PRESENT_STABILITY_MISSING",
+  "patches": [
+    {
+      "path": ["sources", 3, "access_status"],
+      "value": "MISSING"
+    },
+    {
+      "path": ["sources", 3, "content_hash"],
+      "value": {"state": "UNKNOWN", "algorithm": "SHA-256", "value": null}
+    },
+    {
+      "path": ["analyses", "loop_stability", "execution_status"],
+      "value": "BLOCKED"
+    },
+    {
+      "path": ["analyses", "loop_stability", "result_hash"],
+      "value": {"state": "UNKNOWN", "algorithm": "SHA-256", "value": null}
+    },
+    {
+      "path": ["analyses", "loop_stability", "tool"],
+      "value": {"state": "UNKNOWN", "name": null, "version": null}
+    }
+  ],
+  "expected": {
+    "overall_status": "BLOCKED",
+    "transient_status": "PASS",
+    "stability_status": "BLOCKED",
+    "stability_reason": "STABILITY_EVIDENCE_MISSING"
+  }
+}

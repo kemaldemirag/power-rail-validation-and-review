@@ -1,0 +1,5 @@
+{
+  "configuration_id": "CFG-A",
+  "rail_ids": ["VIN", "V3V3"],
+  "synthetic": true
+}

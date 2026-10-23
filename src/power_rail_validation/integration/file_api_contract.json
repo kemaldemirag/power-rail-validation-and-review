@@ -1,0 +1,52 @@
+{
+  "contract_id": "REP02-FILE-API-CONTRACT",
+  "api_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "descriptor_type": "REP02_OFFLINE_FILE_API_DESCRIPTOR",
+  "supported_directions": [
+    "REP-01_TO_REP-02",
+    "REP-03_TO_REP-02"
+  ],
+  "identity": {
+    "configuration_profile_pair": "UNIQUE",
+    "artifact_id": "GLOBALLY_UNIQUE",
+    "file_name": "GLOBALLY_UNIQUE_CASE_INSENSITIVE"
+  },
+  "hash_policy": {
+    "algorithm": "SHA-256",
+    "artifact_scope": "EXACT_FILE_BYTES",
+    "descriptor_canonicalization": "UTF-8_SORTED_KEYS_MINIFIED_JSON_NONFINITE_REJECTED",
+    "descriptor_scope": "ALL_DESCRIPTOR_FIELDS_EXCEPT_INPUT_HASH",
+    "load_error_binding_version": "REP02-FILE-LOAD-ERROR-1.0.0",
+    "load_error_scope": "CANONICAL_ERROR_ENVELOPE_WITH_RAW_FILE_SHA256_WHEN_AVAILABLE",
+    "array_order": "SIGNIFICANT"
+  },
+  "path_policy": "RELATIVE_POSIX_NO_EMPTY_DOT_DOTDOT_BACKSLASH_DRIVE_OR_URI",
+  "availability_policy": {
+    "available_record": "ARTIFACTS_WITH_EXACT_SHA256",
+    "unavailable_record": "ARTIFACT_GAPS_WITHOUT_SHA256"
+  },
+  "compatibility_policy": {
+    "api_version_match": "EXACT",
+    "schema_version_match": "EXACT",
+    "incompatible_version_status": "BLOCKED",
+    "malformed_json_status": "BLOCKED",
+    "hash_mismatch_status": "BLOCKED",
+    "missing_artifact_status": "NOT_RUN"
+  },
+  "live_adapter_policy": {
+    "execution": "OUT_OF_SCOPE",
+    "allowed_statuses": [
+      "NOT_RUN",
+      "BLOCKED"
+    ],
+    "pass_forbidden": true
+  },
+  "claim_limits": [
+    "DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+    "SYNTHETIC_FIXTURES_ONLY",
+    "LIVE_ADAPTERS_NOT_RUN",
+    "NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+    "NO_HARDWARE_COMPLIANCE_CLAIM"
+  ]
+}

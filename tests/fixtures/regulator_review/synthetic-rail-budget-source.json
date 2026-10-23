@@ -1,0 +1,18 @@
+{
+  "fixture_notice": "Synthetic rail and load values for rail-budget integration testing only.",
+  "manufacturer": "SYNTHETIC-SEMI",
+  "part_number": "RR-TEST-5V",
+  "version": "fixture-rail-1.0.0",
+  "rail_id": "VDD_5V",
+  "regulator_id": "REG-TEST-5V",
+  "nominal_voltage_V": 5,
+  "voltage_limits_V": [4.75, 5.25],
+  "loads_A": {
+    "LOAD-MCU": {"rail_id": "VDD_5V", "Imin": 0.1, "Ityp": 0.2, "Imax": 0.4, "backfeed_permitted": false},
+    "LOAD-IO": {"rail_id": "VDD_5V", "Imin": 0.05, "Ityp": 0.1, "Imax": 0.2, "backfeed_permitted": false}
+  },
+  "rated_current_A": 3,
+  "current_limit_A": 2.5,
+  "derating_factor": 0.8,
+  "efficiency_factor": 0.8
+}

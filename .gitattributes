@@ -1,0 +1,9 @@
+# Keep byte-exact evidence and package-owned contracts stable on every platform.
+*.csv text eol=lf
+*.json text eol=lf
+*.lib text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.toml text eol=lf
+*.docx binary
+*.pdf binary

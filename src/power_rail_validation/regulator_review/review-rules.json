@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "source_id": "REP02-RR-RULES",
+  "rule_set_version": "REP02-RR-RULESET-1.0.0",
+  "title": "REP-02 WF-02-05 fail-closed regulator review rules",
+  "rules": [
+    {
+      "rule_id": "REP02.REGULATOR.REVIEW",
+      "decision": "The aggregate regulator-review result uses the declared fail-closed status precedence and never implies project, hardware, or release approval."
+    },
+    {
+      "rule_id": "REP02.REGULATOR.REVIEW.INPUT",
+      "decision": "The complete versioned review envelope, external artifact root, and finite JSON result must validate without silent defaults or unverified aliases."
+    },
+    {
+      "rule_id": "REP02.REGULATOR.RAIL_BUDGET.BASELINE",
+      "decision": "The public rail-budget engine is recomputed from the embedded input and its status is preserved without promotion."
+    },
+    {
+      "rule_id": "REP02.REGULATOR.RAIL_BUDGET.BINDING",
+      "decision": "The rail-budget regulator and rail identifiers must exactly match the reviewed regulator and output rail."
+    },
+    {
+      "rule_id": "REP02.REGULATOR.OUTPUT_VOLTAGE.BINDING",
+      "decision": "The reviewed output voltage and bound rail nominal voltage must both be KNOWN and compare exactly as Decimal values."
+    },
+    {
+      "rule_id": "REP02.REGULATOR.RAIL_BUDGET.SOURCE_BINDING",
+      "decision": "Every source used by the nested rail-budget input must match a byte-verified outer dependency record by source id, version, locator, access state, classification, and SHA-256."
+    },
+    {
+      "rule_id": "REP02.REGULATOR.SOURCE.EXACT_PART",
+      "decision": "An exact-part decision requires an AVAILABLE, pinned, byte-verified and SHA-256-bound SOURCE_EXPLICIT manufacturer source whose manufacturer and part number match the review subject."
+    },
+    {
+      "rule_id": "REP02.REGULATOR.VIN.ABSOLUTE_MAXIMUM",
+      "decision": "Known input voltage must not exceed the sourced absolute maximum; this result is not a recommended-operating decision."
+    },
+    {
+      "rule_id": "REP02.REGULATOR.VIN.RECOMMENDED_OPERATING",
+      "decision": "Known input voltage must be inside the sourced closed recommended-operating interval."
+    },
+    {
+      "rule_id": "REP02.REGULATOR.IOUT.ABSOLUTE_MAXIMUM",
+      "decision": "The recomputed rail-budget worst-case output current must not exceed the sourced absolute maximum."
+    },
+    {
+      "rule_id": "REP02.REGULATOR.IOUT.RECOMMENDED_OPERATING",
+      "decision": "The recomputed rail-budget worst-case output current must not exceed the sourced recommended-operating limit."
+    },
+    {
+      "rule_id": "REP02.REGULATOR.TEMPERATURE.ABSOLUTE_MAXIMUM",
+      "decision": "A known junction temperature must not exceed the sourced absolute maximum; ambient temperature is not silently substituted."
+    },
+    {
+      "rule_id": "REP02.REGULATOR.TEMPERATURE.RECOMMENDED_OPERATING",
+      "decision": "Known ambient temperature must be inside the sourced closed recommended-operating interval."
+    },
+    {
+      "rule_id": "REP02.REGULATOR.IOUT.DERATING",
+      "decision": "Worst-case output current must not exceed the piecewise-linear sourced derating limit at the known ambient temperature; every declared curve point must be known and valid."
+    },
+    {
+      "rule_id": "REP02.REGULATOR.MODEL.PROVENANCE",
+      "decision": "A usable model must be AVAILABLE, exact-part matched, manufacturer-origin, licensed, byte-verified, SHA-256-bound, pinned, and have a version exactly matching its source version and document revision."
+    },
+    {
+      "rule_id": "REP02.REGULATOR.MODEL.APPLICABILITY",
+      "decision": "The exact operating point must be inside every declared model validity bound before model-dependent evidence can be accepted."
+    },
+    {
+      "rule_id": "REP02.REGULATOR.TRANSIENT.EVIDENCE",
+      "decision": "A transient record is assessed only for execution and provenance completeness and never serves as loop-stability evidence."
+    },
+    {
+      "rule_id": "REP02.REGULATOR.LOOP_STABILITY.EVIDENCE",
+      "decision": "Loop-stability evidence requires a distinct AC loop-gain or phase-and-gain-margin record with usable model provenance; it must not share the transient record's locator or exact bytes."
+    }
+  ],
+  "status_precedence": ["BLOCKED", "FAIL", "UNKNOWN", "NOT_RUN", "PASS"],
+  "claim_limits": [
+    "STATIC_AND_RECORDED_EVIDENCE_REVIEW_ONLY",
+    "TRANSIENT_EVIDENCE_IS_NOT_LOOP_STABILITY_EVIDENCE",
+    "NO_PHYSICAL_THERMAL_EMC_ISO_AEC_OR_FIELD_VALIDATION"
+  ]
+}

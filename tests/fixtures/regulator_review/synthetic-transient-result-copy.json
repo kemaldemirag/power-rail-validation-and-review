@@ -1,0 +1,9 @@
+{
+  "fixture_notice": "Synthetic recorded result for provenance-path testing; no SPICE execution is claimed.",
+  "version": "fixture-transient-1.0.0",
+  "document_revision": "fixture-transient-1.0.0",
+  "analysis_kind": "TIME_DOMAIN_TRANSIENT",
+  "part_number": "RR-TEST-5V",
+  "tool": {"name": "fixture-transient-recorder", "version": "1.0.0"},
+  "status": "PASS"
+}

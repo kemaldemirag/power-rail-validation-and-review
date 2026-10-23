@@ -1,0 +1,263 @@
+{
+  "schema_version": "1.0.0",
+  "review_id": "RR-SYNTHETIC-NOMINAL",
+  "fixture_scope": "SYNTHETIC",
+  "regulator": {
+    "regulator_id": "REG-TEST-5V",
+    "manufacturer": "SYNTHETIC-SEMI",
+    "part_number": "RR-TEST-5V",
+    "topology": "BUCK",
+    "output_rail_id": "VDD_5V",
+    "source_refs": ["SRC-RR-DATASHEET"]
+  },
+  "operating_point": {
+    "input_voltage": {"state": "KNOWN", "value": 12, "unit": "V"},
+    "output_voltage": {"state": "KNOWN", "value": 5, "unit": "V"},
+    "ambient_temperature": {"state": "KNOWN", "value": 60, "unit": "degC"},
+    "junction_temperature": {"state": "KNOWN", "value": 90, "unit": "degC"}
+  },
+  "rail_budget_input": {
+    "schema_version": "1.0.0",
+    "rail": {
+      "schema_version": "1.0.0",
+      "entity_type": "rail",
+      "rail_id": "VDD_5V",
+      "nominal_voltage": {"state": "KNOWN", "value": 5, "unit": "V"},
+      "voltage_limits": {
+        "minimum": {"state": "KNOWN", "value": 4.75, "unit": "V"},
+        "maximum": {"state": "KNOWN", "value": 5.25, "unit": "V"}
+      },
+      "provenance": "SOURCE_EXPLICIT",
+      "source_refs": ["SRC-RR-DATASHEET", "SRC-RR-RAIL-FIXTURE"]
+    },
+    "loads": [
+      {
+        "load_id": "LOAD-MCU",
+        "rail_id": "VDD_5V",
+        "currents": {
+          "Imin": {"state": "KNOWN", "value": 0.1, "unit": "A"},
+          "Ityp": {"state": "KNOWN", "value": 0.2, "unit": "A"},
+          "Imax": {"state": "KNOWN", "value": 0.4, "unit": "A"}
+        },
+        "backfeed_permitted": false,
+        "provenance": "SOURCE_EXPLICIT",
+        "source_refs": ["SRC-RR-RAIL-FIXTURE"]
+      },
+      {
+        "load_id": "LOAD-IO",
+        "rail_id": "VDD_5V",
+        "currents": {
+          "Imin": {"state": "KNOWN", "value": 0.05, "unit": "A"},
+          "Ityp": {"state": "KNOWN", "value": 0.1, "unit": "A"},
+          "Imax": {"state": "KNOWN", "value": 0.2, "unit": "A"}
+        },
+        "backfeed_permitted": false,
+        "provenance": "SOURCE_EXPLICIT",
+        "source_refs": ["SRC-RR-RAIL-FIXTURE"]
+      }
+    ],
+    "capacity": {
+      "regulator_id": "REG-TEST-5V",
+      "rail_id": "VDD_5V",
+      "rated_current": {"state": "KNOWN", "value": 3, "unit": "A"},
+      "current_limit": {"state": "KNOWN", "value": 2.5, "unit": "A"},
+      "provenance": "SOURCE_EXPLICIT",
+      "source_refs": ["SRC-RR-DATASHEET", "SRC-RR-RAIL-FIXTURE"]
+    },
+    "derating": {
+      "factor": {"state": "KNOWN", "value": 0.8, "unit": "1"},
+      "provenance": "SOURCE_EXPLICIT",
+      "source_refs": ["SRC-RR-DATASHEET", "SRC-RR-RAIL-FIXTURE"]
+    },
+    "efficiency": {
+      "factor": {"state": "KNOWN", "value": 0.8, "unit": "1"},
+      "provenance": "SOURCE_EXPLICIT",
+      "source_refs": ["SRC-RR-DATASHEET", "SRC-RR-RAIL-FIXTURE"]
+    },
+    "sources": [
+      {
+        "schema_version": "1.0.0",
+        "entity_type": "source",
+        "source_id": "SRC-RR-DATASHEET",
+        "classification": "SOURCE_EXPLICIT",
+        "title": "Synthetic exact-part source",
+        "version": "fixture-datasheet-1.0.0",
+        "locator": "tests/fixtures/regulator_review/synthetic-exact-part-source.json",
+        "access_status": "AVAILABLE",
+        "content_hash": {"state": "KNOWN", "algorithm": "SHA-256", "value": "cf7bd314b294e8b908142a6b51151133a718b8345449d28118dfffb909137565"}
+      },
+      {
+        "schema_version": "1.0.0",
+        "entity_type": "source",
+        "source_id": "SRC-RR-RAIL-FIXTURE",
+        "classification": "SOURCE_EXPLICIT",
+        "title": "Synthetic rail-budget source",
+        "version": "fixture-rail-1.0.0",
+        "locator": "tests/fixtures/regulator_review/synthetic-rail-budget-source.json",
+        "access_status": "AVAILABLE",
+        "content_hash": {"state": "KNOWN", "algorithm": "SHA-256", "value": "3d3228db3e48958aadf1fc665de93e59aa4454f74401d9841ff84270b5a8f199"}
+      }
+    ]
+  },
+  "limits": {
+    "absolute_maximum": {
+      "input_voltage_max": {"state": "KNOWN", "value": 42, "unit": "V"},
+      "output_current_max": {"state": "KNOWN", "value": 3, "unit": "A"},
+      "junction_temperature_max": {"state": "KNOWN", "value": 150, "unit": "degC"},
+      "source_refs": ["SRC-RR-DATASHEET"]
+    },
+    "recommended_operating": {
+      "input_voltage_min": {"state": "KNOWN", "value": 4.5, "unit": "V"},
+      "input_voltage_max": {"state": "KNOWN", "value": 36, "unit": "V"},
+      "output_current_max": {"state": "KNOWN", "value": 2, "unit": "A"},
+      "ambient_temperature_min": {"state": "KNOWN", "value": -40, "unit": "degC"},
+      "ambient_temperature_max": {"state": "KNOWN", "value": 85, "unit": "degC"},
+      "source_refs": ["SRC-RR-DATASHEET"]
+    },
+    "derating": {
+      "interpolation": "PIECEWISE_LINEAR_CLOSED",
+      "points": [
+        {
+          "ambient_temperature": {"state": "KNOWN", "value": -40, "unit": "degC"},
+          "maximum_output_current": {"state": "KNOWN", "value": 2, "unit": "A"}
+        },
+        {
+          "ambient_temperature": {"state": "KNOWN", "value": 25, "unit": "degC"},
+          "maximum_output_current": {"state": "KNOWN", "value": 2, "unit": "A"}
+        },
+        {
+          "ambient_temperature": {"state": "KNOWN", "value": 85, "unit": "degC"},
+          "maximum_output_current": {"state": "KNOWN", "value": 1.2, "unit": "A"}
+        }
+      ],
+      "source_refs": ["SRC-RR-DATASHEET"]
+    }
+  },
+  "sources": [
+    {
+      "schema_version": "1.0.0",
+      "entity_type": "source",
+      "source_id": "SRC-RR-DATASHEET",
+      "classification": "SOURCE_EXPLICIT",
+      "title": "Synthetic exact-part source",
+      "version": "fixture-datasheet-1.0.0",
+      "locator": "tests/fixtures/regulator_review/synthetic-exact-part-source.json",
+      "access_status": "AVAILABLE",
+      "content_hash": {"state": "KNOWN", "algorithm": "SHA-256", "value": "cf7bd314b294e8b908142a6b51151133a718b8345449d28118dfffb909137565"},
+      "source_role": "DATASHEET",
+      "publisher_type": "MANUFACTURER",
+      "manufacturer": "SYNTHETIC-SEMI",
+      "part_number": "RR-TEST-5V",
+      "document_revision": "fixture-datasheet-1.0.0",
+      "page_section": "sections 1-3",
+      "license_status": "DECLARED"
+    },
+    {
+      "schema_version": "1.0.0",
+      "entity_type": "source",
+      "source_id": "SRC-RR-MODEL",
+      "classification": "SOURCE_EXPLICIT",
+      "title": "Synthetic model provenance fixture",
+      "version": "fixture-model-1.0.0",
+      "locator": "tests/fixtures/regulator_review/synthetic-model.lib",
+      "access_status": "AVAILABLE",
+      "content_hash": {"state": "KNOWN", "algorithm": "SHA-256", "value": "11ca82cb786083775b9a0157d97911187e9ab8e0bcd65c2ee69acb109da3e4f7"},
+      "source_role": "MODEL",
+      "publisher_type": "MANUFACTURER",
+      "manufacturer": "SYNTHETIC-SEMI",
+      "part_number": "RR-TEST-5V",
+      "document_revision": "fixture-model-1.0.0",
+      "page_section": "model file",
+      "license_status": "DECLARED"
+    },
+    {
+      "schema_version": "1.0.0",
+      "entity_type": "source",
+      "source_id": "SRC-RR-TRANSIENT",
+      "classification": "DERIVED",
+      "title": "Synthetic transient result record",
+      "version": "fixture-transient-1.0.0",
+      "locator": "tests/fixtures/regulator_review/synthetic-transient-result.json",
+      "access_status": "AVAILABLE",
+      "content_hash": {"state": "KNOWN", "algorithm": "SHA-256", "value": "20e63ec3a4662d8511584fa4c5984adaf3d0ad901fc3c6fb8b642c1a3a6d3a11"},
+      "source_role": "TRANSIENT_RESULT",
+      "publisher_type": "INTERNAL_TOOL",
+      "manufacturer": "SYNTHETIC-SEMI",
+      "part_number": "RR-TEST-5V",
+      "document_revision": "fixture-transient-1.0.0",
+      "page_section": "result",
+      "license_status": "DECLARED"
+    },
+    {
+      "schema_version": "1.0.0",
+      "entity_type": "source",
+      "source_id": "SRC-RR-STABILITY",
+      "classification": "DERIVED",
+      "title": "Synthetic loop-stability result record",
+      "version": "fixture-stability-1.0.0",
+      "locator": "tests/fixtures/regulator_review/synthetic-stability-result.json",
+      "access_status": "AVAILABLE",
+      "content_hash": {"state": "KNOWN", "algorithm": "SHA-256", "value": "e38be42da25d64da514b9283fcb456e6d8b9d3108b852ace26b0c860c97bd72c"},
+      "source_role": "STABILITY_RESULT",
+      "publisher_type": "INTERNAL_TOOL",
+      "manufacturer": "SYNTHETIC-SEMI",
+      "part_number": "RR-TEST-5V",
+      "document_revision": "fixture-stability-1.0.0",
+      "page_section": "result",
+      "license_status": "DECLARED"
+    },
+    {
+      "schema_version": "1.0.0",
+      "entity_type": "source",
+      "source_id": "SRC-RR-RAIL-FIXTURE",
+      "classification": "SOURCE_EXPLICIT",
+      "title": "Synthetic rail-budget source",
+      "version": "fixture-rail-1.0.0",
+      "locator": "tests/fixtures/regulator_review/synthetic-rail-budget-source.json",
+      "access_status": "AVAILABLE",
+      "content_hash": {"state": "KNOWN", "algorithm": "SHA-256", "value": "3d3228db3e48958aadf1fc665de93e59aa4454f74401d9841ff84270b5a8f199"},
+      "source_role": "RAIL_BUDGET",
+      "publisher_type": "INTERNAL_TOOL",
+      "manufacturer": "SYNTHETIC-SEMI",
+      "part_number": "RR-TEST-5V",
+      "document_revision": "fixture-rail-1.0.0",
+      "page_section": "rail-budget fixture",
+      "license_status": "DECLARED"
+    }
+  ],
+  "model": {
+    "access_status": "AVAILABLE",
+    "model_id": "MODEL-RR-TEST-5V",
+    "model_type": "SPICE",
+    "manufacturer": "SYNTHETIC-SEMI",
+    "part_number": "RR-TEST-5V",
+    "version": "fixture-model-1.0.0",
+    "origin": "MANUFACTURER",
+    "license_status": "DECLARED",
+    "file_hash": {"state": "KNOWN", "algorithm": "SHA-256", "value": "11ca82cb786083775b9a0157d97911187e9ab8e0bcd65c2ee69acb109da3e4f7"},
+    "validity_bounds": {
+      "input_voltage_min": {"state": "KNOWN", "value": 4.5, "unit": "V"},
+      "input_voltage_max": {"state": "KNOWN", "value": 36, "unit": "V"},
+      "output_current_max": {"state": "KNOWN", "value": 2, "unit": "A"},
+      "ambient_temperature_min": {"state": "KNOWN", "value": -40, "unit": "degC"},
+      "ambient_temperature_max": {"state": "KNOWN", "value": 85, "unit": "degC"}
+    },
+    "source_refs": ["SRC-RR-MODEL"]
+  },
+  "analyses": {
+    "transient": {
+      "execution_status": "PASS",
+      "evidence_kind": "TIME_DOMAIN_TRANSIENT",
+      "result_hash": {"state": "KNOWN", "algorithm": "SHA-256", "value": "20e63ec3a4662d8511584fa4c5984adaf3d0ad901fc3c6fb8b642c1a3a6d3a11"},
+      "source_refs": ["SRC-RR-TRANSIENT"],
+      "tool": {"state": "KNOWN", "name": "fixture-transient-recorder", "version": "1.0.0"}
+    },
+    "loop_stability": {
+      "execution_status": "PASS",
+      "evidence_kind": "LOOP_GAIN_AC",
+      "result_hash": {"state": "KNOWN", "algorithm": "SHA-256", "value": "e38be42da25d64da514b9283fcb456e6d8b9d3108b852ace26b0c860c97bd72c"},
+      "source_refs": ["SRC-RR-STABILITY"],
+      "tool": {"state": "KNOWN", "name": "fixture-stability-recorder", "version": "1.0.0"}
+    }
+  }
+}

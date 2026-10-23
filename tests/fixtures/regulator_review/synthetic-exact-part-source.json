@@ -1,0 +1,26 @@
+{
+  "fixture_notice": "Synthetic values for software contract testing only; not a manufacturer datasheet.",
+  "manufacturer": "SYNTHETIC-SEMI",
+  "part_number": "RR-TEST-5V",
+  "document_revision": "fixture-datasheet-1.0.0",
+  "page_sections": {
+    "absolute_maximum": "section 1",
+    "recommended_operating": "section 2",
+    "derating": "section 3"
+  },
+  "absolute_maximum": {
+    "input_voltage_V": 42,
+    "output_current_A": 3,
+    "junction_temperature_degC": 150
+  },
+  "recommended_operating": {
+    "input_voltage_V": [4.5, 36],
+    "output_current_A": 2,
+    "ambient_temperature_degC": [-40, 85]
+  },
+  "derating_points": [
+    {"ambient_temperature_degC": -40, "maximum_output_current_A": 2},
+    {"ambient_temperature_degC": 25, "maximum_output_current_A": 2},
+    {"ambient_temperature_degC": 85, "maximum_output_current_A": 1.2}
+  ]
+}

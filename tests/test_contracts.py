@@ -326,10 +326,11 @@ class CanonicalJsonTests(unittest.TestCase):
 
 
 class JsonSchemaTests(unittest.TestCase):
-    def test_six_schemas_use_draft_2020_12(self) -> None:
+    def test_six_d1_entity_schemas_use_draft_2020_12(self) -> None:
         expected = {"rail", "load", "regulator", "source", "event", "finding"}
         observed = set()
-        for path in SCHEMAS.glob("*.schema.json"):
+        for name in expected:
+            path = SCHEMAS / f"{name}.schema.json"
             with path.open("r", encoding="utf-8") as handle:
                 schema = json.load(handle)
             self.assertEqual("https://json-schema.org/draft/2020-12/schema", schema["$schema"])

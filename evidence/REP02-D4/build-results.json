@@ -1,0 +1,75 @@
+{
+  "artifact_hash_consistency": "PASS",
+  "artifacts": [
+    {
+      "path": "dist/power_rail_validation-0.5.0-py3-none-any.whl",
+      "sha256": "da721bc2370d3e52f3d403ca858ca318c28ec5066d3fd4ea4ea35eb4c2f61ca0",
+      "size_bytes": 117705
+    },
+    {
+      "path": "dist/power_rail_validation-0.5.0.tar.gz",
+      "sha256": "fa514847b0d80c6446b1eb3b579cac2848aa8eb88d8c7cd1a687e68274e49e9e",
+      "size_bytes": 194893
+    }
+  ],
+  "build": {
+    "artifacts": [
+      {
+        "file": "power_rail_validation-0.5.0-py3-none-any.whl",
+        "sha256": "da721bc2370d3e52f3d403ca858ca318c28ec5066d3fd4ea4ea35eb4c2f61ca0",
+        "size_bytes": 117705
+      },
+      {
+        "file": "power_rail_validation-0.5.0.tar.gz",
+        "sha256": "fa514847b0d80c6446b1eb3b579cac2848aa8eb88d8c7cd1a687e68274e49e9e",
+        "size_bytes": 194893
+      }
+    ],
+    "backend": "setuptools.build_meta",
+    "setuptools_version": "84.0.0",
+    "status": "PASS"
+  },
+  "deliverable": "REP02-D4-BUILD-AND-INSTALL-VERIFICATION",
+  "generated_at": "2026-10-24T01:19:57+03:00",
+  "schema_version": "1.0.0",
+  "verification_status": "PASS",
+  "verify": {
+    "artifacts": {
+      "sdist": {
+        "file": "power_rail_validation-0.5.0.tar.gz",
+        "sha256": "fa514847b0d80c6446b1eb3b579cac2848aa8eb88d8c7cd1a687e68274e49e9e"
+      },
+      "wheel": {
+        "file": "power_rail_validation-0.5.0-py3-none-any.whl",
+        "sha256": "da721bc2370d3e52f3d403ca858ca318c28ec5066d3fd4ea4ea35eb4c2f61ca0"
+      }
+    },
+    "inventory": {
+      "sdist_documentation_count": 8,
+      "sdist_file_count": 104,
+      "sdist_test_and_fixture_count": 55,
+      "wheel_file_count": 35,
+      "wheel_package_data_count": 11,
+      "wheel_package_file_count": 29
+    },
+    "isolated_install_and_cli": {
+      "commands": {
+        "inject-fault": "FAIL",
+        "rail-budget": "PASS",
+        "report": "PASS",
+        "review": "PASS",
+        "sequence": "PASS",
+        "validate": "PASS"
+      },
+      "console_script": {
+        "deterministic_repetitions": 2,
+        "validate_status": "PASS",
+        "version_matches_module": true
+      },
+      "deterministic_repetitions_per_command": 2,
+      "install_mode": "local-wheel --no-index --no-deps",
+      "version": "power-rail-validation 0.5.0"
+    },
+    "status": "PASS"
+  }
+}

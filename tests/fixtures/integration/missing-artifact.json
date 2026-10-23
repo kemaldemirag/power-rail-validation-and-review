@@ -1,0 +1,65 @@
+{
+  "api_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "descriptor_id": "SYNTH-REP01-HANDOFF-GAP",
+  "producer": {
+    "repository_id": "REP-01",
+    "api_version": "1.0.0",
+    "schema_version": "1.0.0"
+  },
+  "consumer": {
+    "repository_id": "REP-02",
+    "api_version": "1.0.0",
+    "schema_version": "1.0.0"
+  },
+  "compatibility": {
+    "api_version_match": "EXACT",
+    "schema_version_match": "EXACT",
+    "incompatible_version_status": "BLOCKED",
+    "malformed_json_status": "BLOCKED",
+    "hash_mismatch_status": "BLOCKED",
+    "missing_artifact_status": "NOT_RUN"
+  },
+  "configurations": [
+    {
+      "configuration_id": "CFG-A",
+      "profile_id": "PROFILE-NOMINAL",
+      "artifacts": [
+        {
+          "artifact_id": "REP01-CONFIG-A",
+          "role": "CONFIGURATION_INPUT",
+          "file_name": "artifacts/rep01-configuration-a.json",
+          "media_type": "application/json",
+          "access_status": "AVAILABLE",
+          "sha256": "78c1c15075eb79c5089d1aefdef1b3ab0d80f2af9cca7b81e8d60a9e63142887"
+        }
+      ],
+      "artifact_gaps": [
+        {
+          "artifact_id": "REP03-ASSESSMENT-MISSING",
+          "role": "ASSESSMENT_INPUT",
+          "file_name": "external/rep03-assessment.json",
+          "media_type": "application/json",
+          "access_status": "MISSING",
+          "reason_code": "EXTERNAL_ARTIFACT_NOT_PROVIDED"
+        },
+        {
+          "artifact_id": "REP01-SOURCE-MISSING",
+          "role": "SOURCE_INPUT",
+          "file_name": "external/rep01-source-bundle.json",
+          "media_type": "application/json",
+          "access_status": "MISSING",
+          "reason_code": "EXTERNAL_SOURCE_NOT_PROVIDED"
+        }
+      ]
+    }
+  ],
+  "claim_limits": [
+    "DESCRIPTOR_STRUCTURE_AND_FILE_INTEGRITY_ONLY",
+    "SYNTHETIC_FIXTURES_ONLY",
+    "LIVE_ADAPTERS_NOT_RUN",
+    "NO_REP01_OR_REP03_SEMANTIC_MAPPING_CLAIM",
+    "NO_HARDWARE_COMPLIANCE_CLAIM"
+  ],
+  "input_hash": "76fc12e9c61bc049ca202764ee5e99adbb0da1db8bfe198861360ececf28edbb"
+}
