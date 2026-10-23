@@ -10,13 +10,13 @@
   "artifacts": [
     {
       "path": "dist/power_rail_validation-0.5.0-py3-none-any.whl",
-      "sha256": "da721bc2370d3e52f3d403ca858ca318c28ec5066d3fd4ea4ea35eb4c2f61ca0",
+      "sha256": "27ba10f6e14345c39f70241e56abd67469eb7e8130dc6a0abfdb37ca1a8c5027",
       "size_bytes": 117705
     },
     {
       "path": "dist/power_rail_validation-0.5.0.tar.gz",
-      "sha256": "fa514847b0d80c6446b1eb3b579cac2848aa8eb88d8c7cd1a687e68274e49e9e",
-      "size_bytes": 194893
+      "sha256": "8f0e7da652ffba7307a122442a4d314e686696f1969392b341a9de49701e27a8",
+      "size_bytes": 194584
     }
   ],
   "claim_limits": [
@@ -30,7 +30,7 @@
     "NO_COMMIT_TAG_PUSH_OR_PACKAGE_PUBLISH"
   ],
   "d3_baseline": {
-    "current_head_byte_match": false,
+    "current_head_byte_match": true,
     "file_sha256": "2f7946d75874a501b8dfb973e3dbf7ff99cc24b9609474cc856add674fbfc06a",
     "internal_hash_verification": "PASS",
     "manifest_hash": "dff67ec8137da93d2b9d72a709e7e2761e7d859c6475a406314415992aacadf6",
@@ -41,10 +41,10 @@
     "recorded_working_tree": "UNKNOWN",
     "replay_claim": "NOT_MADE",
     "status": "BLOCKED",
-    "tracked_at_current_head": false
+    "tracked_at_current_head": true
   },
   "d4_file_hash_inventory": {
-    ".gitattributes": "0b9449944643f26a8bbd7a6bab534d05d283ea827c310c70e4aa437075bd0f4d",
+    ".gitattributes": "bea0c255f7f1e1d9705283f5e1ed8b5e87e3b9165ffff479d41b31449615dcb1",
     ".github/workflows/ci.yml": "0efe991ea13b6016eee1a7b3d1d675456ba69b0502771fd7bd7df7ca66e900fe",
     ".gitignore": "942b1a7b98df133a01040ad1d24004e0062505e9f5005926f8a27f5c7d4fc535",
     "CHANGELOG.md": "17ab51dde05fa430c2aa1e6937b8e0db915c0ac5f2930fb219a3c939526f9c75",
@@ -164,89 +164,20 @@
     "wheel": "0.48.0"
   },
   "evidence_outputs": {
-    "build-results.json": "9ec17e208a118960f29bb8fb9cb5595abad7a7307971eca5aa9e98da6df77298",
-    "report.md": "6296a6a10d53850f3aa70d8d9633fe51734e7644314e7774032171e74bad5c44",
-    "test-results.json": "bb1d2cd91b235a95b7734ea5b789984eae3a3a86c7029e2c27dbf0071f6938e7"
+    "build-results.json": "971f543f8c1a605b0f1aedb8c9b8cf88c0f0b88e8f2d95f13f9bb9442c7b13ac",
+    "report.md": "f4a2f38a955a2a35ec684669343dc07fbe9760ea54548635a14be07217c6e561",
+    "test-results.json": "545d3c9b8f4852de8a1d9e8daec08d9f90b8ebec42652cb540c27d8d11d7f3a8"
   },
   "generated_at": "2026-10-24T01:19:57+03:00",
   "git": {
     "branch": "main",
     "dirty": true,
     "git_diff_check": "PASS",
-    "head": "79ae5ba1a842cf2cc206eed408d71214ff2c43bc",
+    "head": "b0a823eca4ff1ce280d967f2a5c5215e97f5c42c",
     "status_entries": [
-      "A  .gitattributes",
-      "A  .github/workflows/ci.yml",
-      "A  CHANGELOG.md",
-      "A  LICENSE.txt",
-      "A  MANIFEST.in",
-      "M  README.md",
-      "A  docs/QUICKSTART.md",
-      "M  docs/README.md",
-      "A  docs/REP-02_Codex_Gorev_Plani_Pozisyon_Bazli_v1.docx",
-      "A  docs/REP-02_Is_Akisi_Raporu_v1.pdf",
-      "A  docs/REP02-ANALYSIS/REP02-literatur-entegrasyon-tamamlama-analizi-2026-10-23.docx",
-      "A  docs/REP02-D3/REP02-D3-regulator-integration-and-closeout.docx",
-      "A  docs/REP02-D3/REP02-D3-regulator-integration-and-closeout.md",
-      "A  docs/REP02-SUMMARY/REP02-calismalar-ozeti-2026-10-23.docx",
-      "M  evidence/README.md",
-      "M  evidence/REP02-D2/nominal-result.json",
-      "A  evidence/REP02-D3/integration-results.json",
-      "A  evidence/REP02-D3/manifest-closeout.json",
-      "A  evidence/REP02-D3/regulator-review-results.json",
-      "A  evidence/REP02-D3/report-closeout.md",
-      "A  evidence/REP02-D3/report-model-closeout.json",
-      "A  evidence/REP02-D3/source-model-provenance-register.json",
-      "A  evidence/REP02-D3/test-results-closeout.json",
-      "M  pyproject.toml",
-      "A  scripts/build_release.py",
-      "A  scripts/finalize_d3_closeout.py",
-      "A  scripts/finalize_d4_release.py",
-      "A  scripts/generate_d3_closeout.py",
-      "A  scripts/render_closeout_docx.py",
-      "A  scripts/render_docx_fallback_pdf.py",
-      "A  scripts/verify_release.py",
-      "M  src/README.md",
-      "M  src/power_rail_validation/__init__.py",
-      "A  src/power_rail_validation/__main__.py",
-      "A  src/power_rail_validation/cli.py",
-      "A  src/power_rail_validation/contracts/schemas/report-model.schema.json",
-      "A  src/power_rail_validation/integration/__init__.py",
-      "A  src/power_rail_validation/integration/file_api.py",
-      "A  src/power_rail_validation/integration/file_api_contract.json",
-      "A  src/power_rail_validation/regulator_review/__init__.py",
-      "A  src/power_rail_validation/regulator_review/review-rules.json",
-      "A  src/power_rail_validation/regulator_review/reviewer.py",
-      "M  tests/README.md",
-      "A  tests/fixtures/integration/artifacts/rep01-configuration-a.json",
-      "A  tests/fixtures/integration/artifacts/rep01-configuration-b.json",
-      "A  tests/fixtures/integration/artifacts/rep01-profile-cold.json",
-      "A  tests/fixtures/integration/artifacts/rep01-profile-nominal.json",
-      "A  tests/fixtures/integration/artifacts/rep03-assessment-a.json",
-      "A  tests/fixtures/integration/malformed.json",
-      "A  tests/fixtures/integration/missing-artifact.json",
-      "A  tests/fixtures/integration/multiple-profiles.json",
-      "A  tests/fixtures/integration/rep03-valid.json",
-      "A  tests/fixtures/integration/valid.json",
-      "A  tests/fixtures/regulator_review/negative-cases.json",
-      "A  tests/fixtures/regulator_review/nominal-synthetic.json",
-      "A  tests/fixtures/regulator_review/synthetic-exact-part-source.json",
-      "A  tests/fixtures/regulator_review/synthetic-model.lib",
-      "A  tests/fixtures/regulator_review/synthetic-rail-budget-source.json",
-      "A  tests/fixtures/regulator_review/synthetic-stability-result.json",
-      "A  tests/fixtures/regulator_review/synthetic-transient-result-copy.json",
-      "A  tests/fixtures/regulator_review/synthetic-transient-result.json",
-      "A  tests/fixtures/regulator_review/transient-present-stability-missing.json",
-      "A  tests/fixtures/regulator_review/workspace-gap-profile.json",
-      "A  tests/test_cli.py",
-      "M  tests/test_contracts.py",
-      "M  tests/test_fault_injection.py",
-      "A  tests/test_integration.py",
-      "M  tests/test_rail_budget.py",
-      "A  tests/test_regulator_review.py",
-      "A  tests/test_report_schema.py"
+      "M  .gitattributes"
     ],
-    "status_entry_count": 70,
+    "status_entry_count": 1,
     "working_tree": "DIRTY"
   },
   "hash_policy": {
@@ -256,7 +187,7 @@
     "manifest_file_excluded_from_d4_inventory": true,
     "manifest_hash_scope": "ALL_MANIFEST_FIELDS_EXCEPT_MANIFEST_HASH"
   },
-  "manifest_hash": "a7daeca900eae88f41e5a345150eed44da5467e66591b992fe9802bd2104031d",
+  "manifest_hash": "a0c758fcc74089a3f474559d7564775c6228d122c4cf40dad48411b474be69c9",
   "release_gates": {
     "artifact_hash_consistency": "PASS",
     "build": "PASS",

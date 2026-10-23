@@ -18,14 +18,14 @@ Aday durumu: `LOCAL_SYNTHETIC_RELEASE_CANDIDATE_VERIFIED`
 
 ## Dağıtım artefaktları
 
-- `dist/power_rail_validation-0.5.0-py3-none-any.whl` — `da721bc2370d3e52f3d403ca858ca318c28ec5066d3fd4ea4ea35eb4c2f61ca0` (117705 bayt)
-- `dist/power_rail_validation-0.5.0.tar.gz` — `fa514847b0d80c6446b1eb3b579cac2848aa8eb88d8c7cd1a687e68274e49e9e` (194893 bayt)
+- `dist/power_rail_validation-0.5.0-py3-none-any.whl` — `27ba10f6e14345c39f70241e56abd67469eb7e8130dc6a0abfdb37ca1a8c5027` (117705 bayt)
+- `dist/power_rail_validation-0.5.0.tar.gz` — `8f0e7da652ffba7307a122442a4d314e686696f1969392b341a9de49701e27a8` (194584 bayt)
 
 ## Kaynak ve ortam izi
 
-- Git HEAD: `79ae5ba1a842cf2cc206eed408d71214ff2c43bc`
+- Git HEAD: `b0a823eca4ff1ce280d967f2a5c5215e97f5c42c`
 - Git dalı: `main`
-- Çalışma ağacı: `DIRTY` (70 kayıt; D4 kanıt çıktıları sayıma dahil değil)
+- Çalışma ağacı: `DIRTY` (1 kayıt; D4 kanıt çıktıları sayıma dahil değil)
 - Python: `3.12.14` (CPython)
 - Paket sürümü: `0.5.0`
 - D3 manifest dosya SHA-256: `2f7946d75874a501b8dfb973e3dbf7ff99cc24b9609474cc856add674fbfc06a`
@@ -56,6 +56,6 @@ Bu PASS sonucu sentetik/çevrimdışı yazılım kapsamına aittir; canlı REP-0
 
 ## Kanıt bütünlüğü
 
-- `test-results.json`: `bb1d2cd91b235a95b7734ea5b789984eae3a3a86c7029e2c27dbf0071f6938e7`
-- `build-results.json`: `9ec17e208a118960f29bb8fb9cb5595abad7a7307971eca5aa9e98da6df77298`
+- `test-results.json`: `545d3c9b8f4852de8a1d9e8daec08d9f90b8ebec42652cb540c27d8d11d7f3a8`
+- `build-results.json`: `971f543f8c1a605b0f1aedb8c9b8cf88c0f0b88e8f2d95f13f9bb9442c7b13ac`
 - `release-manifest.json`, kendi dosya hashini envantere almaz. `manifest_hash`, belgenin `manifest_hash` alanı hariç tüm alanlarının sıralı, boşluksuz UTF-8 JSON gösterimi üzerinden hesaplanır.

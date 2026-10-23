@@ -1,4 +1,5 @@
 # Keep byte-exact evidence and package-owned contracts stable on every platform.
+* text=auto eol=lf
 *.csv text eol=lf
 *.json text eol=lf
 *.lib text eol=lf

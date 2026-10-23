@@ -3,26 +3,26 @@
   "artifacts": [
     {
       "path": "dist/power_rail_validation-0.5.0-py3-none-any.whl",
-      "sha256": "da721bc2370d3e52f3d403ca858ca318c28ec5066d3fd4ea4ea35eb4c2f61ca0",
+      "sha256": "27ba10f6e14345c39f70241e56abd67469eb7e8130dc6a0abfdb37ca1a8c5027",
       "size_bytes": 117705
     },
     {
       "path": "dist/power_rail_validation-0.5.0.tar.gz",
-      "sha256": "fa514847b0d80c6446b1eb3b579cac2848aa8eb88d8c7cd1a687e68274e49e9e",
-      "size_bytes": 194893
+      "sha256": "8f0e7da652ffba7307a122442a4d314e686696f1969392b341a9de49701e27a8",
+      "size_bytes": 194584
     }
   ],
   "build": {
     "artifacts": [
       {
         "file": "power_rail_validation-0.5.0-py3-none-any.whl",
-        "sha256": "da721bc2370d3e52f3d403ca858ca318c28ec5066d3fd4ea4ea35eb4c2f61ca0",
+        "sha256": "27ba10f6e14345c39f70241e56abd67469eb7e8130dc6a0abfdb37ca1a8c5027",
         "size_bytes": 117705
       },
       {
         "file": "power_rail_validation-0.5.0.tar.gz",
-        "sha256": "fa514847b0d80c6446b1eb3b579cac2848aa8eb88d8c7cd1a687e68274e49e9e",
-        "size_bytes": 194893
+        "sha256": "8f0e7da652ffba7307a122442a4d314e686696f1969392b341a9de49701e27a8",
+        "size_bytes": 194584
       }
     ],
     "backend": "setuptools.build_meta",
@@ -37,11 +37,11 @@
     "artifacts": {
       "sdist": {
         "file": "power_rail_validation-0.5.0.tar.gz",
-        "sha256": "fa514847b0d80c6446b1eb3b579cac2848aa8eb88d8c7cd1a687e68274e49e9e"
+        "sha256": "8f0e7da652ffba7307a122442a4d314e686696f1969392b341a9de49701e27a8"
       },
       "wheel": {
         "file": "power_rail_validation-0.5.0-py3-none-any.whl",
-        "sha256": "da721bc2370d3e52f3d403ca858ca318c28ec5066d3fd4ea4ea35eb4c2f61ca0"
+        "sha256": "27ba10f6e14345c39f70241e56abd67469eb7e8130dc6a0abfdb37ca1a8c5027"
       }
     },
     "inventory": {
