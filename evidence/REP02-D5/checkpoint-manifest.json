@@ -1,0 +1,195 @@
+{
+  "actions": {
+    "commit": false,
+    "downstream_electrical_execution": false,
+    "package_publish": false,
+    "physical_test": false,
+    "push": false,
+    "scope": "FINALIZER_PROCESS_ONLY",
+    "tag": false
+  },
+  "claim_limits": [
+    "EXECUTION_READINESS_ONLY",
+    "NO_ELECTRICAL_COMPLIANCE_CLAIM",
+    "NO_HARDWARE_VALIDATION_CLAIM",
+    "NO_G1_G6_CLOSURE_CLAIM",
+    "DOWNSTREAM_ENGINES_NOT_RUN",
+    "FINALIZER_PERFORMS_NO_COMMIT_TAG_PUSH_OR_PACKAGE_PUBLISH"
+  ],
+  "d4_read_only_anchor": {
+    "current_head_byte_match": true,
+    "file_sha256": "5fcbf70de457386f220ca22e86f1168350bfb37219bb1a799bb51ec6f55b4176",
+    "git_blob_oid": "12ef5c3aff27fbb0d27616fd615952a89b54a153",
+    "head_blob_oid": "12ef5c3aff27fbb0d27616fd615952a89b54a153",
+    "historical_release_readiness": {
+      "blockers": [
+        "D3_BASELINE_UNCOMMITTED_SOURCE",
+        "PYTHON_3_9_LOCAL_RUNTIME_NOT_EXECUTED",
+        "LIVE_REP01_REP03_INTEGRATION_NOT_RUN",
+        "PHYSICAL_HARDWARE_VALIDATION_NOT_RUN"
+      ],
+      "candidate_status": "LOCAL_SYNTHETIC_RELEASE_CANDIDATE_VERIFIED",
+      "publish_status": "NOT_RUN",
+      "status": "BLOCKED"
+    },
+    "internal_hash_verification": "PASS",
+    "manifest_hash": "a0c758fcc74089a3f474559d7564775c6228d122c4cf40dad48411b474be69c9",
+    "relative_path": "evidence/REP02-D4/release-manifest.json",
+    "reviewed_anchor_identity_verification": "PASS",
+    "root_id": "REP-02-REPOSITORY",
+    "tracked_at_current_head": true
+  },
+  "d5_source_hash_inventory": {
+    "CHANGELOG.md": "025a49e909bfb2e38ad883751681018cd616568fd3150437e778019144a4e911",
+    "MANIFEST.in": "7a91ab9cab77e1d20eb685f7228ddad36917b8e289ad4df47fa6ee74f40f0f35",
+    "README.md": "3261169b0de4baf84c7a9535d1a39ed329387c63e773c7e033d3687f1c9a513b",
+    "docs/QUICKSTART.md": "708f98b144fe16e0871a3089ea1ee37ffcfafc1121d5bb93de12ef45257c9e6e",
+    "docs/README.md": "b459e199647641629a1291558f9e7b5f83a9233dc9bf4152c11d10402293558e",
+    "docs/REP02-D5/REP02-D5-project-intake-readiness.md": "9f1a879b8d7990881c26a06e0fe9fa9f2fb2e71a3a771e2917b34eb030813b6b",
+    "evidence/README.md": "710acd55908dd655b964454ad324e91cf3a71f0085c19770878bd31a081c2c3b",
+    "examples/nightstand/README.md": "65a64065a5dd1a3fd6c1a53ab26eb6628bf91d23fa956905cbc9fefed3083d7c",
+    "examples/nightstand/ncs01-nightstand-v1.json": "f4cb17ee72dc0442e4397b8ef324994e0406fc37e66e7e50842ac88912ff49d7",
+    "pyproject.toml": "c846008ece69dbc87ca501ae87f97e25c49051b3df58408cfcba3d2877d1c80d",
+    "scenarios/REP02-D5/project-intake.json": "10002e18fb1dc287400e0ce41b6abf94657696aad978453648fce8dd709f06e7",
+    "scripts/build_release.py": "d4105fe3122a1253120eee7a81bf4527368a17ef2bb6fb87ea0099b388252a66",
+    "scripts/finalize_d5_intake.py": "2acaeb0d3145aae7a390c3b918b33008224e5669e41a3308e808433f6a796602",
+    "scripts/verify_release.py": "3905114847b84ff9091eacb2e09c3a19ad7faade2f4f118b10f742f60f20935b",
+    "src/power_rail_validation/__init__.py": "be067970eec1ffa79907a391a922c3e19186c112189055aed7ef2c291bff3ddc",
+    "src/power_rail_validation/cli.py": "e4e9bdfeee41003be9e4ba2e880e3e8502d1620bbe649cdfe3c4ffba12804be8",
+    "src/power_rail_validation/ncs01.py": "b0862dd98550cb719335262912eec1d56cfbce8b0216f1939fdd79173ffeeceb",
+    "src/power_rail_validation/project_intake/__init__.py": "6b887ba48602730740eda3670e2e8e66c41733de58a3e645d6df99d227982d78",
+    "src/power_rail_validation/project_intake/project_intake_contract.json": "91f89178113807e5da2901b3394495c73ccbcf3eace6aa8deae05566721a743c",
+    "src/power_rail_validation/project_intake/validator.py": "879808a066d73e4a309e0a2d99b65d0b53088196f9b5081ae7814af2e121ad4f",
+    "tests/fixtures/project_intake/artifacts/open-decisions.md": "d497a0b9d8125bb398128dbea2dc23d30f0ca32502377ec21f9f154f1f1ab43f",
+    "tests/fixtures/project_intake/artifacts/regulator-datasheet.txt": "c80dd21a22c142956e3544c0e73e92eae2eeb673381cb8691c9a130fa5ba92d5",
+    "tests/fixtures/project_intake/artifacts/regulator-selection.json": "155cb9523b59b9acf9a1d69d21152208edd22ecdd69f6a1a2ec7aa50a12c274d",
+    "tests/fixtures/project_intake/artifacts/rep01-configuration-copy.json": "008d853a66ec822bc4b7246c031eb09e3e807dfc21ceef6bbeacb2697d8b286a",
+    "tests/fixtures/project_intake/artifacts/rep01-configuration.json": "008d853a66ec822bc4b7246c031eb09e3e807dfc21ceef6bbeacb2697d8b286a",
+    "tests/fixtures/project_intake/artifacts/rep01-power-profile.json": "9d3cf064d107d0e14d25846e484af5e50594dd271ecf3f6b75f8a856439fc8a1",
+    "tests/fixtures/project_intake/artifacts/rep01-rail-demands.json": "9fd9853cc83a88f4d35669382322e224f51efabb624886ea8e3c03384263cd29",
+    "tests/fixtures/project_intake/ready-static-buck-pin.json": "d63d7d9e27e12e268caf70a432b7db213aae8877a19837cc3400342b13104720",
+    "tests/test_cli.py": "73cddd9d92c6b50e4bfb9b85b3b806a0f24fac6d18d5b4d25a280756d8d5c03d",
+    "tests/test_d5_finalizer.py": "c0a6f1b5e2e111995a1a7976bc7d9444abd1cf5426eb3244c6e104b1f37d85be",
+    "tests/test_ncs01.py": "07cc2da7cd179799b038af3e8767ef6c30eb25bc0f2954511284f5bba6801c48",
+    "tests/test_project_intake.py": "356454a4d02d67ae444dc93184a83e9a95ea8dfd299a36f5e456ad45292f2a0a"
+  },
+  "d5_source_hash_inventory_count": 32,
+  "deliverable": "REP02-D5-CHECKPOINT-MANIFEST",
+  "evidence_outputs": {
+    "intake-result.json": "124ea2b8327babec420aea583685045747c9fa88cba40d2987eb19b20c160990",
+    "report.md": "2140049eef40c81d2d1cf5d61c38a407ec3ae7d7255111a8568cf00dda9ed4df",
+    "test-results.json": "23c5f6723629c435acfb400527467f21f4c05c397db1188cde44798282d79b78"
+  },
+  "execution_readiness": {
+    "candidate_scope": "REP01_IC02_5V_SINGLE_BUCK_SLICE",
+    "known_operating_points": {
+      "vin_nom_v": 24,
+      "vout_target_v": 5
+    },
+    "open_artifact_roles": [
+      "REGULATOR_DATASHEET",
+      "REGULATOR_MODEL",
+      "REGULATOR_SELECTION",
+      "REP01_CONFIGURATION",
+      "REP01_POWER_PROFILE",
+      "REP01_RAIL_DEMANDS"
+    ],
+    "reason_code": "REQUIRED_ARTIFACT_ROLE_MISSING",
+    "status": "BLOCKED",
+    "topology": {
+      "provenance": "DERIVED_FROM_REP01_INTERFACE_CONTRACT_IC02_24_TO_5V_SWITCHING",
+      "value": "BUCK"
+    }
+  },
+  "generated_at": "2026-10-24T03:51:48+03:00",
+  "hash_policy": {
+    "algorithm": "SHA-256",
+    "canonicalization": "SORTED_MINIFIED_UTF8_JSON",
+    "file_hash_scope": "EXACT_FILE_BYTES",
+    "manifest_file_excluded_from_source_and_output_inventories": true,
+    "manifest_hash_scope": "ALL_MANIFEST_FIELDS_EXCEPT_MANIFEST_HASH"
+  },
+  "manifest_hash": "6dafc137ee4ee182c01e63f009106b4c799e86bfdfe5ba2acab74bdb18005c3d",
+  "rep01_snapshot": {
+    "artifact_binding_status": "PASS",
+    "artifacts": [
+      {
+        "artifact_id": "REP01-INTERFACE-CONTRACT-V1.2",
+        "git_blob_oid": "2bc70ef2dcb2d2fcb9208c261b827caf001d68b2",
+        "head_byte_match": true,
+        "relative_path": "docs/interface-contract-v1.2.md",
+        "role": "REP01_INTERFACE_CONTRACT",
+        "root_id": "REP-01-LOCAL-WORKTREE",
+        "sha256": "8fbb2a737699a5b92a13cf4756dcd4a5266306d398a316612e997388794ac3f0",
+        "size_bytes": 11105
+      },
+      {
+        "artifact_id": "REP01-OPEN-DECISIONS-V1.2",
+        "git_blob_oid": "2e4cc02d6bd7c3b6e17974cda5871315159e0c5a",
+        "head_byte_match": true,
+        "relative_path": "docs/open-decisions-v1.2.md",
+        "role": "REP01_OPEN_DECISIONS",
+        "root_id": "REP-01-LOCAL-WORKTREE",
+        "sha256": "1be7d880f69b82830d55483c2aed932c4c390384bb3d17304447958e542d563c",
+        "size_bytes": 13483
+      },
+      {
+        "artifact_id": "REP01-POWER-TREE-PLACEHOLDER",
+        "git_blob_oid": "9cd107a256def03872252a960f1ddcc47b9424fa",
+        "head_byte_match": true,
+        "relative_path": "engineering/power-tree/README.md",
+        "role": "REP01_POWER_TREE_PLACEHOLDER",
+        "root_id": "REP-01-LOCAL-WORKTREE",
+        "sha256": "110e497c8596e2f54857bd15075ae19c9b6df1915713b8ab332bb24cb02b9772",
+        "size_bytes": 178
+      },
+      {
+        "artifact_id": "REP01-REQUIREMENTS-TRACEABILITY-V1.2",
+        "git_blob_oid": "e951e365b656eac7213a0ff6d27c62356e1d9bcf",
+        "head_byte_match": true,
+        "relative_path": "requirements/requirements-traceability-v1.2.csv",
+        "role": "REP01_REQUIREMENTS_TRACEABILITY",
+        "root_id": "REP-01-LOCAL-WORKTREE",
+        "sha256": "237691f6f9fd2bd244a8881ce05550e1ecd0a423d94e3bfb504944c23fe2cfe2",
+        "size_bytes": 12477
+      }
+    ],
+    "branch": "main",
+    "repository_id": "REP-01",
+    "revision": "b335eec28c8cfb514c79e2ddd41be1b82a4b699b",
+    "root_id": "REP-01-LOCAL-WORKTREE",
+    "working_tree": "CLEAN"
+  },
+  "rep02_git": {
+    "canonical_binding": "D5_SOURCE_HASH_INVENTORY",
+    "d5_scope_status_entries": [],
+    "generated_d5_evidence_excluded_from_source_status": true,
+    "live_commit_and_branch_excluded_from_canonical_payload": true,
+    "outside_d5_scope_status_entries": [],
+    "root_id": "REP-02-REPOSITORY",
+    "source_provenance": {
+      "head_byte_match_count": 32,
+      "head_mismatch_paths": [],
+      "inventory_count": 32,
+      "reason_code": "D5_SOURCE_INVENTORY_BYTE_BOUND_TO_HEAD",
+      "status": "PASS"
+    },
+    "status_entry_count": 0,
+    "working_tree": "CLEAN"
+  },
+  "scenario": {
+    "descriptor_input_hash": "ab7e7a992532a8d061f16581c5ea19be7fb41ac8fa9ad490a5e79088776527a5",
+    "file_sha256": "10002e18fb1dc287400e0ce41b6abf94657696aad978453648fce8dd709f06e7",
+    "relative_path": "scenarios/REP02-D5/project-intake.json",
+    "root_id": "REP-02-REPOSITORY"
+  },
+  "schema_version": "1.0.0",
+  "test_summary": {
+    "focused_passed": 29,
+    "focused_tests_run": 29,
+    "full_passed": 404,
+    "full_tests_run": 404,
+    "status": "PASS"
+  },
+  "verification_status": "PASS"
+}

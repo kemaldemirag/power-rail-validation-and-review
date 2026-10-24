@@ -1,0 +1,69 @@
+{
+  "contract_id": "REP02-PROJECT-INTAKE-CONTRACT",
+  "schema_version": "1.0.0",
+  "engine_version": "0.1.0",
+  "topology": "BUCK",
+  "capabilities": [
+    "REP01_BINDING",
+    "STATIC",
+    "BUCK",
+    "PIN",
+    "TRANSIENT",
+    "LOOP_STABILITY"
+  ],
+  "base_artifact_roles": [
+    "REP01_CONFIGURATION",
+    "REP01_POWER_PROFILE",
+    "REP01_RAIL_DEMANDS",
+    "REGULATOR_SELECTION"
+  ],
+  "datasheet_capabilities": [
+    "STATIC",
+    "BUCK",
+    "PIN",
+    "TRANSIENT",
+    "LOOP_STABILITY"
+  ],
+  "model_capabilities": [
+    "TRANSIENT",
+    "LOOP_STABILITY"
+  ],
+  "supporting_artifact_roles": [
+    "REP01_INTERFACE_CONTRACT",
+    "REP01_REQUIREMENTS_TRACEABILITY",
+    "REP01_OPEN_DECISIONS",
+    "REP01_POWER_TREE_PLACEHOLDER"
+  ],
+  "artifact_provenance_policy": {
+    "test_origin": "INTERNAL_TEST_FIXTURE",
+    "rep01_project_origin": "REP01_PROJECT",
+    "datasheet_origin": "MANUFACTURER",
+    "model_origins": [
+      "MANUFACTURER",
+      "AUTHORIZED_MODEL_PROVIDER"
+    ],
+    "datasheet_model_license_statuses": [
+      "VERIFIED",
+      "DECLARED"
+    ],
+    "document_revision": "PINNED"
+  },
+  "project_git_policy": {
+    "artifact_root": "EXACT_GIT_TOP_LEVEL",
+    "head": "EXACT_DECLARED_FULL_REVISION",
+    "working_tree": "CLEAN_WITH_NO_UNTRACKED_FILES",
+    "artifact_bytes": "MATCH_WORKTREE_DECLARATION_AND_GIT_SHOW",
+    "all_roles_including_vendored_sources": true
+  },
+  "cross_role_content_policy": "READINESS_ROLE_BYTES_MUST_BE_DISTINCT",
+  "claim_boundary": [
+    "EXECUTION_READINESS_ONLY",
+    "NO_ELECTRICAL_COMPLIANCE_CLAIM",
+    "NO_HARDWARE_VALIDATION_CLAIM",
+    "NO_G1_G6_CLOSURE_CLAIM",
+    "DOWNSTREAM_ENGINES_NOT_RUN",
+    "NO_ARTIFACT_SEMANTIC_EXTRACTION",
+    "DECLARED_ORIGIN_NOT_AUTHENTICATED",
+    "DESCRIPTOR_HASH_IS_CANONICAL_JSON_NOT_SOURCE_FILE_BYTES"
+  ]
+}

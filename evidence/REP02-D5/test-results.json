@@ -1,0 +1,160 @@
+{
+  "actual_gap_issue_counts": {
+    "MANDATORY_SEMANTIC_UNKNOWN": 7,
+    "REQUIRED_ARTIFACT_ROLE_MISSING": 6,
+    "REQUIRED_IDENTITY_UNKNOWN": 4
+  },
+  "checks": [
+    {
+      "byte_semantic_parity": "PASS",
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m power_rail_validation intake scenarios/REP02-D5/project-intake.json --artifact-root <REP-01-LOCAL-WORKTREE>",
+      "expected_exit_code": 3,
+      "id": "PUBLIC-API-CLI-PARITY",
+      "observed_exit_code": 3,
+      "result_status": "BLOCKED",
+      "status": "PASS"
+    },
+    {
+      "files_checked": 12,
+      "id": "PYTHON-3.9-AST-D5",
+      "interpretation": "GRAMMAR_COMPATIBILITY_ONLY_NOT_A_PYTHON_3_9_RUNTIME_EXECUTION",
+      "status": "PASS"
+    },
+    {
+      "id": "GIT-DIFF-CHECK",
+      "scope": "HEAD_TRACKED_DIFF_PLUS_EACH_UNTRACKED_FILE",
+      "status": "PASS"
+    },
+    {
+      "id": "D4-REVIEWED-ANCHOR-FORGERY-REJECTION",
+      "mutations_rejected": 6,
+      "status": "PASS"
+    }
+  ],
+  "claim_limits": [
+    "EXECUTION_READINESS_ONLY",
+    "NO_ELECTRICAL_COMPLIANCE_CLAIM",
+    "NO_HARDWARE_VALIDATION_CLAIM",
+    "NO_G1_G6_CLOSURE_CLAIM",
+    "DOWNSTREAM_ENGINES_NOT_RUN",
+    "NO_ARTIFACT_SEMANTIC_EXTRACTION",
+    "DECLARED_ORIGIN_NOT_AUTHENTICATED",
+    "DESCRIPTOR_HASH_IS_CANONICAL_JSON_NOT_SOURCE_FILE_BYTES"
+  ],
+  "deliverable": "REP02-D5-TEST-RESULTS",
+  "execution_readiness": "BLOCKED",
+  "generated_at": "2026-10-24T03:51:48+03:00",
+  "interpretation": "TEST_PASS_AND_PROJECT_READINESS_BLOCKED_ARE_INTENTIONALLY_DISTINCT",
+  "package_version": "0.6.0.dev0",
+  "python_runtime": "3.12.14",
+  "scenario_assertions": {
+    "d4_read_only_anchor_replay": "PASS",
+    "descriptor_input_hash": "PASS",
+    "downstream_not_run": "PASS",
+    "no_default_substitution": "PASS",
+    "project_git_provenance": "PASS",
+    "rep01_revision_binding": "PASS",
+    "required_gap_ledger": "PASS",
+    "supporting_artifact_byte_binding": "PASS"
+  },
+  "schema_version": "1.0.0",
+  "test_runs": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m unittest discover -s tests -p test_project_intake.py -q",
+      "errors": 0,
+      "failed": 0,
+      "id": "D5-PROJECT-INTAKE-TESTS",
+      "passed": 29,
+      "skipped": 0,
+      "status": "PASS",
+      "tests_run": 29
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m unittest -q <BYTE_BOUND_MODULE_ALLOWLIST>",
+      "coverage": "ALL_TOP_LEVEL_TEST_MODULES_PRESENT_IN_WORKTREE",
+      "errors": 0,
+      "failed": 0,
+      "id": "D5-WORKSPACE-FULL-REGRESSION",
+      "module_count": 12,
+      "modules": [
+        {
+          "binding": "D5_SOURCE_HASH_INVENTORY",
+          "relative_path": "tests/test_cli.py",
+          "root_id": "REP-02-REPOSITORY",
+          "sha256": "73cddd9d92c6b50e4bfb9b85b3b806a0f24fac6d18d5b4d25a280756d8d5c03d"
+        },
+        {
+          "binding": "REP02_HEAD",
+          "relative_path": "tests/test_contracts.py",
+          "root_id": "REP-02-REPOSITORY",
+          "sha256": "2f6b16796b01c3e7e7ae8786392a5645e9cc15d69ae55dd112e9fb40b3cd2a47"
+        },
+        {
+          "binding": "D5_SOURCE_HASH_INVENTORY",
+          "relative_path": "tests/test_d5_finalizer.py",
+          "root_id": "REP-02-REPOSITORY",
+          "sha256": "c0a6f1b5e2e111995a1a7976bc7d9444abd1cf5426eb3244c6e104b1f37d85be"
+        },
+        {
+          "binding": "REP02_HEAD",
+          "relative_path": "tests/test_fault_injection.py",
+          "root_id": "REP-02-REPOSITORY",
+          "sha256": "bb30bb59a80f7b4cb8c90d9e8e6697a56df7f8e89374452ed5b41731041a98e9"
+        },
+        {
+          "binding": "REP02_HEAD",
+          "relative_path": "tests/test_integration.py",
+          "root_id": "REP-02-REPOSITORY",
+          "sha256": "026cfa6a92925adbbbd401c1e44ce64e333efb174c3e687610fe42e5c8922dca"
+        },
+        {
+          "binding": "D5_SOURCE_HASH_INVENTORY",
+          "relative_path": "tests/test_ncs01.py",
+          "root_id": "REP-02-REPOSITORY",
+          "sha256": "07cc2da7cd179799b038af3e8767ef6c30eb25bc0f2954511284f5bba6801c48"
+        },
+        {
+          "binding": "D5_SOURCE_HASH_INVENTORY",
+          "relative_path": "tests/test_project_intake.py",
+          "root_id": "REP-02-REPOSITORY",
+          "sha256": "356454a4d02d67ae444dc93184a83e9a95ea8dfd299a36f5e456ad45292f2a0a"
+        },
+        {
+          "binding": "REP02_HEAD",
+          "relative_path": "tests/test_rail_budget.py",
+          "root_id": "REP-02-REPOSITORY",
+          "sha256": "a7905ce423f8cb01d3142275c8ac6345fe5cea017dea32b827c810e316d81997"
+        },
+        {
+          "binding": "REP02_HEAD",
+          "relative_path": "tests/test_regulator_review.py",
+          "root_id": "REP-02-REPOSITORY",
+          "sha256": "9d91d93fa3e1154296055548da194d92e5d1b3b75c0df8c3b6b498499af76c54"
+        },
+        {
+          "binding": "REP02_HEAD",
+          "relative_path": "tests/test_report_schema.py",
+          "root_id": "REP-02-REPOSITORY",
+          "sha256": "51ca7b58f81e8bf47506f82de0541f60f879b1034f402751d09f144bbaebd631"
+        },
+        {
+          "binding": "REP02_HEAD",
+          "relative_path": "tests/test_reporting.py",
+          "root_id": "REP-02-REPOSITORY",
+          "sha256": "28ffb5b83d8d06a19eb0d10ac89afa9e86e686d37aa954254f5870052b1f537f"
+        },
+        {
+          "binding": "REP02_HEAD",
+          "relative_path": "tests/test_sequencing.py",
+          "root_id": "REP-02-REPOSITORY",
+          "sha256": "e16715f30e81d85d2850d2e62fe1a66c3a0221988cbe5e810288d20283170fba"
+        }
+      ],
+      "passed": 404,
+      "skipped": 0,
+      "status": "PASS",
+      "tests_run": 404
+    }
+  ],
+  "verification_status": "PASS"
+}

@@ -153,6 +153,7 @@ def _test_distribution_files() -> Set[str]:
         path.relative_to(REPO_ROOT).as_posix()
         for path in tests.rglob("*.py")
         if "__pycache__" not in path.parts
+        and path.name != "test_d5_finalizer.py"
     }
     fixtures = tests / "fixtures"
     selected.update(
@@ -172,6 +173,23 @@ def _documentation_distribution_files() -> Set[str]:
         for path in docs.rglob("*.md")
         if path.is_file()
     }
+
+
+def _project_data_distribution_files() -> Set[str]:
+    selected: Set[str] = set()
+    for folder, suffixes in (
+        ("examples", {".json", ".md"}),
+        ("scenarios", {".json"}),
+    ):
+        root = REPO_ROOT / folder
+        selected.update(
+            path.relative_to(REPO_ROOT).as_posix()
+            for path in root.rglob("*")
+            if path.is_file()
+            and "__pycache__" not in path.parts
+            and path.suffix in suffixes
+        )
+    return selected
 
 
 def _require_members(label: str, actual: Set[str], expected: Set[str]) -> None:
@@ -226,6 +244,8 @@ def _verify_inventory(wheel: Path, sdist: Path) -> Dict[str, object]:
     } | {
         f"{root}/{name}" for name in _documentation_distribution_files()
     } | {
+        f"{root}/{name}" for name in _project_data_distribution_files()
+    } | {
         f"{root}/{name}"
         for name in (
             "pyproject.toml",
@@ -244,6 +264,7 @@ def _verify_inventory(wheel: Path, sdist: Path) -> Dict[str, object]:
         "sdist_file_count": len(sdist_members),
         "sdist_test_and_fixture_count": len(_test_distribution_files()),
         "sdist_documentation_count": len(_documentation_distribution_files()),
+        "sdist_project_data_count": len(_project_data_distribution_files()),
     }
 
 
@@ -557,6 +578,20 @@ def _verify_install_and_cli(wheel: Path) -> Dict[str, object]:
             environment,
         )
         outcomes["review"] = "PASS"
+
+        _verify_smoke(
+            python,
+            [
+                "intake",
+                str(FIXTURES / "project_intake" / "ready-static-buck-pin.json"),
+                "--artifact-root",
+                str(FIXTURES / "project_intake"),
+            ],
+            "PASS",
+            root,
+            environment,
+        )
+        outcomes["intake"] = "PASS"
 
         report_input = root / "report-input.json"
         _write_json(report_input, rail_result)

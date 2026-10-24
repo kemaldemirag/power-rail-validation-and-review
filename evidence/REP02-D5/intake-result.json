@@ -1,0 +1,428 @@
+{
+  "artifact_gaps": [
+    {
+      "gap_id": "GAP-REGULATOR-DATASHEET",
+      "reason_code": "ARTIFACT_NOT_PRESENT",
+      "role": "REGULATOR_DATASHEET"
+    },
+    {
+      "gap_id": "GAP-REGULATOR-MODEL",
+      "reason_code": "ARTIFACT_NOT_PRESENT",
+      "role": "REGULATOR_MODEL"
+    },
+    {
+      "gap_id": "GAP-REGULATOR-SELECTION",
+      "reason_code": "ARTIFACT_NOT_PRESENT",
+      "role": "REGULATOR_SELECTION"
+    },
+    {
+      "gap_id": "GAP-REP01-CONFIGURATION",
+      "reason_code": "ARTIFACT_NOT_PRESENT",
+      "role": "REP01_CONFIGURATION"
+    },
+    {
+      "gap_id": "GAP-REP01-POWER-PROFILE",
+      "reason_code": "ARTIFACT_NOT_PRESENT",
+      "role": "REP01_POWER_PROFILE"
+    },
+    {
+      "gap_id": "GAP-REP01-RAIL-DEMANDS",
+      "reason_code": "ARTIFACT_NOT_PRESENT",
+      "role": "REP01_RAIL_DEMANDS"
+    }
+  ],
+  "artifact_results": [
+    {
+      "artifact_id": "REP01-INTERFACE-CONTRACT-V1.2",
+      "committed_artifact_status": "VERIFIED",
+      "committed_sha256": "8fbb2a737699a5b92a13cf4756dcd4a5266306d398a316612e997388794ac3f0",
+      "document_revision": "v1.2",
+      "expected_sha256": "8fbb2a737699a5b92a13cf4756dcd4a5266306d398a316612e997388794ac3f0",
+      "license_status": "NOT_APPLICABLE",
+      "media_type": "text/markdown",
+      "observed_sha256": "8fbb2a737699a5b92a13cf4756dcd4a5266306d398a316612e997388794ac3f0",
+      "origin": "REP01_PROJECT",
+      "path": "docs/interface-contract-v1.2.md",
+      "readiness_role": false,
+      "reason_code": "ARTIFACT_BYTES_AND_BINDINGS_VERIFIED",
+      "role": "REP01_INTERFACE_CONTRACT",
+      "status": "PASS",
+      "version": "git-b335eec28c8cfb514c79e2ddd41be1b82a4b699b"
+    },
+    {
+      "artifact_id": "REP01-OPEN-DECISIONS-V1.2",
+      "committed_artifact_status": "VERIFIED",
+      "committed_sha256": "1be7d880f69b82830d55483c2aed932c4c390384bb3d17304447958e542d563c",
+      "document_revision": "v1.2",
+      "expected_sha256": "1be7d880f69b82830d55483c2aed932c4c390384bb3d17304447958e542d563c",
+      "license_status": "NOT_APPLICABLE",
+      "media_type": "text/markdown",
+      "observed_sha256": "1be7d880f69b82830d55483c2aed932c4c390384bb3d17304447958e542d563c",
+      "origin": "REP01_PROJECT",
+      "path": "docs/open-decisions-v1.2.md",
+      "readiness_role": false,
+      "reason_code": "ARTIFACT_BYTES_AND_BINDINGS_VERIFIED",
+      "role": "REP01_OPEN_DECISIONS",
+      "status": "PASS",
+      "version": "git-b335eec28c8cfb514c79e2ddd41be1b82a4b699b"
+    },
+    {
+      "artifact_id": "REP01-POWER-TREE-PLACEHOLDER",
+      "committed_artifact_status": "VERIFIED",
+      "committed_sha256": "110e497c8596e2f54857bd15075ae19c9b6df1915713b8ab332bb24cb02b9772",
+      "document_revision": "git-b335eec28c8cfb514c79e2ddd41be1b82a4b699b",
+      "expected_sha256": "110e497c8596e2f54857bd15075ae19c9b6df1915713b8ab332bb24cb02b9772",
+      "license_status": "NOT_APPLICABLE",
+      "media_type": "text/markdown",
+      "observed_sha256": "110e497c8596e2f54857bd15075ae19c9b6df1915713b8ab332bb24cb02b9772",
+      "origin": "REP01_PROJECT",
+      "path": "engineering/power-tree/README.md",
+      "readiness_role": false,
+      "reason_code": "ARTIFACT_BYTES_AND_BINDINGS_VERIFIED",
+      "role": "REP01_POWER_TREE_PLACEHOLDER",
+      "status": "PASS",
+      "version": "git-b335eec28c8cfb514c79e2ddd41be1b82a4b699b"
+    },
+    {
+      "artifact_id": "REP01-REQUIREMENTS-TRACEABILITY-V1.2",
+      "committed_artifact_status": "VERIFIED",
+      "committed_sha256": "237691f6f9fd2bd244a8881ce05550e1ecd0a423d94e3bfb504944c23fe2cfe2",
+      "document_revision": "v1.2",
+      "expected_sha256": "237691f6f9fd2bd244a8881ce05550e1ecd0a423d94e3bfb504944c23fe2cfe2",
+      "license_status": "NOT_APPLICABLE",
+      "media_type": "text/csv",
+      "observed_sha256": "237691f6f9fd2bd244a8881ce05550e1ecd0a423d94e3bfb504944c23fe2cfe2",
+      "origin": "REP01_PROJECT",
+      "path": "requirements/requirements-traceability-v1.2.csv",
+      "readiness_role": false,
+      "reason_code": "ARTIFACT_BYTES_AND_BINDINGS_VERIFIED",
+      "role": "REP01_REQUIREMENTS_TRACEABILITY",
+      "status": "PASS",
+      "version": "git-b335eec28c8cfb514c79e2ddd41be1b82a4b699b"
+    }
+  ],
+  "capability_results": [
+    {
+      "capability": "BUCK",
+      "reason_code": "INTAKE_BLOCKED",
+      "status": "BLOCKED"
+    },
+    {
+      "capability": "LOOP_STABILITY",
+      "reason_code": "INTAKE_BLOCKED",
+      "status": "BLOCKED"
+    },
+    {
+      "capability": "PIN",
+      "reason_code": "INTAKE_BLOCKED",
+      "status": "BLOCKED"
+    },
+    {
+      "capability": "REP01_BINDING",
+      "reason_code": "INTAKE_BLOCKED",
+      "status": "BLOCKED"
+    },
+    {
+      "capability": "STATIC",
+      "reason_code": "INTAKE_BLOCKED",
+      "status": "BLOCKED"
+    },
+    {
+      "capability": "TRANSIENT",
+      "reason_code": "INTAKE_BLOCKED",
+      "status": "BLOCKED"
+    }
+  ],
+  "downstream_evaluations": [
+    {
+      "capability": "BUCK",
+      "reason_code": "DOWNSTREAM_ENGINE_NOT_RUN",
+      "status": "NOT_RUN"
+    },
+    {
+      "capability": "PIN",
+      "reason_code": "DOWNSTREAM_ENGINE_NOT_RUN",
+      "status": "NOT_RUN"
+    },
+    {
+      "capability": "TRANSIENT",
+      "reason_code": "DOWNSTREAM_ENGINE_NOT_RUN",
+      "status": "NOT_RUN"
+    },
+    {
+      "capability": "LOOP_STABILITY",
+      "reason_code": "DOWNSTREAM_ENGINE_NOT_RUN",
+      "status": "NOT_RUN"
+    }
+  ],
+  "input_hash": "ab7e7a992532a8d061f16581c5ea19be7fb41ac8fa9ad490a5e79088776527a5",
+  "issues": [
+    {
+      "finding_id": "INTAKE-0001",
+      "message": "requested capabilities require role REGULATOR_DATASHEET",
+      "path": "$.artifacts",
+      "reason_code": "REQUIRED_ARTIFACT_ROLE_MISSING",
+      "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+      "source_refs": [
+        "REP02-PROJECT-INTAKE-CONTRACT"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "finding_id": "INTAKE-0002",
+      "message": "requested capabilities require role REGULATOR_MODEL",
+      "path": "$.artifacts",
+      "reason_code": "REQUIRED_ARTIFACT_ROLE_MISSING",
+      "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+      "source_refs": [
+        "REP02-PROJECT-INTAKE-CONTRACT"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "finding_id": "INTAKE-0003",
+      "message": "requested capabilities require role REGULATOR_SELECTION",
+      "path": "$.artifacts",
+      "reason_code": "REQUIRED_ARTIFACT_ROLE_MISSING",
+      "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+      "source_refs": [
+        "REP02-PROJECT-INTAKE-CONTRACT"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "finding_id": "INTAKE-0004",
+      "message": "requested capabilities require role REP01_CONFIGURATION",
+      "path": "$.artifacts",
+      "reason_code": "REQUIRED_ARTIFACT_ROLE_MISSING",
+      "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+      "source_refs": [
+        "REP02-PROJECT-INTAKE-CONTRACT"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "finding_id": "INTAKE-0005",
+      "message": "requested capabilities require role REP01_POWER_PROFILE",
+      "path": "$.artifacts",
+      "reason_code": "REQUIRED_ARTIFACT_ROLE_MISSING",
+      "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+      "source_refs": [
+        "REP02-PROJECT-INTAKE-CONTRACT"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "finding_id": "INTAKE-0006",
+      "message": "requested capabilities require role REP01_RAIL_DEMANDS",
+      "path": "$.artifacts",
+      "reason_code": "REQUIRED_ARTIFACT_ROLE_MISSING",
+      "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+      "source_refs": [
+        "REP02-PROJECT-INTAKE-CONTRACT"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "finding_id": "INTAKE-0007",
+      "message": "mandatory operating-envelope value is unknown; no default was applied",
+      "path": "$.operating_envelope.ambient_max_c",
+      "reason_code": "MANDATORY_SEMANTIC_UNKNOWN",
+      "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+      "source_refs": [
+        "REP02-PROJECT-INTAKE-CONTRACT"
+      ],
+      "status": "UNKNOWN"
+    },
+    {
+      "finding_id": "INTAKE-0008",
+      "message": "mandatory operating-envelope value is unknown; no default was applied",
+      "path": "$.operating_envelope.ambient_min_c",
+      "reason_code": "MANDATORY_SEMANTIC_UNKNOWN",
+      "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+      "source_refs": [
+        "REP02-PROJECT-INTAKE-CONTRACT"
+      ],
+      "status": "UNKNOWN"
+    },
+    {
+      "finding_id": "INTAKE-0009",
+      "message": "mandatory operating-envelope value is unknown; no default was applied",
+      "path": "$.operating_envelope.load_max_a",
+      "reason_code": "MANDATORY_SEMANTIC_UNKNOWN",
+      "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+      "source_refs": [
+        "REP02-PROJECT-INTAKE-CONTRACT"
+      ],
+      "status": "UNKNOWN"
+    },
+    {
+      "finding_id": "INTAKE-0010",
+      "message": "mandatory operating-envelope value is unknown; no default was applied",
+      "path": "$.operating_envelope.load_min_a",
+      "reason_code": "MANDATORY_SEMANTIC_UNKNOWN",
+      "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+      "source_refs": [
+        "REP02-PROJECT-INTAKE-CONTRACT"
+      ],
+      "status": "UNKNOWN"
+    },
+    {
+      "finding_id": "INTAKE-0011",
+      "message": "mandatory operating-envelope value is unknown; no default was applied",
+      "path": "$.operating_envelope.load_nom_a",
+      "reason_code": "MANDATORY_SEMANTIC_UNKNOWN",
+      "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+      "source_refs": [
+        "REP02-PROJECT-INTAKE-CONTRACT"
+      ],
+      "status": "UNKNOWN"
+    },
+    {
+      "finding_id": "INTAKE-0012",
+      "message": "mandatory operating-envelope value is unknown; no default was applied",
+      "path": "$.operating_envelope.vin_max_v",
+      "reason_code": "MANDATORY_SEMANTIC_UNKNOWN",
+      "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+      "source_refs": [
+        "REP02-PROJECT-INTAKE-CONTRACT"
+      ],
+      "status": "UNKNOWN"
+    },
+    {
+      "finding_id": "INTAKE-0013",
+      "message": "mandatory operating-envelope value is unknown; no default was applied",
+      "path": "$.operating_envelope.vin_min_v",
+      "reason_code": "MANDATORY_SEMANTIC_UNKNOWN",
+      "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+      "source_refs": [
+        "REP02-PROJECT-INTAKE-CONTRACT"
+      ],
+      "status": "UNKNOWN"
+    },
+    {
+      "finding_id": "INTAKE-0014",
+      "message": "required identity is explicitly unknown",
+      "path": "$.regulator.manufacturer",
+      "reason_code": "REQUIRED_IDENTITY_UNKNOWN",
+      "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+      "source_refs": [
+        "REP02-PROJECT-INTAKE-CONTRACT"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "finding_id": "INTAKE-0015",
+      "message": "required identity is explicitly unknown",
+      "path": "$.regulator.part_number",
+      "reason_code": "REQUIRED_IDENTITY_UNKNOWN",
+      "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+      "source_refs": [
+        "REP02-PROJECT-INTAKE-CONTRACT"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "finding_id": "INTAKE-0016",
+      "message": "required identity is explicitly unknown",
+      "path": "$.rep01.configuration_id",
+      "reason_code": "REQUIRED_IDENTITY_UNKNOWN",
+      "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+      "source_refs": [
+        "REP02-PROJECT-INTAKE-CONTRACT"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "finding_id": "INTAKE-0017",
+      "message": "required identity is explicitly unknown",
+      "path": "$.rep01.profile_id",
+      "reason_code": "REQUIRED_IDENTITY_UNKNOWN",
+      "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+      "source_refs": [
+        "REP02-PROJECT-INTAKE-CONTRACT"
+      ],
+      "status": "BLOCKED"
+    }
+  ],
+  "limitations": [
+    "EXECUTION_READINESS_ONLY",
+    "NO_ELECTRICAL_COMPLIANCE_CLAIM",
+    "NO_HARDWARE_VALIDATION_CLAIM",
+    "NO_G1_G6_CLOSURE_CLAIM",
+    "DOWNSTREAM_ENGINES_NOT_RUN",
+    "NO_ARTIFACT_SEMANTIC_EXTRACTION",
+    "DECLARED_ORIGIN_NOT_AUTHENTICATED",
+    "DESCRIPTOR_HASH_IS_CANONICAL_JSON_NOT_SOURCE_FILE_BYTES"
+  ],
+  "package_version": "0.6.0.dev0",
+  "project_provenance": {
+    "committed_artifacts_verified": 4,
+    "reason_code": "PROJECT_GIT_PROVENANCE_VERIFIED",
+    "revision": "b335eec28c8cfb514c79e2ddd41be1b82a4b699b",
+    "status": "PASS",
+    "working_tree": "CLEAN"
+  },
+  "reason_code": "REQUIRED_ARTIFACT_ROLE_MISSING",
+  "requested_capabilities": [
+    "BUCK",
+    "LOOP_STABILITY",
+    "PIN",
+    "REP01_BINDING",
+    "STATIC",
+    "TRANSIENT"
+  ],
+  "required_artifact_roles": [
+    "REGULATOR_DATASHEET",
+    "REGULATOR_MODEL",
+    "REGULATOR_SELECTION",
+    "REP01_CONFIGURATION",
+    "REP01_POWER_PROFILE",
+    "REP01_RAIL_DEMANDS"
+  ],
+  "rule_id": "REP02.PROJECT_INTAKE.READINESS",
+  "schema_version": "1.0.0",
+  "source_refs": [
+    "REP01-INTERFACE-CONTRACT-V1.2",
+    "REP01-OPEN-DECISIONS-V1.2",
+    "REP01-POWER-TREE-PLACEHOLDER",
+    "REP01-REQUIREMENTS-TRACEABILITY-V1.2",
+    "REP02-PROJECT-INTAKE-CONTRACT",
+    "REP02-PROJECT-INTAKE-DESCRIPTOR"
+  ],
+  "sources": [
+    {
+      "content_hash": "8fbb2a737699a5b92a13cf4756dcd4a5266306d398a316612e997388794ac3f0",
+      "source_id": "REP01-INTERFACE-CONTRACT-V1.2",
+      "version": "git-b335eec28c8cfb514c79e2ddd41be1b82a4b699b"
+    },
+    {
+      "content_hash": "1be7d880f69b82830d55483c2aed932c4c390384bb3d17304447958e542d563c",
+      "source_id": "REP01-OPEN-DECISIONS-V1.2",
+      "version": "git-b335eec28c8cfb514c79e2ddd41be1b82a4b699b"
+    },
+    {
+      "content_hash": "110e497c8596e2f54857bd15075ae19c9b6df1915713b8ab332bb24cb02b9772",
+      "source_id": "REP01-POWER-TREE-PLACEHOLDER",
+      "version": "git-b335eec28c8cfb514c79e2ddd41be1b82a4b699b"
+    },
+    {
+      "content_hash": "237691f6f9fd2bd244a8881ce05550e1ecd0a423d94e3bfb504944c23fe2cfe2",
+      "source_id": "REP01-REQUIREMENTS-TRACEABILITY-V1.2",
+      "version": "git-b335eec28c8cfb514c79e2ddd41be1b82a4b699b"
+    },
+    {
+      "content_hash": "91f89178113807e5da2901b3394495c73ccbcf3eace6aa8deae05566721a743c",
+      "source_id": "REP02-PROJECT-INTAKE-CONTRACT",
+      "version": "1.0.0"
+    },
+    {
+      "content_hash": "ab7e7a992532a8d061f16581c5ea19be7fb41ac8fa9ad490a5e79088776527a5",
+      "source_id": "REP02-PROJECT-INTAKE-DESCRIPTOR",
+      "version": "1.0.0"
+    }
+  ],
+  "status": "BLOCKED",
+  "tool_name": "power-rail-project-intake",
+  "tool_version": "0.1.0"
+}

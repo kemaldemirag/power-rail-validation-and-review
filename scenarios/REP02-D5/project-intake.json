@@ -1,0 +1,176 @@
+{
+  "schema_version": "1.0.0",
+  "descriptor_id": "REP02-D5-REP01-ACTUAL-GAP",
+  "scope": "PROJECT",
+  "rep01": {
+    "repository_id": "REP-01",
+    "git_revision": {
+      "state": "KNOWN",
+      "value": "b335eec28c8cfb514c79e2ddd41be1b82a4b699b"
+    },
+    "configuration_id": {
+      "state": "UNKNOWN",
+      "reason_code": "REP01_CONFIGURATION_ARTIFACT_MISSING"
+    },
+    "profile_id": {
+      "state": "UNKNOWN",
+      "reason_code": "REP01_POWER_PROFILE_ARTIFACT_MISSING"
+    },
+    "rail_id": {
+      "state": "KNOWN",
+      "value": "5V"
+    }
+  },
+  "topology": {
+    "state": "KNOWN",
+    "value": "BUCK"
+  },
+  "requested_capabilities": [
+    "REP01_BINDING",
+    "STATIC",
+    "BUCK",
+    "PIN",
+    "TRANSIENT",
+    "LOOP_STABILITY"
+  ],
+  "operating_envelope": {
+    "vin_min_v": {
+      "state": "UNKNOWN",
+      "unit": "V",
+      "reason_code": "REP01_INPUT_RANGE_MISSING"
+    },
+    "vin_nom_v": {
+      "state": "KNOWN",
+      "value": 24,
+      "unit": "V"
+    },
+    "vin_max_v": {
+      "state": "UNKNOWN",
+      "unit": "V",
+      "reason_code": "REP01_INPUT_RANGE_MISSING"
+    },
+    "vout_target_v": {
+      "state": "KNOWN",
+      "value": 5,
+      "unit": "V"
+    },
+    "load_min_a": {
+      "state": "UNKNOWN",
+      "unit": "A",
+      "reason_code": "REP01_LOAD_ENVELOPE_MISSING"
+    },
+    "load_nom_a": {
+      "state": "UNKNOWN",
+      "unit": "A",
+      "reason_code": "REP01_LOAD_ENVELOPE_MISSING"
+    },
+    "load_max_a": {
+      "state": "UNKNOWN",
+      "unit": "A",
+      "reason_code": "REP01_LOAD_ENVELOPE_MISSING"
+    },
+    "ambient_min_c": {
+      "state": "UNKNOWN",
+      "unit": "degC",
+      "reason_code": "REP01_AMBIENT_RANGE_MISSING"
+    },
+    "ambient_max_c": {
+      "state": "UNKNOWN",
+      "unit": "degC",
+      "reason_code": "REP01_AMBIENT_RANGE_MISSING"
+    }
+  },
+  "regulator": {
+    "manufacturer": {
+      "state": "UNKNOWN",
+      "reason_code": "REGULATOR_SELECTION_MISSING"
+    },
+    "part_number": {
+      "state": "UNKNOWN",
+      "reason_code": "REGULATOR_SELECTION_MISSING"
+    }
+  },
+  "artifacts": [
+    {
+      "artifact_id": "REP01-INTERFACE-CONTRACT-V1.2",
+      "role": "REP01_INTERFACE_CONTRACT",
+      "path": "docs/interface-contract-v1.2.md",
+      "media_type": "text/markdown",
+      "version": "git-b335eec28c8cfb514c79e2ddd41be1b82a4b699b",
+      "document_revision": "v1.2",
+      "origin": "REP01_PROJECT",
+      "license_status": "NOT_APPLICABLE",
+      "sha256": "8fbb2a737699a5b92a13cf4756dcd4a5266306d398a316612e997388794ac3f0",
+      "bindings": {}
+    },
+    {
+      "artifact_id": "REP01-OPEN-DECISIONS-V1.2",
+      "role": "REP01_OPEN_DECISIONS",
+      "path": "docs/open-decisions-v1.2.md",
+      "media_type": "text/markdown",
+      "version": "git-b335eec28c8cfb514c79e2ddd41be1b82a4b699b",
+      "document_revision": "v1.2",
+      "origin": "REP01_PROJECT",
+      "license_status": "NOT_APPLICABLE",
+      "sha256": "1be7d880f69b82830d55483c2aed932c4c390384bb3d17304447958e542d563c",
+      "bindings": {}
+    },
+    {
+      "artifact_id": "REP01-REQUIREMENTS-TRACEABILITY-V1.2",
+      "role": "REP01_REQUIREMENTS_TRACEABILITY",
+      "path": "requirements/requirements-traceability-v1.2.csv",
+      "media_type": "text/csv",
+      "version": "git-b335eec28c8cfb514c79e2ddd41be1b82a4b699b",
+      "document_revision": "v1.2",
+      "origin": "REP01_PROJECT",
+      "license_status": "NOT_APPLICABLE",
+      "sha256": "237691f6f9fd2bd244a8881ce05550e1ecd0a423d94e3bfb504944c23fe2cfe2",
+      "bindings": {}
+    },
+    {
+      "artifact_id": "REP01-POWER-TREE-PLACEHOLDER",
+      "role": "REP01_POWER_TREE_PLACEHOLDER",
+      "path": "engineering/power-tree/README.md",
+      "media_type": "text/markdown",
+      "version": "git-b335eec28c8cfb514c79e2ddd41be1b82a4b699b",
+      "document_revision": "git-b335eec28c8cfb514c79e2ddd41be1b82a4b699b",
+      "origin": "REP01_PROJECT",
+      "license_status": "NOT_APPLICABLE",
+      "sha256": "110e497c8596e2f54857bd15075ae19c9b6df1915713b8ab332bb24cb02b9772",
+      "bindings": {}
+    }
+  ],
+  "artifact_gaps": [
+    {
+      "gap_id": "GAP-REP01-CONFIGURATION",
+      "role": "REP01_CONFIGURATION",
+      "reason_code": "ARTIFACT_NOT_PRESENT"
+    },
+    {
+      "gap_id": "GAP-REP01-POWER-PROFILE",
+      "role": "REP01_POWER_PROFILE",
+      "reason_code": "ARTIFACT_NOT_PRESENT"
+    },
+    {
+      "gap_id": "GAP-REP01-RAIL-DEMANDS",
+      "role": "REP01_RAIL_DEMANDS",
+      "reason_code": "ARTIFACT_NOT_PRESENT"
+    },
+    {
+      "gap_id": "GAP-REGULATOR-SELECTION",
+      "role": "REGULATOR_SELECTION",
+      "reason_code": "ARTIFACT_NOT_PRESENT"
+    },
+    {
+      "gap_id": "GAP-REGULATOR-DATASHEET",
+      "role": "REGULATOR_DATASHEET",
+      "reason_code": "ARTIFACT_NOT_PRESENT"
+    },
+    {
+      "gap_id": "GAP-REGULATOR-MODEL",
+      "role": "REGULATOR_MODEL",
+      "reason_code": "ARTIFACT_NOT_PRESENT"
+    }
+  ],
+  "input_hash": "ab7e7a992532a8d061f16581c5ea19be7fb41ac8fa9ad490a5e79088776527a5"
+}

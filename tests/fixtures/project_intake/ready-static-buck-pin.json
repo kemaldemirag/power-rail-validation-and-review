@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0.0",
+  "descriptor_id": "REP02-D5-TEST-READY",
+  "scope": "TEST",
+  "rep01": {
+    "repository_id": "REP-01",
+    "git_revision": {
+      "state": "KNOWN",
+      "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "configuration_id": {
+      "state": "KNOWN",
+      "value": "CFG-TEST-BUCK-01"
+    },
+    "profile_id": {
+      "state": "KNOWN",
+      "value": "PROFILE-NOMINAL"
+    },
+    "rail_id": {
+      "state": "KNOWN",
+      "value": "VDD_TEST_1V8"
+    }
+  },
+  "topology": {
+    "state": "KNOWN",
+    "value": "BUCK"
+  },
+  "requested_capabilities": [
+    "REP01_BINDING",
+    "STATIC",
+    "BUCK",
+    "PIN"
+  ],
+  "operating_envelope": {
+    "vin_min_v": {"state": "KNOWN", "value": 4.75, "unit": "V"},
+    "vin_nom_v": {"state": "KNOWN", "value": 5.0, "unit": "V"},
+    "vin_max_v": {"state": "KNOWN", "value": 5.25, "unit": "V"},
+    "vout_target_v": {"state": "KNOWN", "value": 1.8, "unit": "V"},
+    "load_min_a": {"state": "KNOWN", "value": 0.0, "unit": "A"},
+    "load_nom_a": {"state": "KNOWN", "value": 0.5, "unit": "A"},
+    "load_max_a": {"state": "KNOWN", "value": 1.0, "unit": "A"},
+    "ambient_min_c": {"state": "KNOWN", "value": -20.0, "unit": "degC"},
+    "ambient_max_c": {"state": "KNOWN", "value": 70.0, "unit": "degC"}
+  },
+  "regulator": {
+    "manufacturer": {
+      "state": "KNOWN",
+      "value": "Synthetic Semiconductor"
+    },
+    "part_number": {
+      "state": "KNOWN",
+      "value": "TEST-BUCK-001"
+    }
+  },
+  "artifacts": [
+    {
+      "artifact_id": "SRC-TEST-REP01-CONFIG",
+      "role": "REP01_CONFIGURATION",
+      "path": "artifacts/rep01-configuration.json",
+      "media_type": "application/json",
+      "version": "fixture-1",
+      "document_revision": "fixture-1",
+      "origin": "INTERNAL_TEST_FIXTURE",
+      "license_status": "NOT_APPLICABLE",
+      "sha256": "008d853a66ec822bc4b7246c031eb09e3e807dfc21ceef6bbeacb2697d8b286a",
+      "bindings": {
+        "rep01_git_revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "configuration_id": "CFG-TEST-BUCK-01"
+      }
+    },
+    {
+      "artifact_id": "SRC-TEST-REP01-PROFILE",
+      "role": "REP01_POWER_PROFILE",
+      "path": "artifacts/rep01-power-profile.json",
+      "media_type": "application/json",
+      "version": "fixture-1",
+      "document_revision": "fixture-1",
+      "origin": "INTERNAL_TEST_FIXTURE",
+      "license_status": "NOT_APPLICABLE",
+      "sha256": "9d3cf064d107d0e14d25846e484af5e50594dd271ecf3f6b75f8a856439fc8a1",
+      "bindings": {
+        "rep01_git_revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "configuration_id": "CFG-TEST-BUCK-01",
+        "profile_id": "PROFILE-NOMINAL"
+      }
+    },
+    {
+      "artifact_id": "SRC-TEST-REP01-DEMANDS",
+      "role": "REP01_RAIL_DEMANDS",
+      "path": "artifacts/rep01-rail-demands.json",
+      "media_type": "application/json",
+      "version": "fixture-1",
+      "document_revision": "fixture-1",
+      "origin": "INTERNAL_TEST_FIXTURE",
+      "license_status": "NOT_APPLICABLE",
+      "sha256": "9fd9853cc83a88f4d35669382322e224f51efabb624886ea8e3c03384263cd29",
+      "bindings": {
+        "rep01_git_revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "configuration_id": "CFG-TEST-BUCK-01",
+        "profile_id": "PROFILE-NOMINAL",
+        "rail_id": "VDD_TEST_1V8"
+      }
+    },
+    {
+      "artifact_id": "SRC-TEST-REGULATOR-SELECTION",
+      "role": "REGULATOR_SELECTION",
+      "path": "artifacts/regulator-selection.json",
+      "media_type": "application/json",
+      "version": "fixture-1",
+      "document_revision": "fixture-1",
+      "origin": "INTERNAL_TEST_FIXTURE",
+      "license_status": "NOT_APPLICABLE",
+      "sha256": "155cb9523b59b9acf9a1d69d21152208edd22ecdd69f6a1a2ec7aa50a12c274d",
+      "bindings": {
+        "rep01_git_revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "configuration_id": "CFG-TEST-BUCK-01",
+        "profile_id": "PROFILE-NOMINAL",
+        "rail_id": "VDD_TEST_1V8",
+        "manufacturer": "Synthetic Semiconductor",
+        "part_number": "TEST-BUCK-001"
+      }
+    },
+    {
+      "artifact_id": "SRC-TEST-REGULATOR-DATASHEET",
+      "role": "REGULATOR_DATASHEET",
+      "path": "artifacts/regulator-datasheet.txt",
+      "media_type": "text/plain",
+      "version": "fixture-1",
+      "document_revision": "fixture-1",
+      "origin": "INTERNAL_TEST_FIXTURE",
+      "license_status": "DECLARED",
+      "sha256": "c80dd21a22c142956e3544c0e73e92eae2eeb673381cb8691c9a130fa5ba92d5",
+      "bindings": {
+        "manufacturer": "Synthetic Semiconductor",
+        "part_number": "TEST-BUCK-001"
+      }
+    },
+    {
+      "artifact_id": "SRC-TEST-OPEN-DECISIONS",
+      "role": "REP01_OPEN_DECISIONS",
+      "path": "artifacts/open-decisions.md",
+      "media_type": "text/markdown",
+      "version": "fixture-1",
+      "document_revision": "fixture-1",
+      "origin": "INTERNAL_TEST_FIXTURE",
+      "license_status": "NOT_APPLICABLE",
+      "sha256": "d497a0b9d8125bb398128dbea2dc23d30f0ca32502377ec21f9f154f1f1ab43f",
+      "bindings": {}
+    }
+  ],
+  "artifact_gaps": [
+    {
+      "gap_id": "GAP-TEST-REGULATOR-MODEL",
+      "role": "REGULATOR_MODEL",
+      "reason_code": "NOT_REQUIRED_FOR_REQUESTED_STATIC_SCOPE"
+    }
+  ],
+  "input_hash": "c20034cc42b99b2dd8ff3fa95cc0a1ec2af033ef8a34382bb71c4e4503bb5dc1"
+}

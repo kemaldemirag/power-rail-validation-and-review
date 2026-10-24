@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "power-rail-validation"
-version = "0.5.0"
+version = "0.6.0.dev0"
 description = "REP-02 deterministic power-rail validation, regulator-review, and evidence-integration tools"
 readme = "README.md"
 license = "LicenseRef-Proprietary"
@@ -34,6 +34,7 @@ where = ["src"]
 [tool.setuptools.package-data]
 "power_rail_validation.contracts" = ["contracts.csv", "field_dictionary.csv", "schemas/*.schema.json"]
 "power_rail_validation.integration" = ["file_api_contract.json"]
+"power_rail_validation.project_intake" = ["project_intake_contract.json"]
 "power_rail_validation.regulator_review" = ["review-rules.json"]
 
 [tool.unittest]

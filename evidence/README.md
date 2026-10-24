@@ -51,3 +51,12 @@ Bu paket D3 sentetik test/kanıt kapsamını kapatır. GAP-02, GAP-03, G1 ve can
 - `REP02-D4/report.md`: sonuçların, açık kapıların ve release iddia sınırının insan-okunur özeti.
 
 D4 kanıtı, D3 manifestini yeniden üretmez veya geçmiş D3 byte bağını bugünkü kaynak ağacına genişletmez. D3 kaynakları incelenmiş bir commit/tag ile dondurulmadığı için bu provenance sınırlaması açık `BLOCKED / UNCOMMITTED_SOURCE` olarak kalır. Yerel `PASS`, Python 3.12 yazılım release adayına aittir; Python 3.9 CI yürütmesi, canlı adaptörler ve donanım kapıları ayrıca çalıştırılmalıdır.
+
+## D5 gerçek proje girdisi hazırlık kanıtları
+
+- `REP02-D5/intake-result.json`: sabit REP-01 revizyonu ve tek `5V` dilimi için kanonik intake motoru sonucu.
+- `REP02-D5/test-results.json`: odaklı/tam test ve API/CLI parity, Python 3.9 grameri, diff ve senaryo bağ kontrolleri.
+- `REP02-D5/report.md`: doğrulanan REP-01 byte ankrajları, açık zorunlu artifact rolleri ve downstream iddia sınırının insan-okunur özeti.
+- `REP02-D5/checkpoint-manifest.json`: D5 kaynakları, D4 salt-okunur ankrajı, REP-01 commit/blob bağları ve üç kanıt çıktısı için self-hash'li manifest.
+
+D5 araç doğrulaması `PASS` olsa da güncel gerçek proje hazırlığı kasıtlı olarak `BLOCKED` kalır. Hazırlık kapısı elektriksel motor çalıştırmaz; buck, pin, transient, loop-stability, fiziksel donanım ve G1-G6 sonuçları üretmez.

@@ -19,6 +19,7 @@ from power_rail_validation.cli import (
     main,
 )
 from power_rail_validation.contracts import sha256_hexdigest
+from power_rail_validation.project_intake import descriptor_input_hash
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -104,6 +105,47 @@ class CliCommandTests(unittest.TestCase):
 
         self.assertEqual(EXIT_CODES["PASS"], exit_code)
         self.assertEqual("PASS", json.loads(stdout)["status"])
+        self.assertEqual("", stderr)
+
+    def test_intake_requires_explicit_root_and_returns_reportable_pass(self) -> None:
+        fixture_root = FIXTURES / "project_intake"
+        exit_code, stdout, stderr = invoke(
+            [
+                "intake",
+                str(fixture_root / "ready-static-buck-pin.json"),
+                "--artifact-root",
+                str(fixture_root),
+            ]
+        )
+
+        result = json.loads(stdout)
+        self.assertEqual(EXIT_CODES["PASS"], exit_code)
+        self.assertEqual("PASS", result["status"])
+        self.assertEqual("INTAKE_EXECUTION_READY", result["reason_code"])
+        self.assertEqual({"NOT_RUN"}, {item["status"] for item in result["downstream_evaluations"]})
+        self.assertEqual("", stderr)
+
+    def test_intake_large_integer_order_conflict_is_blocked_without_internal_error(self) -> None:
+        fixture_root = FIXTURES / "project_intake"
+        descriptor = load_json(fixture_root / "ready-static-buck-pin.json")
+        assert isinstance(descriptor, dict)
+        descriptor["operating_envelope"]["vin_min_v"]["value"] = 10**400
+        descriptor["operating_envelope"]["vin_nom_v"]["value"] = 10**400 - 1
+        descriptor["operating_envelope"]["vin_max_v"]["value"] = 10**400
+        descriptor["input_hash"] = descriptor_input_hash(descriptor)
+
+        exit_code, stdout, stderr = invoke(
+            ["intake", "-", "--artifact-root", str(fixture_root)],
+            json.dumps(descriptor),
+        )
+
+        result = json.loads(stdout)
+        self.assertEqual(EXIT_CODES["BLOCKED"], exit_code)
+        self.assertEqual("BLOCKED", result["status"])
+        self.assertIn(
+            "OPERATING_ENVELOPE_ORDER_CONFLICT",
+            {item["reason_code"] for item in result["issues"]},
+        )
         self.assertEqual("", stderr)
 
     def test_sequence_reads_stdin_and_returns_pass(self) -> None:
@@ -224,6 +266,15 @@ class CliFailureTests(unittest.TestCase):
         self.assertEqual(EXIT_USAGE_OR_INPUT, exit_code)
         self.assertEqual("", stdout)
         self.assertIn("only valid", stderr)
+
+    def test_intake_without_explicit_artifact_root_is_a_usage_error(self) -> None:
+        exit_code, stdout, stderr = invoke(
+            ["intake", str(FIXTURES / "project_intake" / "ready-static-buck-pin.json")]
+        )
+
+        self.assertEqual(EXIT_USAGE_OR_INPUT, exit_code)
+        self.assertEqual("", stdout)
+        self.assertIn("--artifact-root", stderr)
 
     def test_report_contract_rejection_is_an_input_error(self) -> None:
         exit_code, stdout, stderr = invoke(["report", "-"], "{}")

@@ -36,7 +36,7 @@ _ROOT_FILES = (
     "CHANGELOG.md",
     "LICENSE.txt",
 )
-_SOURCE_TREES = ("src", "tests", "docs")
+_SOURCE_TREES = ("src", "tests", "docs", "examples", "scenarios")
 
 
 class ReleaseBuildError(RuntimeError):

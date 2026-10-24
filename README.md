@@ -1,6 +1,6 @@
 # power-rail-validation-and-review
 
-Durum: D4_LOCAL_RELEASE_CANDIDATE_IMPLEMENTED — LIVE_INTEGRATION_AND_HARDWARE_GATES_BLOCKED
+Durum: D5_PROJECT_INTAKE_GATE_IMPLEMENTED — CURRENT_REP01_VERTICAL_SLICE_BLOCKED
 
 Bu repo güç rayı bütçesi, derating, sıralama, sentetik hata senaryoları ve kanıt sınıflı inceleme raporları için yeniden kullanılabilir bir araç seti geliştirir.
 
@@ -72,6 +72,16 @@ Bu kapsam D3 sentetik test ve kanıt kapısını kapatır. Canlı REP-01/03 adap
 
 D4 kapanışı yalnız yerel yazılım release adayını kapsar. Python 3.12 üzerinde tam test ve temiz kurulum doğrulaması yerelde çalıştırılır; Python 3.9 yürütmesi CI matrisinde tanımlıdır ancak commit/push yapılmadığı için bu çalışma ağacında henüz koşturulmuş sayılmaz.
 
+`D5 / Gerçek Proje Girdisi Hazırlık Kapısı` ardıl geliştirme dilimi şunları ekler:
+
+- tek bir sabit REP-01 revizyonu, ray ve exact regülatör seçimi için kapalı intake descriptor'ı;
+- artifact rolü, güvenli göreli yol, pinned belge revizyonu, köken/lisans, SHA-256 ve çapraz bağ doğrulaması;
+- talep edilen kabiliyete göre datasheet/model gereksinimi ve açık artifact-gap kaydı;
+- mevcut durum/çıkış-kodu modelini kullanan `intake INPUT --artifact-root ROOT` komutu;
+- gerçek REP-01 `5V` diliminin mevcut eksiklerini varsayımsız biçimde `BLOCKED` bırakan ayrı D5 kanıtı.
+
+Intake `PASS`, yalnız downstream analiz girdilerinin kimlik ve byte bütünlüğü bakımından hazır olduğunu söyler. Artifact içeriğinden elektriksel semantik çıkarmaz; buck, pin, transient ve loop-stability motorlarını çalıştırmaz ve donanım/G1-G6 onayı vermez. Kaynak ağacı D5 geliştirmesi için `0.6.0.dev0` sürümündedir; dondurulmuş D4 dağıtım artifact'ları `0.5.0` olarak korunur.
+
 ## Güvenlik ve iddia sınırı
 
 G1 kaynak kapısı `BLOCKED` durumundadır. Bu repo şu aşamada gerçek müşteri şeması, exact-part regülatör modeli, fiziksel ölçüm veya EMC, ISO, AEC ve saha uygunluk kanıtı üretmez. Testlerdeki `PASS`, yalnız test edilen sözleşme, sentetik fixture ve yerel dosya bütünlüğü davranışını ifade eder; donanım, proje kapısı veya canlı entegrasyon onayı değildir. Eksik karar girdisi sayısal varsayılanla doldurulmaz ve `PASS` sonucuna yükseltilmez.
@@ -85,7 +95,7 @@ python -m pip install --no-deps .\dist\power_rail_validation-0.5.0-py3-none-any.
 power-rail-validation --version
 ```
 
-Altı komutun doğrulanmış örnekleri, stdin/stdout davranışı ve çıkış kodları için [CLI hızlı başlangıç kılavuzuna](docs/QUICKSTART.md) bakın. Aynı arayüz `python -m power_rail_validation` ile de kullanılabilir.
+D4 dağıtımındaki altı komutun ve D5 kaynak ağacı/`0.6.0.dev0` paket adayındaki `intake` komutunun doğrulanmış örnekleri, stdin/stdout davranışı ve çıkış kodları için [CLI hızlı başlangıç kılavuzuna](docs/QUICKSTART.md) bakın. Aynı arayüz `python -m power_rail_validation` ile de kullanılabilir.
 
 ## Test
 
@@ -111,6 +121,17 @@ python scripts/build_release.py
 python scripts/verify_release.py
 ```
 
+## D5 gerçek senaryosunu çalıştırma
+
+Kardeş REP-01 deposunun yolu açıkça verilmelidir:
+
+```powershell
+$env:PYTHONPATH = (Resolve-Path .\src).Path
+python -m power_rail_validation intake .\scenarios\REP02-D5\project-intake.json --artifact-root ..\esp32-s3-24v-interface-board
+```
+
+Mevcut snapshot için beklenen sonuç `BLOCKED`, proses kodu `3`'tür. Bu, hazırlık kapısının doğru çalıştığını; altı zorunlu artifact sınıfı ve bazı yetkili sayısal/kimlik girdileri henüz bulunmadığı için downstream analizin başlatılmadığını gösterir.
+
 ## Sonraki çalışma dilimi
 
-Bir sonraki ana dilim tek bir gerçek dikey dilimdir: bir exact regülatör, bir ray, yetkili datasheet profili ve bir REP-01 artifact'ını uçtan uca bağlamak. Bu dilimde buck güç katı kontrolleri, gerilim/pin kısıtları ve gerçek transient/loop-stability metrikleri küçük ve kanıta bağlı biçimde ele alınmalıdır. Canlı REP-01/03 entegrasyonu; yetkili repo/artifact erişimi, semantik eşleme ve GAP-02/GAP-03 kaynakları çözülene kadar `BLOCKED` kalır. Repo bağımsız Git deposudur; bu çalışma commit veya push yapmaz.
+Bir sonraki ana dilim tek bir gerçek dikey dilimdir: bir exact regülatör, bir ray, yetkili datasheet profili ve bir REP-01 artifact'ını uçtan uca bağlamak. Bu dilimde buck güç katı kontrolleri, gerilim/pin kısıtları ve gerçek transient/loop-stability metrikleri küçük ve kanıta bağlı biçimde ele alınmalıdır. Canlı REP-01/03 entegrasyonu; yetkili repo/artifact erişimi, semantik eşleme ve GAP-02/GAP-03 kaynakları çözülene kadar `BLOCKED` kalır. Repo bağımsız Git deposudur; D5 finalizer otomasyonu commit veya push gerçekleştirmez.

@@ -1,6 +1,6 @@
 # REP-02 CLI Hızlı Başlangıç
 
-Bu kılavuz, `power-rail-validation` 0.5.0 komut satırı arayüzünü paketlenmiş wheel'den veya kaynak ağacından çalıştırmak içindir. Komutlar bir UTF-8 JSON girdisi alır, alan motoru sonucunu tek bir JSON belgesi olarak standart çıktıya yazar ve sonucun `status` değerini proses çıkış koduna yansıtır.
+Bu kılavuz, dondurulmuş D4 `power-rail-validation` 0.5.0 wheel'ini ve D5 geliştirme kaynak ağacı/`0.6.0.dev0` paket adayı arayüzünü çalıştırmak içindir. D4 wheel altı komut taşır; D5 kaynak ağacı ve paket adayı bunlara gerçek proje girdi hazırlığını denetleyen `intake` komutunu ekler. Komutlar bir UTF-8 JSON girdisi alır, alan motoru sonucunu tek bir JSON belgesi olarak standart çıktıya yazar ve sonucun `status` değerini proses çıkış koduna yansıtır.
 
 > **Kapsam:** Bu sürüm sentetik fixture'ları ve çevrimdışı dosya doğrulamasını çalıştırır. Bir `PASS`, fiziksel donanım, canlı REP-01/REP-03 entegrasyonu, saha güvenilirliği veya ürün uygunluğu onayı değildir.
 
@@ -45,18 +45,27 @@ python -m power_rail_validation --help
 
 Bu kılavuzdaki fixture örnekleri bu kaynak ağacı biçimiyle test edilmiştir. Wheel kurulumunda aynı komutlarda `python -m power_rail_validation` yerine `power-rail-validation` kullanılabilir.
 
+Kaynak ağacında beklenen geliştirme sürümü:
+
+```text
+power-rail-validation 0.6.0.dev0
+```
+
+`intake` komutu D4 `0.5.0` wheel'inde yoktur; D5 kaynak ağacından veya doğrulanmış `0.6.0.dev0` paket adayından çalıştırılmalıdır.
+
 ## Tam komut sözdizimi
 
 ```text
 power-rail-validation validate INPUT [--kind {contract,file-api}] [--artifact-root PATH]
 power-rail-validation rail-budget INPUT
+power-rail-validation intake INPUT --artifact-root PATH
 power-rail-validation sequence INPUT
 power-rail-validation inject-fault INPUT
 power-rail-validation review INPUT [--artifact-root PATH]
 power-rail-validation report INPUT [--generated-at RFC3339_TIMESTAMP]
 ```
 
-`INPUT`, UTF-8 kodlu bir JSON dosya yolu veya standart girdiyi seçen `-` işaretidir. `validate` için varsayılan tür `contract`'tır. `--artifact-root`, yalnız `validate --kind file-api` ve `review` ile geçerlidir. Dosya-API doğrulamasında belirtilmezse girdi dosyasının dizini artifact kökü olur.
+`INPUT`, UTF-8 kodlu bir JSON dosya yolu veya standart girdiyi seçen `-` işaretidir. `validate` için varsayılan tür `contract`'tır. `intake` için `--artifact-root` zorunludur; gerçek artifact baytlarının doğrulanacağı kökü açıkça seçer. `--artifact-root`, ayrıca `validate --kind file-api` ve `review` ile geçerlidir. Dosya-API doğrulamasında belirtilmezse girdi dosyasının dizini artifact kökü olur.
 
 ## Doğrulanmış fixture örnekleri
 
@@ -102,7 +111,31 @@ $railResult
 
 Beklenen sonuç `PASS / WITHIN_DERATED_CAPACITY_AND_LIMITS`, beklenen çıkış kodu `0`'dır.
 
-### 3. `sequence`
+### 3. `intake`
+
+Pozitif test fixture'ı yalnız sentetik yürütme hazırlığını doğrular:
+
+```powershell
+$intakeFixtureRoot = (Resolve-Path .\tests\fixtures\project_intake).Path
+$intakeResult = python -m power_rail_validation intake .\tests\fixtures\project_intake\ready-static-buck-pin.json --artifact-root $intakeFixtureRoot
+$intakeExit = $LASTEXITCODE
+$intakeResult
+```
+
+Beklenen sonuç `PASS / INTAKE_EXECUTION_READY`, beklenen çıkış kodu `0`'dır. Sonuç `SYNTHETIC_TEST_ONLY`, `EXECUTION_READINESS_ONLY` ve `DOWNSTREAM_ENGINES_NOT_RUN` sınırlarını taşır.
+
+Gerçek REP-01 snapshot'ı için kanonik D5 senaryosu:
+
+```powershell
+$rep01Root = (Resolve-Path ..\esp32-s3-24v-interface-board).Path
+$actualIntake = python -m power_rail_validation intake .\scenarios\REP02-D5\project-intake.json --artifact-root $rep01Root
+$actualIntakeExit = $LASTEXITCODE
+$actualIntake
+```
+
+Mevcut snapshot için beklenen sonuç `BLOCKED`, beklenen çıkış kodu `3`'tür. Dört destekleyici REP-01 artifact'ı byte olarak doğrulanır; proje konfigürasyonu, güç profili, ray talepleri, exact regülatör seçimi, exact-part datasheet'i ve model bulunmadığı için downstream motorları `NOT_RUN` kalır.
+
+### 4. `sequence`
 
 ```powershell
 $sequenceInput = (Get-Content -Raw .\tests\fixtures\sequencing\normal.json | ConvertFrom-Json).input
@@ -114,7 +147,7 @@ $sequenceResult
 
 Beklenen sonuç `PASS / SEQUENCE_COMPLETE`, beklenen çıkış kodu `0`'dır.
 
-### 4. `inject-fault`
+### 5. `inject-fault`
 
 Fault runner, senaryoya ek olarak rail-budget ve sequencing baseline girdilerini ister. Fixture bağlarını testlerin kullandığı biçimde birleştirin:
 
@@ -132,7 +165,7 @@ $faultResult
 
 Bu fixture kasıtlı olarak teknik bir brownout hatası üretir. Beklenen sonuç `FAIL / BROWNOUT_EFFECT_TRIGGERED`, beklenen çıkış kodu `1`'dir. Buradaki `1`, CLI arızası değil, alan motorunun doğrulanmış `FAIL` sonucudur.
 
-### 5. `review`
+### 6. `review`
 
 Regülatör fixture'indeki kaynak locator'ları repo köküne göre tanımlıdır:
 
@@ -144,7 +177,7 @@ $reviewResult
 
 Beklenen sonuç `PASS / REGULATOR_REVIEW_COMPLETE`, beklenen çıkış kodu `0`'dır. Bu sentetik `PASS`, proje veya donanım onayı değildir.
 
-### 6. `report`
+### 7. `report`
 
 `report`, bir bileşen sonucunu ortak rapor modeline normalleştirir. Yukarıda üretilen `$railResult` doğrudan standart girdiye verilebilir:
 
@@ -216,6 +249,7 @@ exit $exitCode
 | Fault injection | Brownout, stuck-low, delay, rail-loss ve restart için deterministik sentetik fixture kuralları | Analog transient fiziği, waveform çözümü veya donanım güvenilirlik onayı |
 | Regulator review | Exact-part kimliğiyle bağlı kayıt, kaynak, hash, limit ve kanıt kapılarını denetleme | SPICE çalıştırma; transient kaydından loop stability çıkarımı; G1-G6 kapılarını değiştirme |
 | File API | Sürüm, descriptor yapısı ve yerel artifact byte/hash bütünlüğünü çevrimdışı doğrulama | Canlı REP-01/REP-03 adaptörü çalıştırma veya semantik mapping onayı |
+| Project intake | Tek bir REP-01 rayı için bildirilen kimlik, sürüm, köken, çapraz bağ ve artifact byte hazırlığını denetleme | Artifact içeriğinden elektriksel değer çıkarma; buck/pin/transient/stability veya donanım onayı |
 | Reporting | Mevcut bileşen sonucunu ortak bulgu modeline normalleştirme | Eksik kanıtı tamamlama veya alt sonucun statüsünü yükseltme |
 
 Gerçek proje kullanımında exact-part veri sayfaları, sürümlü model artifact'ları, gerçek ölçüm kayıtları ve yetkili entegrasyon girdileri ayrı kaynak kapılarından geçmelidir. Eksik veya belirsiz kanıt, varsayımla `PASS`e yükseltilmez.

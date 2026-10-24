@@ -18,6 +18,7 @@ from . import __version__
 from .contracts import sha256_hexdigest, validate_document
 from .fault_injection import run_fault_scenario
 from .integration import validate_file_api_descriptor
+from .project_intake import validate_project_intake
 from .rail_budget import calculate_rail_budget
 from .regulator_review import review_regulator
 from .reporting import ReportValidationError, build_report_model
@@ -191,6 +192,8 @@ def _execute(args: argparse.Namespace, document: Any) -> Mapping[str, Any]:
 
     if args.command == "rail-budget":
         return calculate_rail_budget(document)
+    if args.command == "intake":
+        return validate_project_intake(document, artifact_root=args.artifact_root)
     if args.command == "sequence":
         return evaluate_sequencing(document)
     if args.command == "inject-fault":
@@ -247,6 +250,17 @@ def build_parser() -> argparse.ArgumentParser:
 
     rail_budget = subparsers.add_parser("rail-budget", help="calculate one static rail budget")
     rail_budget.add_argument("input", metavar="INPUT", help="UTF-8 JSON file, or '-' for stdin")
+
+    intake = subparsers.add_parser(
+        "intake", help="validate one REP-01 regulator/rail execution-readiness intake"
+    )
+    intake.add_argument("input", metavar="INPUT", help="UTF-8 JSON file, or '-' for stdin")
+    intake.add_argument(
+        "--artifact-root",
+        type=Path,
+        required=True,
+        help="explicit root used for byte-exact artifact verification",
+    )
 
     sequence = subparsers.add_parser("sequence", help="evaluate one sequencing scenario")
     sequence.add_argument("input", metavar="INPUT", help="UTF-8 JSON file, or '-' for stdin")

@@ -1,0 +1,237 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "NCS-01",
+  "title": "Nightstand 45 W narrow feasibility case",
+  "claim_limits": [
+    "PORTFOLIO_WHAT_IF_ONLY",
+    "LABEL_POWER_IS_NOT_MEASURED_POWER",
+    "LABEL_POWER_IS_NOT_RAIL_CAPACITY",
+    "PD_CONTRACTS_UNKNOWN",
+    "NO_HARDWARE_PASS",
+    "NO_EXACT_PART_SELECTION"
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-NCS01-CRITICAL-PATH-20261023",
+      "version": "2026-10-23-local-analysis",
+      "locator": "001-Kayıt Notları ve Dokümantasyon/002-Proje Dokümantasyonu/001-Power-Embedded-Interface-Portfolio/04-Arastirma-Raporlari/002-23.10.2026-Literatur-Entegrasyon-Kritik-Yol-Analizi.docx",
+      "content_hash": {
+        "state": "KNOWN",
+        "algorithm": "SHA-256",
+        "value": "9dbd105da8bbb4bf6eb722db05e5296446c253ec5c60a553407d5d586d862721"
+      },
+      "access_status": "AVAILABLE",
+      "classification": "HANDOFF_ONLY",
+      "supports": [
+        "LABEL_TOTAL_POWER_45W_HANDOFF",
+        "PD_PROFILE_UNKNOWN",
+        "NCS01_ARCHITECTURE_COMPARISON_SCOPE"
+      ]
+    }
+  ],
+  "facts": {
+    "label_total_power": {
+      "state": "KNOWN",
+      "value": 45,
+      "unit": "W",
+      "basis": "LABEL_TOTAL_POWER_45W_HANDOFF",
+      "provenance": "HANDOFF_ONLY",
+      "source_refs": [
+        "SRC-NCS01-CRITICAL-PATH-20261023"
+      ]
+    },
+    "measured_continuous_power": {
+      "state": "UNKNOWN",
+      "value": null,
+      "unit": "W",
+      "basis": "MEASUREMENT_NOT_RUN",
+      "provenance": "UNKNOWN",
+      "source_refs": [
+        "SRC-NCS01-CRITICAL-PATH-20261023"
+      ]
+    },
+    "pd_port_count": {
+      "state": "UNKNOWN",
+      "value": null,
+      "unit": "COUNT",
+      "basis": "CUSTOMER_INPUT_NOT_BOUND",
+      "provenance": "UNKNOWN",
+      "source_refs": [
+        "SRC-NCS01-CRITICAL-PATH-20261023"
+      ]
+    },
+    "pd_profiles": {
+      "state": "UNKNOWN",
+      "value": null,
+      "unit": "PD_PROFILE_REF_SET",
+      "basis": "CUSTOMER_INPUT_NOT_BOUND",
+      "provenance": "UNKNOWN",
+      "source_refs": [
+        "SRC-NCS01-CRITICAL-PATH-20261023"
+      ]
+    },
+    "simultaneous_power_policy": {
+      "state": "UNKNOWN",
+      "value": null,
+      "unit": "POLICY_REF",
+      "basis": "CUSTOMER_INPUT_NOT_BOUND",
+      "provenance": "UNKNOWN",
+      "source_refs": [
+        "SRC-NCS01-CRITICAL-PATH-20261023"
+      ]
+    }
+  },
+  "scenarios": [
+    {
+      "scenario_id": "S-CAPACITY-UNKNOWN",
+      "description": "Current evidence state: usable aggregate load-side capacity is not bound.",
+      "scenario_kind": "KNOWN_GAP",
+      "capacity": {
+        "state": "UNKNOWN",
+        "value": null,
+        "unit": "W",
+        "provenance": "UNKNOWN"
+      }
+    },
+    {
+      "scenario_id": "S-CAPACITY-44W",
+      "description": "ASSUMPTION: deliberately insufficient load-side capacity for a negative boundary test.",
+      "scenario_kind": "PORTFOLIO_ASSUMPTION",
+      "capacity": {
+        "state": "KNOWN",
+        "value": 44,
+        "unit": "W",
+        "provenance": "ASSUMPTION"
+      }
+    },
+    {
+      "scenario_id": "S-CAPACITY-45W",
+      "description": "ASSUMPTION: load-side capacity equals the handoff-only 45 W label total with no gross margin.",
+      "scenario_kind": "PORTFOLIO_ASSUMPTION",
+      "capacity": {
+        "state": "KNOWN",
+        "value": 45,
+        "unit": "W",
+        "provenance": "ASSUMPTION"
+      }
+    },
+    {
+      "scenario_id": "S-CAPACITY-60W",
+      "description": "ASSUMPTION: higher load-side capacity used only to show that positive arithmetic margin is not a hardware PASS.",
+      "scenario_kind": "PORTFOLIO_ASSUMPTION",
+      "capacity": {
+        "state": "KNOWN",
+        "value": 60,
+        "unit": "W",
+        "provenance": "ASSUMPTION"
+      }
+    }
+  ],
+  "architectures": [
+    {
+      "architecture_id": "READY_MODULE",
+      "description": "Replaceable ready-made upstream power and PD modules with minimal custom interconnect.",
+      "recommendation": "FALLBACK_BASELINE",
+      "recommendation_basis": "ENGINEERING_RULE",
+      "fallback": true,
+      "future_option": false,
+      "partition": [
+        "UPSTREAM_POWER_READY_MODULE",
+        "PD_FUNCTION_READY_MODULE",
+        "MINIMAL_CUSTOM_INTERCONNECT"
+      ],
+      "required_evidence": [
+        "SOURCE_BINDING",
+        "LOAD_DEFINITION",
+        "PORT_PROFILE",
+        "SIMULTANEOUS_POWER_POLICY",
+        "STATIC_CAPACITY",
+        "DERATING",
+        "EFFICIENCY_LOSS",
+        "INTERFACE_MAP",
+        "STARTUP_SHUTDOWN",
+        "BACKFEED_POWER_OFF",
+        "NEGOTIATION",
+        "FAULT_RECOVERY",
+        "THERMAL",
+        "COMPLIANCE",
+        "MEASUREMENT_INTEGRITY",
+        "MODEL_REPRODUCIBILITY",
+        "MODULE_SWAP_REPEATABILITY"
+      ]
+    },
+    {
+      "architecture_id": "HYBRID",
+      "description": "Replaceable upstream power and PD modules plus a narrow custom distribution, measurement, control, and test surface.",
+      "recommendation": "PREFERRED_PROVISIONAL",
+      "recommendation_basis": "ENGINEERING_RULE",
+      "fallback": false,
+      "future_option": false,
+      "partition": [
+        "UPSTREAM_POWER_REPLACEABLE",
+        "PD_FUNCTION_REPLACEABLE",
+        "CUSTOM_LOW_VOLTAGE_DISTRIBUTION",
+        "CUSTOM_MEASUREMENT_AND_CONTROL",
+        "EXPLICIT_TEST_POINTS"
+      ],
+      "required_evidence": [
+        "SOURCE_BINDING",
+        "LOAD_DEFINITION",
+        "PORT_PROFILE",
+        "SIMULTANEOUS_POWER_POLICY",
+        "STATIC_CAPACITY",
+        "DERATING",
+        "EFFICIENCY_LOSS",
+        "INTERFACE_MAP",
+        "STARTUP_SHUTDOWN",
+        "BACKFEED_POWER_OFF",
+        "NEGOTIATION",
+        "FAULT_RECOVERY",
+        "THERMAL",
+        "COMPLIANCE",
+        "MEASUREMENT_INTEGRITY",
+        "MODEL_REPRODUCIBILITY",
+        "MODULE_SWAP_REPEATABILITY",
+        "HYBRID_BOUNDARY_CONTRACT",
+        "CONTROL_TELEMETRY_FAIL_SAFE",
+        "INTERCONNECT_DROP_THERMAL"
+      ]
+    },
+    {
+      "architecture_id": "CUSTOM_PCB",
+      "description": "Custom controller, conversion, distribution, protection, and layout after exact requirements and bench evidence exist.",
+      "recommendation": "DEFERRED",
+      "recommendation_basis": "ENGINEERING_RULE",
+      "fallback": false,
+      "future_option": true,
+      "partition": [
+        "CUSTOM_POWER_CONVERSION",
+        "CUSTOM_PD_CONTROL",
+        "CUSTOM_DISTRIBUTION_AND_PROTECTION",
+        "CUSTOM_MEASUREMENT_AND_CONTROL"
+      ],
+      "required_evidence": [
+        "SOURCE_BINDING",
+        "LOAD_DEFINITION",
+        "PORT_PROFILE",
+        "SIMULTANEOUS_POWER_POLICY",
+        "STATIC_CAPACITY",
+        "DERATING",
+        "EFFICIENCY_LOSS",
+        "INTERFACE_MAP",
+        "STARTUP_SHUTDOWN",
+        "BACKFEED_POWER_OFF",
+        "NEGOTIATION",
+        "FAULT_RECOVERY",
+        "THERMAL",
+        "COMPLIANCE",
+        "MEASUREMENT_INTEGRITY",
+        "MODEL_REPRODUCIBILITY",
+        "EXACT_PART_PROVENANCE",
+        "SCHEMATIC_LAYOUT_REVIEW",
+        "LOOP_STABILITY",
+        "BRING_UP"
+      ]
+    }
+  ]
+}

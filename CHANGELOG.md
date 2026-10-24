@@ -3,6 +3,33 @@
 All notable changes to `power-rail-validation` are recorded here. Release
 claims remain limited to the documented synthetic/offline software scope.
 
+## [Unreleased] — 0.6.0.dev0
+
+### Added
+
+- Fail-closed `project_intake` contract and validator for one pinned REP-01
+  regulator/rail slice.
+- Capability-based artifact requirements, byte-exact artifact verification,
+  cross-bindings, provenance/origin checks, and explicit gap records.
+- `intake INPUT --artifact-root ROOT` CLI command with the existing status and
+  exit-code contract.
+- A canonical real REP-01 `5V` scenario and separate D5 checkpoint evidence.
+
+### Changed
+
+- Source-tree development version advanced to `0.6.0.dev0`. The frozen D4
+  wheel/sdist remain version `0.5.0`; no D5 distribution was built or
+  published.
+
+### Scope limits
+
+- Intake `PASS` means execution inputs are complete and byte-bound only.
+- The current REP-01 scenario remains `BLOCKED` because the project
+  configuration, power profile, rail demands, exact regulator selection,
+  exact-part datasheet, and authorized model are unavailable.
+- Buck, pin, transient, loop-stability, hardware, and G1-G6 evaluations remain
+  `NOT_RUN` or open; no electrical or physical approval is claimed.
+
 ## [0.5.0] - 2026-10-24
 
 ### Added

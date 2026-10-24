@@ -1,0 +1,4 @@
+SYNTHETIC TEST DATASHEET ONLY
+Manufacturer: Synthetic Semiconductor
+Full part number: TEST-BUCK-001
+No project or hardware claim.
