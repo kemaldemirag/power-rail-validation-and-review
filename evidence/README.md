@@ -52,6 +52,8 @@ Bu paket D3 sentetik test/kanıt kapsamını kapatır. GAP-02, GAP-03, G1 ve can
 
 D4 kanıtı, D3 manifestini yeniden üretmez veya geçmiş D3 byte bağını bugünkü kaynak ağacına genişletmez. D3 kaynakları incelenmiş bir commit/tag ile dondurulmadığı için bu provenance sınırlaması açık `BLOCKED / UNCOMMITTED_SOURCE` olarak kalır. Yerel `PASS`, Python 3.12 yazılım release adayına aittir; Python 3.9 CI yürütmesi, canlı adaptörler ve donanım kapıları ayrıca çalıştırılmalıdır.
 
+Güncel taban notu: tarihsel D4 dosyaları değiştirilmeden, ardıl D5 commit'i `66f20739feae5689cbc4620fb38ee7817796c2e9` için GitHub Actions koşusu `40094625985` Python 3.9 ve 3.12'de PASS olmuştur. Bu uzak sonuç D4 manifestinin üretim-zamanı beyanını geriye dönük değiştirmez; D6 değişiklikleri yeni CI kanıtı gerektirir.
+
 ## D5 gerçek proje girdisi hazırlık kanıtları
 
 - `REP02-D5/intake-result.json`: sabit REP-01 revizyonu ve tek `5V` dilimi için kanonik intake motoru sonucu.

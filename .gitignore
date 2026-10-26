@@ -33,3 +33,10 @@ vendor/
 third_party/
 raw/
 screenshots/
+
+# External reference material stays local unless an explicit redistribution
+# decision records otherwise. Commit lock metadata and normalized extracts,
+# not vendor downloads.
+references/**/raw/
+references/**/downloads/
+references/**/cache/

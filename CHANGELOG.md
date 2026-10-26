@@ -14,12 +14,22 @@ claims remain limited to the documented synthetic/offline software scope.
 - `intake INPUT --artifact-root ROOT` CLI command with the existing status and
   exit-code contract.
 - A canonical real REP-01 `5V` scenario and separate D5 checkpoint evidence.
+- Repository-wide `AGENTS.md` governance contract with immutable D4/D5
+  evidence, source-policy, test, and release boundaries.
+- D6 reference-candidate qualification gate and external-reference storage
+  policy.
+- `TI-TLVM13660EVM` / `TLVM13660RDLR` as the first technically qualified
+  `STATIC + BUCK + PIN` candidate in `QUALIFIED_FOR_LOCK` state; portfolio
+  approval remains pending.
 
 ### Changed
 
 - Source-tree development version advanced to `0.6.0.dev0`. The frozen D4
   wheel/sdist remain version `0.5.0`; no D5 distribution was built or
   published.
+- Corrected the current remote-CI baseline: D5 commit `66f2073` passes the
+  Python 3.9 and 3.12 GitHub Actions matrix. New D6 commits still require a
+  fresh CI run.
 
 ### Scope limits
 

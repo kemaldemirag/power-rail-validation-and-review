@@ -1,6 +1,8 @@
 # power-rail-validation-and-review
 
-Durum: D5_PROJECT_INTAKE_GATE_IMPLEMENTED — CURRENT_REP01_VERTICAL_SLICE_BLOCKED
+[![CI](https://github.com/kemaldemirag/power-rail-validation-and-review/actions/workflows/ci.yml/badge.svg)](https://github.com/kemaldemirag/power-rail-validation-and-review/actions/workflows/ci.yml)
+
+Durum: D6_REFERENCE_CANDIDATE_QUALIFIED — PORTFOLIO_APPROVAL_PENDING — CONTRACT_V2_PENDING — D5_REP01_VERTICAL_SLICE_BLOCKED
 
 Bu repo güç rayı bütçesi, derating, sıralama, sentetik hata senaryoları ve kanıt sınıflı inceleme raporları için yeniden kullanılabilir bir araç seti geliştirir.
 
@@ -70,7 +72,7 @@ Bu kapsam D3 sentetik test ve kanıt kapısını kapatır. Canlı REP-01/03 adap
 - Python 3.9 ve 3.12 matrisli minimal CI tanımı, lisans, changelog ve doğrulanmış hızlı başlangıç kılavuzu
 - D3 kanıtını değiştirmeden ona hash ile referans veren ayrı D4 test, build ve release manifesti
 
-D4 kapanışı yalnız yerel yazılım release adayını kapsar. Python 3.12 üzerinde tam test ve temiz kurulum doğrulaması yerelde çalıştırılır; Python 3.9 yürütmesi CI matrisinde tanımlıdır ancak commit/push yapılmadığı için bu çalışma ağacında henüz koşturulmuş sayılmaz.
+D4 kapanışı yalnız yerel yazılım release adayını kapsar. Kapanış anında Python 3.12 tam test ve temiz kurulum doğrulaması yerelde çalıştırılmış, Python 3.9 yürütmesi henüz uzak CI'da koşturulmamıştı. Ardıl D5 commit'i `66f20739feae5689cbc4620fb38ee7817796c2e9` için [GitHub Actions koşusu 40094625985](https://github.com/kemaldemirag/power-rail-validation-and-review/actions/runs/40094625985) Python 3.9 ve 3.12'de PASS'tir. Bu sonuç tarihsel D4 kanıtını yeniden yazmaz; her yeni D6 commit'i için uzak CI yeniden çalıştırılmalıdır.
 
 `D5 / Gerçek Proje Girdisi Hazırlık Kapısı` ardıl geliştirme dilimi şunları ekler:
 
@@ -81,6 +83,16 @@ D4 kapanışı yalnız yerel yazılım release adayını kapsar. Python 3.12 üz
 - gerçek REP-01 `5V` diliminin mevcut eksiklerini varsayımsız biçimde `BLOCKED` bırakan ayrı D5 kanıtı.
 
 Intake `PASS`, yalnız downstream analiz girdilerinin kimlik ve byte bütünlüğü bakımından hazır olduğunu söyler. Artifact içeriğinden elektriksel semantik çıkarmaz; buck, pin, transient ve loop-stability motorlarını çalıştırmaz ve donanım/G1-G6 onayı vermez. Kaynak ağacı D5 geliştirmesi için `0.6.0.dev0` sürümündedir; dondurulmuş D4 dağıtım artifact'ları `0.5.0` olarak korunur.
+
+`D6 / Referans Tasarım Doğrulaması` için Oturum 1 yönetişim ve aday yeterlilik kapısını açar:
+
+- D4/D5 tarihsel kanıtını ve D4 dağıtım byte'larını koruyan kök [`AGENTS.md`](AGENTS.md) sözleşmesi;
+- ham üçüncü taraf dosyalarını repoya almayan [`references/`](references/) politikası;
+- `STATIC + BUCK + PIN` ilk dilimi için gerçek buck, exact MPN, 24 V → 5 V çalışma noktası ve doğrudan sayısal oracle ölçütleri;
+- lock için önerilen `TI-TLVM13660EVM` / `TLVM13660RDLR` adayının [`QUALIFIED_FOR_LOCK` kaydı](docs/REP02-D6/REP02-D6-reference-candidate-qualification.md); portföy onayı `PENDING`dir;
+- v1'i yerinde değiştirmeyen [`sözleşme v2 tasarım sınırı`](docs/REP02-D6/REP02-D6-contract-v2-outline.md).
+
+Bu aşama henüz D6 teknik yürütme veya elektriksel `PASS` sonucu değildir. Exact kaynak byte'ları SHA-256 lock ile bağlanana ve sözleşme v2 uygulanana kadar durum `BLOCKED` kalır. Transient ve loop-stability, exact lisanslı model/ölçüm kanıtı yoksa `NOT_RUN` olarak korunur.
 
 ## Güvenlik ve iddia sınırı
 
@@ -134,4 +146,6 @@ Mevcut snapshot için beklenen sonuç `BLOCKED`, proses kodu `3`'tür. Bu, hazı
 
 ## Sonraki çalışma dilimi
 
-Bir sonraki ana dilim tek bir gerçek dikey dilimdir: bir exact regülatör, bir ray, yetkili datasheet profili ve bir REP-01 artifact'ını uçtan uca bağlamak. Bu dilimde buck güç katı kontrolleri, gerilim/pin kısıtları ve gerçek transient/loop-stability metrikleri küçük ve kanıta bağlı biçimde ele alınmalıdır. Canlı REP-01/03 entegrasyonu; yetkili repo/artifact erişimi, semantik eşleme ve GAP-02/GAP-03 kaynakları çözülene kadar `BLOCKED` kalır. Repo bağımsız Git deposudur; D5 finalizer otomasyonu commit veya push gerçekleştirmez.
+Bir sonraki ana dilim, teknik olarak yeterli bulunup lock için önerilen `TI-TLVM13660EVM` referansını byte-bağlı hale getirecek sözleşme v2 ve reference-intake çalışmasıdır. V1 `1.0.0` sözleşmeleri yerinde değiştirilmeden v2 şemaları yan yana eklenmeli; `provenance_type`, `evidence_context`, kaynağa özgü locator ve `reference.lock.json` semantiği tanımlanmalıdır. İlk yürütme yalnız bir exact regülatör, bir 5 V ray ve iki yayımlanmış 24 V verim oracle'ıyla `STATIC + BUCK + PIN` kapsamındadır. Adaya ilişkin portföy approval record'u ayrı ve kullanıcı kontrollü kalır.
+
+Canlı REP-01/03 entegrasyonu; yetkili repo/artifact erişimi, semantik eşleme ve GAP-02/GAP-03 kaynakları çözülene kadar ayrı olarak `BLOCKED` kalır. Referans sonucu REP-01 GAP kayıtlarını global kapatmaz. Repo bağımsız Git deposudur; otomasyon commit, push, tag veya release gerçekleştirmez.
